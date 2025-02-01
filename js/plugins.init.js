@@ -9,29 +9,39 @@ try {
 
     counter.forEach(counter_value => {
         const updateCount = () => {
-            const target = +counter_value.getAttribute('data-target');
+            // Get the target value and check for a "+" symbol
+            let target = counter_value.getAttribute('data-target');
+            const hasPlus = target.includes('+');
+            
+            // Remove the "+" symbol from target for calculation purposes
+            target = target.replace('+', '');
+            target = +target;  // Convert to number
+    
             const count = +counter_value.innerText;
-
-            // Lower inc to slow and higher to slow
+            
+            // Lower inc to slow and higher to speed up
             var inc = target / speed;
-
+    
             if (inc < 1) {
                 inc = 1;
             }
-
+    
             // Check if target is reached
             if (count < target) {
                 // Add inc to count and output in counter_value
                 counter_value.innerText = (count + inc).toFixed(0);
+    
                 // Call function every ms
                 setTimeout(updateCount, 1);
             } else {
-                counter_value.innerText = target;
+                // Ensure it shows the target number and adds "+" at the end if applicable
+                counter_value.innerText = target + (hasPlus ? '+' : '');
             }
         };
-
+    
         updateCount();
     });
+    
 } catch (error) {
     
 }
