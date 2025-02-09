@@ -62,7 +62,7 @@
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
         <div class="container">
             <a class="navbar-brand" href="">
-                <a class="nav-link" href="index.html">DURRELL GEMUH</a>
+                <a class="nav-link" href="index.html"><strong>DURRELL GEMUH</strong></a>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,7 +99,10 @@
                                 class="mdi mdi-linkedin"></i></a></li>
                     <li class="list-inline-item"><a href="https://www.facebook.com/durrell.gemuh/" target="_blank"><i
                                 class="mdi mdi-facebook"></i></a></li>
-                    <!-- <li class="list-inline-item"><a href="javascript:void(0)"><i class="mdi mdi-twitter"></i></a></li> -->
+                    <li class="list-inline-item"><a href="https://x.com/durrelloo" target="_blank"><i
+                                class="mdi mdi-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.instagram.com/g_durrello/" target="_blank"><i
+                                class="mdi mdi-instagram"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -1369,46 +1372,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="custom-form mb-sm-30">
-                        <form method="post" name="myForm" onsubmit="return validateForm()">
-                            <p id="error-msg"></p>
-                            <div id="simple-msg"></div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-6">
-                                            <div class="form-group">
-                                                <input name="name" id="name" type="text"
-                                                    class="form-control border rounded" placeholder="First Name :">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-md-6">
-                                            <div class="form-group">
-                                                <input name="email" id="email" type="email"
-                                                    class="form-control border rounded" placeholder="Your email :">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <input name="subject" id="subject" class="form-control border rounded"
-                                                    placeholder="Your subject :">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <textarea name="comments" id="comments" rows="4"
-                                            class="form-control border rounded" placeholder="Your Message :"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-12 text-end">
-                                    <button type="submit" id="submit" name="send" class="btn btn-primary">Send
-                                        Message</button>
-                                </div>
-                            </div>
-                        </form>
+                        <div id="contact-us-form-hubspot"></div>
                     </div><!--end custom-form-->
                 </div>
             </div>
@@ -1435,6 +1399,15 @@
     <!-- Back to top -->
 
     <!-- javascript -->
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+    <script>
+        hbspt.forms.create({
+            portalId: "48641570",
+            formId: "eeda12f9-914f-4938-b15a-6e3ae3aadf0a",
+            target: "#contact-us-form-hubspot"
+        });
+    </script>
+
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/gumshoe.js"></script>
     <!-- SLIDER -->
