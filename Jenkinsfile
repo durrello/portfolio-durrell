@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                docker pull nginx:latest
+                docker pull 'nginx:latest'
             }
         }
         stage('Test') {
