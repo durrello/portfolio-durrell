@@ -1142,35 +1142,129 @@ async function launchApp() {
 }
 
 // ── GITHUB API ──
-async function ghRequest(path, method = 'GET', body = null) {
-  const url = `https://api.github.com/repos/${cfg.user}/${cfg.repo}/contents/${path}`;
-  const opts = {
-    method,
-    headers: {
-      'Authorization': `token ${cfg.token}`,
-      'Accept': 'application/vnd.github.v3+json',
-      'Content-Type': 'application/json'
-    }
+const GH = 'https://api.github.com';
+
+function ghHeaders() {
+  return {
+    'Authorization': `token ${cfg.token}`,
+    'Accept': 'application/vnd.github.v3+json',
+    'Content-Type': 'application/json'
   };
-  if (body) opts.body = JSON.stringify(body);
-  const res = await fetch(url, opts);
-  if (!res.ok && res.status !== 404) throw new Error(`GitHub: ${res.status} ${res.statusText}`);
-  return res.status === 404 ? null : res.json();
 }
 
 async function ghGetFile(path) {
-  const data = await ghRequest(path);
-  if (!data) return { content: null, sha: null };
-  return { content: JSON.parse(atob(data.content.replace(/\n/g,''))), sha: data.sha };
+  const res = await fetch(`${GH}/repos/${cfg.user}/${cfg.repo}/contents/${path}`, {
+    headers: ghHeaders()
+  });
+  if (res.status === 404) return { content: null, sha: null };
+  if (!res.ok) throw new Error(`GitHub ${res.status}: ${res.statusText}`);
+  const data = await res.json();
+  let parsed;
+  try { parsed = JSON.parse(atob(data.content.replace(/\n/g,''))); }
+  catch(e) { parsed = atob(data.content.replace(/\n/g,'')); }
+  return { content: parsed, sha: data.sha, raw: data };
 }
 
-async function ghPutFile(path, content, sha, message) {
-  const encoded = btoa(unescape(encodeURIComponent(
-    typeof content === 'string' ? content : JSON.stringify(content, null, 2)
-  )));
-  const body = { message, content: encoded, branch: cfg.branch };
-  if (sha) body.sha = sha;
-  return ghRequest(path, 'PUT', body);
+async function ghGetSha(path) {
+  const res = await fetch(`${GH}/repos/${cfg.user}/${cfg.repo}/contents/${path}`, {
+    headers: ghHeaders()
+  });
+  if (res.status === 404) return null;
+  const data = await res.json();
+  return data.sha || null;
+}
+
+// Get the latest commit SHA for the branch (needed for tree API)
+async function ghGetBranchSha() {
+  const res = await fetch(`${GH}/repos/${cfg.user}/${cfg.repo}/git/refs/heads/${cfg.branch}`, {
+    headers: ghHeaders()
+  });
+  if (!res.ok) throw new Error('Could not get branch ref');
+  const data = await res.json();
+  return data.object.sha;
+}
+
+// Get the tree SHA from a commit
+async function ghGetCommitTree(commitSha) {
+  const res = await fetch(`${GH}/repos/${cfg.user}/${cfg.repo}/git/commits/${commitSha}`, {
+    headers: ghHeaders()
+  });
+  const data = await res.json();
+  return data.tree.sha;
+}
+
+// Create a blob
+async function ghCreateBlob(content) {
+  const res = await fetch(`${GH}/repos/${cfg.user}/${cfg.repo}/git/blobs`, {
+    method: 'POST',
+    headers: ghHeaders(),
+    body: JSON.stringify({ content, encoding: 'utf-8' })
+  });
+  if (!res.ok) throw new Error('Blob creation failed');
+  const data = await res.json();
+  return data.sha;
+}
+
+// Multi-file commit using Git Tree API — this triggers Cloudflare Pages deployment
+async function ghMultiCommit(files, message) {
+  // files = [{ path, content }]
+  // 1. Get latest commit on branch
+  const commitSha = await ghGetBranchSha();
+  const treeSha = await ghGetCommitTree(commitSha);
+
+  // 2. Create blobs for each file
+  const treeItems = await Promise.all(files.map(async f => {
+    const blobSha = await ghCreateBlob(typeof f.content === 'string' ? f.content : JSON.stringify(f.content, null, 2));
+    return { path: f.path, mode: '100644', type: 'blob', sha: blobSha };
+  }));
+
+  // 3. Create new tree
+  const treeRes = await fetch(`${GH}/repos/${cfg.user}/${cfg.repo}/git/trees`, {
+    method: 'POST',
+    headers: ghHeaders(),
+    body: JSON.stringify({ base_tree: treeSha, tree: treeItems })
+  });
+  if (!treeRes.ok) throw new Error('Tree creation failed');
+  const newTree = await treeRes.json();
+
+  // 4. Create commit
+  const commitRes = await fetch(`${GH}/repos/${cfg.user}/${cfg.repo}/git/commits`, {
+    method: 'POST',
+    headers: ghHeaders(),
+    body: JSON.stringify({
+      message,
+      tree: newTree.sha,
+      parents: [commitSha]
+    })
+  });
+  if (!commitRes.ok) throw new Error('Commit creation failed');
+  const newCommit = await commitRes.json();
+
+  // 5. Update branch ref
+  const refRes = await fetch(`${GH}/repos/${cfg.user}/${cfg.repo}/git/refs/heads/${cfg.branch}`, {
+    method: 'PATCH',
+    headers: ghHeaders(),
+    body: JSON.stringify({ sha: newCommit.sha })
+  });
+  if (!refRes.ok) throw new Error('Branch update failed');
+  return newCommit;
+}
+
+// Build markdown frontmatter file from post object
+function buildMarkdownFile(post) {
+  const tags = (post.tags || []).map(t => `  - ${t}`).join('\n');
+  return `---
+title: ${post.title}
+description: ${post.description || ''}
+author: ${post.author || 'Durrell Gemuh'}
+publishDate: ${post.publishDate ? post.publishDate.split('T')[0] : new Date().toISOString().split('T')[0]}
+category: ${post.category || ''}
+featuredImage: ${post.featuredImage || ''}
+tags:
+${tags || '  []'}
+---
+
+${post.content || ''}`;
 }
 
 async function loadData() {
@@ -1179,14 +1273,14 @@ async function loadData() {
       ghGetFile('posts.json'),
       ghGetFile('portfolio.json')
     ]);
-    blogPosts = postsData.content || [];
-    portfolioProjects = portData.content || [];
+    blogPosts = Array.isArray(postsData.content) ? postsData.content : [];
+    portfolioProjects = Array.isArray(portData.content) ? portData.content : [];
     document.getElementById('gh-dot').classList.remove('disconnected');
     document.getElementById('gh-status-text').textContent = `${cfg.user}/${cfg.repo}`;
   } catch(e) {
     document.getElementById('gh-dot').classList.add('disconnected');
     document.getElementById('gh-status-text').textContent = 'Connection error';
-    toast('Could not load data from GitHub. Check your token.', 'error');
+    toast('Could not load from GitHub. Check your token & repo name.', 'error');
   }
 }
 
@@ -1280,28 +1374,52 @@ async function saveBlog() {
     blogPosts.unshift(post);
   }
 
+  // Only include published posts in the manifest
+  const publishedPosts = blogPosts.filter(p => (p.status || 'published') !== 'draft');
+
   try {
-    toast('Saving to GitHub...', 'success');
-    const { sha } = await ghGetFile('posts.json');
-    await ghPutFile('posts.json', blogPosts, sha, `${editingBlogIdx !== null ? 'Update' : 'Add'} post: ${title}`);
-    toast('✅ Published! Cloudflare will deploy shortly.', 'success');
+    toast('💾 Committing to GitHub...', 'success');
+
+    // Write BOTH the .md source file AND posts.json in a single commit
+    // This guarantees Cloudflare Pages triggers a deployment
+    await ghMultiCommit([
+      {
+        path: `posts/${slug}.md`,
+        content: buildMarkdownFile(post)
+      },
+      {
+        path: 'posts.json',
+        content: publishedPosts
+      }
+    ], `${editingBlogIdx !== null ? 'Update' : 'Add'} post: ${title}`);
+
+    toast('✅ Published! Cloudflare is deploying your site now.', 'success');
     showView('blogs');
   } catch(e) {
     toast('GitHub save failed: ' + e.message, 'error');
+    console.error(e);
   }
 }
 
 async function deleteBlog(idx) {
   if (!confirm('Delete this post?')) return;
+  const post = blogPosts[idx];
   blogPosts.splice(idx, 1);
+  const publishedPosts = blogPosts.filter(p => (p.status||'published') !== 'draft');
   try {
-    const { sha } = await ghGetFile('posts.json');
-    await ghPutFile('posts.json', blogPosts, sha, 'Delete post');
-    toast('Post deleted', 'success');
+    try {
+      const mdSha = await ghGetSha('posts/' + post.slug + '.md');
+      if (mdSha) {
+        await fetch('https://api.github.com/repos/' + cfg.user + '/' + cfg.repo + '/contents/posts/' + post.slug + '.md', {
+          method: 'DELETE', headers: ghHeaders(),
+          body: JSON.stringify({ message: 'Delete post: ' + post.title, sha: mdSha, branch: cfg.branch })
+        });
+      }
+    } catch(e) {}
+    await ghMultiCommit([{ path: 'posts.json', content: publishedPosts }], 'Delete post: ' + post.title);
+    toast('Post deleted — deploying...', 'success');
     renderBlogs();
-  } catch(e) {
-    toast('Delete failed', 'error');
-  }
+  } catch(e) { toast('Delete failed: ' + e.message, 'error'); }
 }
 
 function previewBlog() {
@@ -1393,10 +1511,9 @@ async function saveProject() {
 
   try {
     toast('Saving to GitHub...', 'success');
-    const { sha } = await ghGetFile('portfolio.json');
-    await ghPutFile('portfolio.json', portfolioProjects, sha,
-      `${editingProjIdx !== null ? 'Update' : 'Add'} project: ${title}`);
-    toast('✅ Project saved! Cloudflare will deploy shortly.', 'success');
+    await ghMultiCommit([{ path: 'portfolio.json', content: portfolioProjects }],
+      (editingProjIdx !== null ? 'Update' : 'Add') + ' project: ' + title);
+    toast('✅ Project saved — Cloudflare deploying now.', 'success');
     showView('portfolio');
   } catch(e) {
     toast('GitHub save failed: ' + e.message, 'error');
@@ -1407,12 +1524,11 @@ async function deleteProject(idx) {
   if (!confirm('Delete this project?')) return;
   portfolioProjects.splice(idx, 1);
   try {
-    const { sha } = await ghGetFile('portfolio.json');
-    await ghPutFile('portfolio.json', portfolioProjects, sha, 'Delete project');
-    toast('Project deleted', 'success');
+    await ghMultiCommit([{ path: 'portfolio.json', content: portfolioProjects }], 'Delete project');
+    toast('Project deleted — deploying...', 'success');
     renderPortfolio();
   } catch(e) {
-    toast('Delete failed', 'error');
+    toast('Delete failed: ' + e.message, 'error');
   }
 }
 
@@ -1683,9 +1799,8 @@ async function saveSettings() {
   localStorage.setItem('cms_cfg', JSON.stringify(cfg));
 
   try {
-    const { sha } = await ghGetFile('_config.json');
-    await ghPutFile('_config.json', sc, sha, 'Update site config');
-    toast('✅ Settings saved to GitHub', 'success');
+    await ghMultiCommit([{ path: '_config.json', content: sc }], 'Update site config');
+    toast('✅ Settings saved — Cloudflare deploying.', 'success');
   } catch(e) {
     toast('Settings saved locally (GitHub error: ' + e.message + ')', 'error');
   }
