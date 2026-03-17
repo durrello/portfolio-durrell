@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Admin - Durrell Gemuh</title>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+          Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      if (!window.netlifyIdentity) {
+        window.netlifyIdentity = {}
+      }
+      // Mock Netlify Identity for Cloudflare Pages
+      window.netlifyIdentity = {
+        on: () => {},
+        init: () => {},
+        logout: () => {},
+        currentUser: () => ({ email: 'admin@local' })
+      }
+    </script>
+    <script>
+      // Initialize Decap CMS
+      CMS.init({
+        config: {
+          backend: {
+            name: 'github',
+            repo: 'durrello/portfolio-durrell',
+            branch: 'master',
+            auth_endpoint: '/api/auth',
+            base_url: 'https://durrellgemuh.com',
+            auth_type: 'github',
+            app_id: 'Ov23li0CmiVKKOHUDbeY',
+            max_file_size: 500000
+          },
+          local_backend: true,
+          media_folder: 'images/uploads',
+          public_folder: '/images/uploads',
+          site_url: 'https://durrellgemuh.com',
+          display_url: 'https://durrellgemuh.com',
+          logo_url: 'https://durrellgemuh.com/images/durrell.jpg',
+          collections: [
+            {
+              name: 'blog',
+              label: 'Blog Posts',
+              folder: 'posts',
+              create: true,
+              slug: '{{slug}}',
+              extension: 'md',
+              format: 'frontmatter',
+              fields: [
+                { label: 'Title', name: 'title', widget: 'string' },
+                { label: 'Description', name: 'description', widget: 'text', hint: 'Brief excerpt for blog listing' },
+                { label: 'Author', name: 'author', widget: 'string', default: 'Durrell Gemuh' },
+                { label: 'Publish Date', name: 'publishDate', widget: 'datetime', format: 'YYYY-MM-DD' },
+                { label: 'Featured Image', name: 'featuredImage', widget: 'image', required: false },
+                { label: 'Category', name: 'category', widget: 'select', options: ['DevOps', 'Cloud', 'Kubernetes', 'CI/CD', 'AWS', 'GCP', 'Terraform', 'Linux', 'Docker', 'Security'] },
+                { label: 'Tags', name: 'tags', widget: 'list', default: [] },
+                { label: 'Body', name: 'body', widget: 'markdown' }
+              ]
+            },
+            {
+              name: 'portfolio',
+              label: 'Portfolio Projects',
+              folder: 'portfolio',
+              create: true,
+              slug: '{{slug}}',
+              extension: 'json',
+              fields: [
+                { label: 'Title', name: 'title', widget: 'string' },
+                { label: 'Description', name: 'description', widget: 'text' },
+                { label: 'Image', name: 'image', widget: 'image' },
+                { label: 'Technologies', name: 'technologies', widget: 'list' },
+                { label: 'Link', name: 'link', widget: 'string', required: false },
+                { label: 'Features', name: 'features', widget: 'list', default: [] },
+                { label: 'Status', name: 'status', widget: 'select', options: ['Completed', 'In Progress', 'Planned'] }
+              ]
+            },
+            {
+              name: 'settings',
+              label: 'Site Settings',
+              files: [
+                {
+                  name: 'general',
+                  label: 'General Settings',
+                  file: '_config.json',
+                  fields: [
+                    { label: 'Site Title', name: 'siteTitle', widget: 'string' },
+                    { label: 'Site Description', name: 'siteDescription', widget: 'text' },
+                    { label: 'Author Name', name: 'author', widget: 'string' },
+                    { label: 'Author Bio', name: 'authorBio', widget: 'text' },
+                    { label: 'Contact Email', name: 'contactEmail', widget: 'string' },
+                    { label: 'Social Links', name: 'social', widget: 'object', fields: [
+                      { label: 'Twitter', name: 'twitter', widget: 'string', required: false },
+                      { label: 'GitHub', name: 'github', widget: 'string', required: false },
+                      { label: 'LinkedIn', name: 'linkedin', widget: 'string', required: false },
+                      { label: 'Instagram', name: 'instagram', widget: 'string', required: false }
+                    ]}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>

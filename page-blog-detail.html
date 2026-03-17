@@ -172,9 +172,31 @@
 </head>
 
 <body>
+    <!-- Navbar Start -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><strong>DURRELL GEMUH</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span data-feather="menu" class="fea icon-md"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav navbar-nav-link mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="page-blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <div style="height:70px;"></div>
     <section class="section">
         <div class="container">
-            <a href="page-blog.html" class="back-link">← Back to Blog</a>
+            <a href="page-blog.html" class="back-link" style="display:inline-flex;align-items:center;gap:0.4rem;color:#0d6efd;font-weight:500;margin-bottom:2rem;text-decoration:none;">← Back to Blog</a>
             
             <!-- Post Container -->
             <div id="post-container"></div>
@@ -190,6 +212,10 @@
     </section>
 
     <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>feather.replace();</script>
     <script src="js/blog-loader.js"></script>
     <script>
         // Get post slug from URL parameter

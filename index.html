@@ -84,9 +84,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#projects">Projects</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#news">Blog</a>
-                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="page-blog.html">Blog</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
@@ -1182,106 +1182,15 @@
             </div>
         </div>
         <div class="container">
+            <div class="row mt-4" id="projects-grid">
+                <!-- Projects loaded dynamically from portfolio.json -->
+                <div class="col-12 text-center py-4" id="projects-loading">
+                    <p class="text-muted">Loading projects...</p>
+                </div>
+            </div>
             <div class="row mt-4">
-                <div class="col-lg-4 col-md-6 mt-4 pt-2">
-                    <div class="item-box portfolio-box rounded shadow bg-white overflow-hidden">
-                        <div class="portfolio-box-img position-relative overflow-hidden">
-                            <!-- <img class="item-container img-fluid mx-auto" src="images/portfolio/1.jpg"
-                                alt="Kubernetes Infrastructure Deployment"> -->
-                            <div class="overlay-work">
-                                <div class="work-content text-center">
-                                    <a href="images/portfolio/1.jpg"
-                                        class="lightbox text-light work-icon bg-dark d-inline-block rounded-pill "><i
-                                            data-feather="cloud" class="fea icon-sm image-icon"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gallary-title py-4 text-center">
-                            <h5><a href="https://dev.to/durrello" target="_blank" class="title text-dark">Infrastructure as Code (IaC)</a></h5>
-                            <span>Automated cloud infrastructure using Terraform, enabling infrastructure as code
-                                deployment and management.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4 pt-2">
-                    <div class="item-box portfolio-box rounded shadow bg-white overflow-hidden">
-                        <div class="portfolio-box-img position-relative overflow-hidden">
-                            <!-- <img class="item-container img-fluid mx-auto" src="images/portfolio/2.jpg"
-                                alt="CI/CD Automation Platform"> -->
-                            <div class="overlay-work">
-                                <div class="work-content text-center">
-                                    <a href="images/portfolio/2.jpg"
-                                        class="lightbox text-light work-icon bg-dark d-inline-block rounded-pill "><i
-                                            data-feather="git-merge" class="fea icon-sm image-icon"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gallary-title py-4 text-center">
-                            <h5><a href="https://dev.to/durrello" target="_blank" class="title text-dark">Containerization and Orchestration</a></h5>
-                            <span>Kubernetes Infrastructure Deployment, featuring production-ready Kubernetes platform
-                                using Helm and GitOps, CI/CD Automation Platform, and Automated Jenkins pipelines for
-                                microservice builds and deployments.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4 pt-2">
-                    <div class="item-box portfolio-box rounded shadow bg-white overflow-hidden">
-                        <div class="portfolio-box-img position-relative overflow-hidden">
-                            <!-- <img class="item-container img-fluid mx-auto" src="images/portfolio/3.jpg"
-                                alt="Observability Stack"> -->
-                            <div class="overlay-work">
-                                <div class="work-content text-center">
-                                    <a href="images/portfolio/3.jpg"
-                                        class="lightbox text-light work-icon bg-dark d-inline-block rounded-pill "><i
-                                            data-feather="bar-chart-2" class="fea icon-sm image-icon"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gallary-title py-4 text-center">
-                            <h5><a href="https://dev.to/durrello" target="_blank" class="title text-dark">Observability and Monitoring</a></h5>
-                            <span>Observability Stack, utilizing Prometheus, Grafana, and Datadog for monitoring
-                                infrastructure, and integrating Bitbucket with ArgoCD for streamlined deployment and
-                                management.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4 pt-2">
-                    <div class="item-box portfolio-box rounded shadow bg-white overflow-hidden">
-                        <div class="portfolio-box-img position-relative overflow-hidden">
-                            <!-- <img class="item-container img-fluid mx-auto" src="images/portfolio/4.jpg"
-                                alt="Dockerized WordPress Backup System"> -->
-                            <div class="overlay-work">
-                                <div class="work-content text-center">
-                                    <a href="images/portfolio/4.jpg"
-                                        class="lightbox text-light work-icon bg-dark d-inline-block rounded-pill "><i
-                                            data-feather="database" class="fea icon-sm image-icon"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gallary-title py-4 text-center">
-                            <h5><a href="https://dev.to/durrello" target="_blank" class="title text-dark">DevOps Tools and Practices</a></h5>
-                            <span>Mastering the DevOps Toolkit</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4 pt-2">
-                    <div class="item-box portfolio-box rounded shadow bg-white overflow-hidden">
-                        <div class="portfolio-box-img position-relative overflow-hidden">
-                            <!-- <img class="item-container img-fluid mx-auto" src="images/portfolio/5.jpg"
-                                alt="Infrastructure as Code"> -->
-                            <div class="overlay-work">
-                                <div class="work-content text-center">
-                                    <a href="images/portfolio/5.jpg"
-                                        class="lightbox text-light work-icon bg-dark d-inline-block rounded-pill "><i
-                                            data-feather="code" class="fea icon-sm image-icon"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gallary-title py-4 text-center">
-                            <h5><a href="https://dev.to/durrello" target="_blank" class="title text-dark">Security and Compliance</a></h5>
-                            <span>Ensuring Safe and Trustworthy Systems</span>
-                        </div>
-                    </div>
+                <div class="col-12 text-center">
+                    <a href="page-portfolio.html" class="btn btn-outline-primary">View All Projects</a>
                 </div>
             </div>
         </div>
@@ -1289,105 +1198,37 @@
     <!-- Projects End -->
 
     <!-- Blog Start -->
-    <!-- <section class="section bg-light pb-3" id="news">
+    <section class="section bg-light pb-3" id="news">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
                     <div class="section-title">
                         <div class="position-relative">
-                            <h4 class="title text-uppercase mb-4">Latest News & Blog</h4>
+                            <h4 class="title text-uppercase mb-4">Latest From The Blog</h4>
                             <div>
                                 <div class="title-box"></div>
                                 <div class="title-line"></div>
                             </div>
                         </div>
-                        <p class="text-muted mx-auto para-desc mt-5 mb-0">Obviously I'm a Web Designer. Experienced with
-                            all stages of the development cycle for dynamic web projects.</p>
+                        <p class="text-muted mx-auto para-desc mt-5 mb-0">DevOps deep-dives, cloud infrastructure guides,
+                            and real-world lessons from working with AWS, GCP, Kubernetes, and more.</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                    <div class="blog-post rounded shadow">
-                        <img src="images/blog/01.jpg" class="img-fluid rounded-top" alt="">
-                        <div class="content pt-4 pb-4 p-3">
-                            <ul class="list-unstyled d-flex justify-content-between post-meta">
-                                <li><i data-feather="user" class="fea icon-sm me-1"></i><a href="javascript:void(0)"
-                                        class="text-dark">Cristino</a></li>
-                                <li><i data-feather="tag" class="fea icon-sm me-1"></i><a href="javascript:void(0)"
-                                        class="text-dark">Branding</a></li>
-                            </ul>
-                            <h5 class="mb-3"><a href="page-blog-detail.html" class="title text-dark">Our Home
-                                    Entertainment has Evolved Significantly</a></h5>
-                            <ul class="list-unstyled mb-0 pt-3 border-top d-flex justify-content-between">
-                                <li><a href="javascript:void(0)" class="text-dark">Read More <i
-                                            data-feather="chevron-right" class="fea icon-sm"></i></a></li>
-                                <li><i class="mdi mdi-calendar-edit me-1"></i>10th April, 2020</li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="row" id="blog-preview-grid">
+                <!-- Latest posts loaded dynamically -->
+                <div class="col-12 text-center py-4" id="blog-preview-loading">
+                    <p class="text-muted">Loading posts...</p>
                 </div>
-                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                    <div class="blog-post rounded shadow">
-                        <img src="images/blog/02.jpg" class="img-fluid rounded-top" alt="">
-                        <div class="content pt-4 pb-4 p-3">
-                            <ul class="list-unstyled d-flex justify-content-between post-meta">
-                                <li><i data-feather="user" class="fea icon-sm me-1"></i><a href="javascript:void(0)"
-                                        class="text-dark">Cristino</a></li>
-                                <li><i data-feather="tag" class="fea icon-sm me-1"></i><a href="javascript:void(0)"
-                                        class="text-dark">Branding</a></li>
-                            </ul>
-                            <h5 class="mb-3"><a href="page-blog-detail.html" class="title text-dark">These Are The
-                                    Voyages of The Starship Enterprise</a></h5>
-                            <ul class="list-unstyled mb-0 pt-3 border-top d-flex justify-content-between">
-                                <li><a href="javascript:void(0)" class="text-dark">Read More <i
-                                            data-feather="chevron-right" class="fea icon-sm"></i></a></li>
-                                <li><i class="mdi mdi-calendar-edit me-1"></i>10th April, 2020</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                    <div class="blog-post rounded shadow">
-                        <img src="images/blog/03.jpg" class="img-fluid rounded-top" alt="">
-                        <div class="content pt-4 pb-4 p-3">
-                            <ul class="list-unstyled d-flex justify-content-between post-meta">
-                                <li><i data-feather="user" class="fea icon-sm me-1"></i><a href="javascript:void(0)"
-                                        class="text-dark">Cristino</a></li>
-                                <li><i data-feather="tag" class="fea icon-sm me-1"></i><a href="javascript:void(0)"
-                                        class="text-dark">Branding</a></li>
-                            </ul>
-                            <h5 class="mb-3"><a href="page-blog-detail.html" class="title text-dark">Three Reasons
-                                    Visibility Matters in Supply Chain</a></h5>
-                            <ul class="list-unstyled mb-0 pt-3 border-top d-flex justify-content-between">
-                                <li><a href="javascript:void(0)" class="text-dark">Read More <i
-                                            data-feather="chevron-right" class="fea icon-sm"></i></a></li>
-                                <li><i class="mdi mdi-calendar-edit me-1"></i>10th April, 2020</li>
-                            </ul>
-                        </div>
-                    </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <a href="page-blog.html" class="btn btn-outline-primary">View All Posts</a>
                 </div>
             </div>
         </div>
-        <div class="container-fluid mt-100 mt-60">
-            <div class="rounded-pill py-5" style="background: url('images/hireme.jpg') center center;">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-12 text-center">
-                            <h4 class="text-light title-dark">I Am Available For Freelancer Projects.</h4>
-                            <p class="text-white-50 mx-auto mt-4 para-desc">Obviously I'm a Web Designer. Experienced
-                                with all stages of the development cycle for dynamic web projects.</p>
-                            <div class="mt-4">
-                                <a href="#contact" class="btn btn-primary mouse-down">Hire me <i
-                                        data-feather="chevron-down" class="fea icon-sm"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Blog Start -->
+    </section>
+    <!-- Blog End -->
 
     <!-- Contact Start -->
     <section class="section pb-0" id="contact">
@@ -1507,8 +1348,77 @@
     <script src="js/plugins.init.js"></script>
     <script src="js/app.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="js/portfolio-loader.js"></script>
+    <script src="js/blog-loader.js"></script>
     <script>
         feather.replace();
+
+        // ── Render latest 3 blog posts on homepage ──
+        function renderHomeBlog() {
+            var posts = BlogLoader.getFeaturedPosts(3);
+            var grid = document.getElementById('blog-preview-grid');
+            var loading = document.getElementById('blog-preview-loading');
+            if (!grid) return;
+            if (posts.length === 0) {
+                if (BlogLoader.posts.length === 0) { setTimeout(renderHomeBlog, 150); return; }
+                loading.innerHTML = '<p class="text-muted">No posts yet.</p>';
+                return;
+            }
+            loading.style.display = 'none';
+            grid.innerHTML = posts.map(function(post) {
+                var date = post.publishDate ? new Date(post.publishDate).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'}) : '';
+                var img = post.featuredImage
+                    ? '<img src="' + post.featuredImage + '" class="img-fluid rounded-top" alt="' + post.title + '" style="height:200px;object-fit:cover;width:100%;">'
+                    : '<div style="height:200px;background:linear-gradient(135deg,#0d6efd22,#0d6efd44);display:flex;align-items:center;justify-content:center;border-radius:8px 8px 0 0;"><i data-feather="file-text" style="width:48px;height:48px;color:#0d6efd;opacity:0.5;"></i></div>';
+                return '<div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">' +
+                    '<div class="blog-post rounded shadow" style="height:100%;">' +
+                    img +
+                    '<div class="content pt-4 pb-4 p-3">' +
+                    '<ul class="list-unstyled d-flex justify-content-between post-meta mb-2">' +
+                    '<li><i data-feather="tag" class="fea icon-sm me-1"></i><span class="text-muted">' + (post.category || 'DevOps') + '</span></li>' +
+                    '<li><i class="mdi mdi-calendar-edit me-1"></i><span class="text-muted">' + date + '</span></li>' +
+                    '</ul>' +
+                    '<h5 class="mb-3"><a href="page-blog-detail.html?post=' + post.slug + '" class="title text-dark">' + post.title + '</a></h5>' +
+                    '<p class="text-muted" style="font-size:0.9rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (post.description || '') + '</p>' +
+                    '<a href="page-blog-detail.html?post=' + post.slug + '" class="text-primary">Read More <i data-feather="chevron-right" class="fea icon-sm"></i></a>' +
+                    '</div></div></div>';
+            }).join('');
+            feather.replace();
+        }
+
+        // ── Render latest 6 portfolio projects on homepage ──
+        function renderHomeProjects() {
+            var projects = PortfolioLoader.getFeaturedProjects(6);
+            var grid = document.getElementById('projects-grid');
+            var loading = document.getElementById('projects-loading');
+            if (!grid) return;
+            if (projects.length === 0) {
+                if (PortfolioLoader.projects.length === 0) { setTimeout(renderHomeProjects, 150); return; }
+                loading.innerHTML = '<p class="text-muted">No projects yet.</p>';
+                return;
+            }
+            loading.style.display = 'none';
+            var icons = ['cloud','git-merge','bar-chart-2','database','code','shield'];
+            grid.innerHTML = projects.map(function(project, i) {
+                var techs = (project.technologies || []).slice(0,3).join(' · ');
+                var icon = icons[i % icons.length];
+                return '<div class="col-lg-4 col-md-6 mt-4 pt-2">' +
+                    '<div class="item-box portfolio-box rounded shadow bg-white overflow-hidden">' +
+                    (project.image
+                        ? '<div class="portfolio-box-img position-relative overflow-hidden" style="height:200px;"><img src="' + project.image + '" style="width:100%;height:100%;object-fit:cover;" alt="' + project.title + '"><div class="overlay-work"><div class="work-content text-center">' + (project.link ? '<a href="' + project.link + '" target="_blank" class="text-light work-icon bg-dark d-inline-block rounded-pill"><i data-feather="external-link" class="fea icon-sm"></i></a>' : '') + '</div></div></div>'
+                        : '<div class="portfolio-box-img position-relative overflow-hidden" style="height:200px;background:linear-gradient(135deg,#0d6efd11,#0d6efd33);display:flex;align-items:center;justify-content:center;"><div class="overlay-work"><div class="work-content text-center">' + (project.link ? '<a href="' + project.link + '" target="_blank" class="text-light work-icon bg-dark d-inline-block rounded-pill"><i data-feather="external-link" class="fea icon-sm"></i></a>' : '') + '</div></div><i data-feather="' + icon + '" style="width:56px;height:56px;color:#0d6efd;opacity:0.3;"></i></div>'
+                    ) +
+                    '<div class="gallary-title py-4 text-center px-3">' +
+                    '<h5><a href="' + (project.link || '#') + '" target="_blank" class="title text-dark">' + project.title + '</a></h5>' +
+                    (techs ? '<p class="text-muted mb-1" style="font-size:0.8rem;">' + techs + '</p>' : '') +
+                    '<span class="text-muted" style="font-size:0.85rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (project.description || '') + '</span>' +
+                    '</div></div></div>';
+            }).join('');
+            feather.replace();
+        }
+
+        setTimeout(renderHomeBlog, 600);
+        setTimeout(renderHomeProjects, 600);
     </script>
 </body>
 
