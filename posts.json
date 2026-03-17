@@ -1,17 +1,5 @@
 [
   {
-    "slug": "aws-service-spotlight-1-amazon-s3-the-glue-you-don-t-think-about-until-you-need-it",
-    "title": "Untitled",
-    "description": "",
-    "author": "Durrell Gemuh",
-    "publishDate": "2026-03-17T00:00:00.000Z",
-    "category": "DevOps",
-    "tags": [],
-    "featuredImage": null,
-    "content": "Welcome to my **AWS Service Spotlight** series, where I break down AWS services, how they work, when to use them, and how they fit into real-world DevOps systems.\n\nThis week we're starting with one of AWS's oldest and most underrated workhorses — **Amazon S3**. Not because it's flashy, but because it saved me from a genuinely frustrating situation this week. More on that in a bit.",
-    "_file": "aws-service-spotlight-1-amazon-s3-the-glue-you-don-t-think-about-until-you-need-it.md"
-  },
-  {
     "slug": "example-post",
     "title": "Getting Started with Kubernetes",
     "description": "A comprehensive guide to understanding and deploying applications on Kubernetes",
