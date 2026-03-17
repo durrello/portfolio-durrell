@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Durrell CMS · Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --surface2: #1a1a24;
+  --border: #2a2a38;
+  --accent: #6c63ff;
+  --accent2: #00d4aa;
+  --warn: #ff6b6b;
+  --text: #e8e8f0;
+  --muted: #6b6b80;
+  --success: #00d4aa;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── SETUP SCREEN ── */
+#setup-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 2rem;
+}
+
+.setup-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 3rem;
+  max-width: 520px;
+  width: 100%;
+}
+
+.setup-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.setup-card h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.setup-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.field-group { margin-bottom: 1.25rem; }
+.field-group label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.field-group input, .field-group select {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.field-group input:focus, .field-group select:focus {
+  border-color: var(--accent);
+}
+
+.field-help {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.35rem;
+  line-height: 1.5;
+}
+.field-help a { color: var(--accent); text-decoration: none; }
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  width: 100%;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 0.9rem;
+}
+.btn-primary:hover { background: #5a53e0; transform: translateY(-1px); }
+
+.btn-secondary {
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+.btn-success {
+  background: var(--success);
+  color: #0a0a0f;
+  font-weight: 600;
+}
+.btn-success:hover { background: #00bfa3; }
+
+.btn-danger {
+  background: transparent;
+  color: var(--warn);
+  border: 1px solid var(--warn);
+}
+.btn-danger:hover { background: var(--warn); color: white; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  padding: 0.5rem 0.75rem;
+}
+.btn-ghost:hover { color: var(--text); }
+
+.btn-sm { padding: 0.45rem 0.9rem; font-size: 0.8rem; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none !important; }
+
+/* ── MAIN APP ── */
+#app {
+  display: none;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.topbar-logo .dot { color: var(--accent); }
+
+.topbar-nav {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-tab {
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  transition: all 0.15s;
+  font-family: 'DM Sans', sans-serif;
+}
+.nav-tab:hover { color: var(--text); background: var(--surface2); }
+.nav-tab.active { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+
+.topbar-actions { display: flex; align-items: center; gap: 0.75rem; }
+
+.status-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  display: inline-block;
+}
+.status-dot.disconnected { background: var(--warn); }
+
+/* ── LAYOUT ── */
+.content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── VIEWS ── */
+.view { display: none; }
+.view.active { display: block; }
+
+/* ── LIST VIEW ── */
+.view-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.view-header h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.25rem;
+}
+
+.item-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.item-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.card-tag {
+  display: inline-block;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.card-tag.published { border-color: var(--success); color: var(--success); }
+.card-tag.draft { border-color: #ff9f43; color: #ff9f43; }
+
+.item-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.item-card p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-meta {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  font-family: 'DM Mono', monospace;
+}
+
+.card-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.empty-state {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: var(--muted);
+}
+
+.empty-state .empty-icon { font-size: 3rem; margin-bottom: 1rem; }
+.empty-state h3 { font-family: 'Syne', sans-serif; font-size: 1.2rem; color: var(--text); margin-bottom: 0.5rem; }
+
+/* ── EDITOR ── */
+.editor-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.editor-main { display: flex; flex-direction: column; gap: 1rem; }
+
+.editor-topbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.editor-topbar h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  flex: 1;
+}
+
+.form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.form-field label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus { border-color: var(--accent); }
+
+.title-input {
+  font-family: 'Syne', sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid var(--border) !important;
+  border-radius: 0 !important;
+  padding: 0.5rem 0 !important;
+  color: var(--text) !important;
+}
+.title-input:focus { border-bottom-color: var(--accent) !important; }
+
+/* ── RICH CONTENT EDITOR ── */
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px 8px 0 0;
+  flex-wrap: wrap;
+}
+
+.toolbar-btn {
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  border: none;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-family: 'DM Mono', monospace;
+  transition: all 0.15s;
+}
+.toolbar-btn:hover { background: var(--surface); color: var(--text); }
+.toolbar-sep { width: 1px; height: 20px; background: var(--border); margin: 0 0.25rem; }
+
+.content-editor {
+  width: 100%;
+  min-height: 420px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 1rem;
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  resize: vertical;
+  outline: none;
+  tab-size: 2;
+}
+.content-editor:focus { border-color: var(--accent); }
+
+/* ── AI PANEL ── */
+.ai-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  position: sticky;
+  top: 76px;
+}
+
+.ai-panel-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface2);
+}
+
+.ai-badge {
+  font-size: 0.65rem;
+  background: var(--accent);
+  color: white;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.ai-panel-header h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  flex: 1;
+}
+
+.ai-panel-body { padding: 1rem; }
+
+.ai-quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.ai-quick-btn {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  color: var(--text);
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.3;
+}
+.ai-quick-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.ai-input-wrap {
+  margin-bottom: 0.75rem;
+}
+
+.ai-input {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  color: var(--text);
+  font-size: 0.83rem;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  resize: none;
+  min-height: 70px;
+  transition: border-color 0.2s;
+  line-height: 1.5;
+}
+.ai-input:focus { border-color: var(--accent); }
+
+.ai-output {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.85rem;
+  font-size: 0.8rem;
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 60px;
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-family: 'DM Sans', sans-serif;
+  display: none;
+}
+.ai-output.visible { display: block; }
+
+.ai-output-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+.ai-output-actions.visible { display: flex; }
+
+.ai-spinner {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  gap: 0.5rem;
+}
+.ai-spinner.visible { display: flex; }
+
+.spin {
+  width: 14px; height: 14px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── SIDEBAR PANEL ── */
+.sidebar-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar-panel h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.9rem;
+}
+
+.tags-input-wrap { display: flex; gap: 0.5rem; }
+.tags-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.tag-chip {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.tag-chip button {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  padding: 0; line-height: 1; font-size: 0.8rem;
+}
+.tag-chip button:hover { color: var(--warn); }
+
+/* ── PUBLISH PANEL ── */
+.publish-btn-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ── TOAST ── */
+.toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.toast {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  animation: slideUp 0.3s ease;
+  max-width: 340px;
+}
+.toast.success { border-color: var(--success); }
+.toast.error { border-color: var(--warn); }
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ── SETTINGS VIEW ── */
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ── PORTFOLIO EDITOR ── */
+.features-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.feature-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.feature-item input {
+  flex: 1;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.55rem 0.8rem;
+  color: var(--text);
+  font-size: 0.85rem;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+}
+.feature-item input:focus { border-color: var(--accent); }
+
+/* ── GITHUB STATUS ── */
+.github-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* ── MISC ── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .editor-layout { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .item-grid { grid-template-columns: 1fr; }
+  .ai-panel { position: static; }
+  .settings-grid { grid-template-columns: 1fr; }
+}
+
+select option { background: var(--surface2); }
+
+.section-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1.5rem 0;
+}
+
+.info-box {
+  background: rgba(108, 99, 255, 0.08);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.info-box strong { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- ── SETUP SCREEN ── -->
+<div id="setup-screen">
+  <div class="setup-card">
+    <div class="setup-logo">DURRELL CMS</div>
+    <h2>Connect Your Site</h2>
+    <p>Enter your GitHub credentials to enable publishing directly to your repository. Your posts and projects will auto-deploy via Cloudflare Pages.</p>
+
+    <div class="info-box">
+      <strong>One-time setup.</strong> Credentials are saved in your browser only. Never sent anywhere except GitHub's API.
+    </div>
+
+    <div class="field-group">
+      <label>GitHub Personal Access Token</label>
+      <input type="password" id="setup-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
+      <div class="field-help">
+        Create one at <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens</a> — needs <strong>repo</strong> scope.
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>GitHub Username</label>
+      <input type="text" id="setup-user" placeholder="durrellgemuh" />
+    </div>
+
+    <div class="field-group">
+      <label>Repository Name</label>
+      <input type="text" id="setup-repo" placeholder="portfolio-durrell" />
+    </div>
+
+    <div class="field-group">
+      <label>Branch</label>
+      <input type="text" id="setup-branch" placeholder="main" />
+    </div>
+
+    <button class="btn btn-primary" onclick="saveSetup()">
+      Connect & Open CMS →
+    </button>
+  </div>
+</div>
+
+<!-- ── MAIN APP ── -->
+<div id="app">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-logo">
+      DURRELL<span class="dot">.</span>CMS
+    </div>
+    <div class="topbar-nav">
+      <button class="nav-tab active" onclick="showView('blogs')">✍️ Blog Posts</button>
+      <button class="nav-tab" onclick="showView('portfolio')">🗂 Portfolio</button>
+      <button class="nav-tab" onclick="showView('settings')">⚙️ Settings</button>
+    </div>
+    <div class="topbar-actions">
+      <div class="github-status">
+        <span class="status-dot" id="gh-dot"></span>
+        <span id="gh-status-text">Connected</span>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="disconnect()">Disconnect</button>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- ── BLOG LIST VIEW ── -->
+    <div class="view active" id="view-blogs">
+      <div class="view-header">
+        <h1>Blog Posts</h1>
+        <button class="btn btn-primary" onclick="newBlog()">+ New Post</button>
+      </div>
+      <div id="blog-list"></div>
+    </div>
+
+    <!-- ── BLOG EDITOR VIEW ── -->
+    <div class="view" id="view-blog-editor">
+      <div class="editor-topbar">
+        <button class="btn btn-ghost" onclick="showView('blogs')">← Back</button>
+        <h2 id="editor-mode-label">New Blog Post</h2>
+      </div>
+
+      <div class="editor-layout">
+        <!-- MAIN EDITOR -->
+        <div class="editor-main">
+          <div class="form-field">
+            <input class="title-input" type="text" id="blog-title" placeholder="Your post title..." />
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label>Category</label>
+              <select id="blog-category">
+                <option>DevOps</option><option>Cloud</option><option>Kubernetes</option>
+                <option>CI/CD</option><option>AWS</option><option>GCP</option>
+                <option>Terraform</option><option>Linux</option><option>Docker</option>
+                <option>Security</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Status</label>
+              <select id="blog-status">
+                <option value="published">Published</option>
+                <option value="draft">Draft</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label>Description / Excerpt</label>
+            <textarea id="blog-description" rows="2" placeholder="Short description shown on the blog listing page..."></textarea>
+          </div>
+
+          <div class="form-field">
+            <label>Content (Markdown)</label>
+            <div class="editor-toolbar">
+              <button class="toolbar-btn" onclick="insertMd('**','**')" title="Bold">B</button>
+              <button class="toolbar-btn" onclick="insertMd('*','*')" title="Italic"><em>I</em></button>
+              <button class="toolbar-btn" onclick="insertMd('`','`')" title="Code">`</button>
+              <div class="toolbar-sep"></div>
+              <button class="toolbar-btn" onclick="insertMdLine('## ')" title="H2">H2</button>
+              <button class="toolbar-btn" onclick="insertMdLine('### ')" title="H3">H3</button>
+              <div class="toolbar-sep"></div>
+              <button class="toolbar-btn" onclick="insertMdLine('- ')" title="List">• List</button>
+              <button class="toolbar-btn" onclick="insertMdLine('> ')" title="Quote">❝</button>
+              <div class="toolbar-sep"></div>
+              <button class="toolbar-btn" onclick="insertCodeBlock()" title="Code Block">{ }</button>
+              <button class="toolbar-btn" onclick="insertMd('[','](url)')" title="Link">🔗</button>
+            </div>
+            <textarea class="content-editor" id="blog-content" placeholder="Write your post in Markdown...
+
+# Heading 1
+## Heading 2
+
+Your content here. **Bold**, *italic*, `code`.
+
+```yaml
+# Code blocks supported
+apiVersion: apps/v1
+```"></textarea>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDEBAR -->
+        <div>
+          <!-- AI PANEL -->
+          <div class="ai-panel" style="margin-bottom:1rem;">
+            <div class="ai-panel-header">
+              <span class="ai-badge">AI</span>
+              <h3>Writing Assistant</h3>
+            </div>
+            <div class="ai-panel-body">
+              <div class="ai-quick-actions">
+                <button class="ai-quick-btn" onclick="aiQuick('Write a complete blog post about the title and category I entered. Return full Markdown.')">✍️ Write full post</button>
+                <button class="ai-quick-btn" onclick="aiQuick('Improve and expand the current content. Keep the same topic and DevOps tone. Return the improved Markdown.')">✨ Improve content</button>
+                <button class="ai-quick-btn" onclick="aiQuick('Write a compelling 1-2 sentence description/excerpt for a DevOps blog post with this title and content. Return just the description text.')">📝 Generate description</button>
+                <button class="ai-quick-btn" onclick="aiQuick('Suggest 5 relevant tags for this DevOps blog post (comma-separated, no explanation).')">🏷 Suggest tags</button>
+                <button class="ai-quick-btn" onclick="aiQuick('Fix grammar, improve clarity, and make the content more engaging. Return the improved Markdown.')">🔧 Fix & polish</button>
+              </div>
+
+              <div class="ai-input-wrap">
+                <textarea class="ai-input" id="ai-prompt" placeholder="Or type a custom instruction...
+e.g. 'Add a section about monitoring'"></textarea>
+              </div>
+
+              <button class="btn btn-secondary" style="width:100%;margin-bottom:0.75rem;" onclick="runAI()">
+                Ask AI →
+              </button>
+
+              <div class="ai-spinner" id="ai-spinner">
+                <div class="spin"></div> Generating...
+              </div>
+
+              <div class="ai-output" id="ai-output"></div>
+              <div class="ai-output-actions" id="ai-actions">
+                <button class="btn btn-success btn-sm" onclick="applyAI('replace')">Replace Content</button>
+                <button class="btn btn-secondary btn-sm" onclick="applyAI('append')">Append</button>
+                <button class="btn btn-ghost btn-sm" onclick="dismissAI()">✕</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- METADATA -->
+          <div class="sidebar-panel">
+            <h4>Metadata</h4>
+            <div class="form-field" style="margin-bottom:0.75rem;">
+              <label>Tags</label>
+              <div class="tags-input-wrap">
+                <input type="text" id="tag-input" placeholder="Add tag + Enter" style="flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.75rem;color:var(--text);font-size:0.83rem;outline:none;font-family:'DM Sans',sans-serif;" onkeydown="if(event.key==='Enter'){addTag();event.preventDefault();}">
+                <button class="btn btn-secondary btn-sm" onclick="addTag()">+</button>
+              </div>
+              <div class="tags-list" id="tags-list"></div>
+            </div>
+            <div class="form-field">
+              <label>Featured Image URL</label>
+              <input type="text" id="blog-image" placeholder="/images/uploads/..." />
+            </div>
+          </div>
+
+          <!-- PUBLISH -->
+          <div class="sidebar-panel">
+            <h4>Publish</h4>
+            <div class="publish-btn-wrap">
+              <button class="btn btn-success" onclick="saveBlog()">
+                🚀 Save & Publish to GitHub
+              </button>
+              <button class="btn btn-secondary" onclick="previewBlog()">
+                👁 Preview JSON
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PORTFOLIO LIST VIEW ── -->
+    <div class="view" id="view-portfolio">
+      <div class="view-header">
+        <h1>Portfolio Projects</h1>
+        <button class="btn btn-primary" onclick="newProject()">+ New Project</button>
+      </div>
+      <div id="portfolio-list"></div>
+    </div>
+
+    <!-- ── PORTFOLIO EDITOR ── -->
+    <div class="view" id="view-portfolio-editor">
+      <div class="editor-topbar">
+        <button class="btn btn-ghost" onclick="showView('portfolio')">← Back</button>
+        <h2 id="proj-mode-label">New Project</h2>
+      </div>
+
+      <div class="editor-layout">
+        <div class="editor-main">
+          <div class="form-field">
+            <input class="title-input" type="text" id="proj-title" placeholder="Project name..." />
+          </div>
+          <div class="form-field">
+            <label>Description</label>
+            <textarea id="proj-desc" rows="3" placeholder="What does this project do?"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Status</label>
+              <select id="proj-status">
+                <option>Completed</option>
+                <option>In Progress</option>
+                <option>Planned</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>GitHub / Demo Link</label>
+              <input type="text" id="proj-link" placeholder="https://github.com/..." />
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Image URL</label>
+            <input type="text" id="proj-image" placeholder="/images/portfolio/..." />
+          </div>
+          <div class="form-field">
+            <label>Key Features</label>
+            <div class="features-list" id="features-list"></div>
+            <button class="btn btn-secondary btn-sm" style="margin-top:0.5rem;" onclick="addFeature('')">+ Add Feature</button>
+          </div>
+        </div>
+
+        <div>
+          <!-- AI for projects -->
+          <div class="ai-panel" style="margin-bottom:1rem;">
+            <div class="ai-panel-header">
+              <span class="ai-badge">AI</span>
+              <h3>Project Assistant</h3>
+            </div>
+            <div class="ai-panel-body">
+              <div class="ai-quick-actions">
+                <button class="ai-quick-btn" onclick="aiProjectQuick('Write a compelling 2-3 sentence description for this DevOps portfolio project. Return just the description.')">📝 Write description</button>
+                <button class="ai-quick-btn" onclick="aiProjectQuick('Suggest 5 key features for this project as a JSON array of strings. No explanation, just the array.')">⚡ Suggest features</button>
+                <button class="ai-quick-btn" onclick="aiProjectQuick('Suggest 6 relevant technologies for this DevOps project as a comma-separated list.')">🔧 Suggest tech stack</button>
+              </div>
+              <div class="ai-input-wrap">
+                <textarea class="ai-input" id="ai-proj-prompt" placeholder="Custom instruction..."></textarea>
+              </div>
+              <button class="btn btn-secondary" style="width:100%;margin-bottom:0.75rem;" onclick="runProjectAI()">Ask AI →</button>
+              <div class="ai-spinner" id="ai-proj-spinner"></div>
+              <div class="ai-output" id="ai-proj-output"></div>
+              <div class="ai-output-actions" id="ai-proj-actions">
+                <button class="btn btn-success btn-sm" onclick="applyProjectAI()">Apply</button>
+                <button class="btn btn-ghost btn-sm" onclick="dismissProjectAI()">✕</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech stack -->
+          <div class="sidebar-panel">
+            <h4>Technologies</h4>
+            <div class="tags-input-wrap">
+              <input type="text" id="tech-input" placeholder="e.g. Terraform" style="flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.75rem;color:var(--text);font-size:0.83rem;outline:none;font-family:'DM Sans',sans-serif;" onkeydown="if(event.key==='Enter'){addTech();event.preventDefault();}">
+              <button class="btn btn-secondary btn-sm" onclick="addTech()">+</button>
+            </div>
+            <div class="tags-list" id="tech-list"></div>
+          </div>
+
+          <!-- Publish -->
+          <div class="sidebar-panel">
+            <h4>Publish</h4>
+            <button class="btn btn-success" style="width:100%;" onclick="saveProject()">
+              🚀 Save to GitHub
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SETTINGS VIEW ── -->
+    <div class="view" id="view-settings">
+      <div class="view-header">
+        <h1>Settings</h1>
+        <button class="btn btn-success" onclick="saveSettings()">Save Changes</button>
+      </div>
+      <div class="settings-grid">
+        <div class="sidebar-panel">
+          <h4>Site Info</h4>
+          <div class="form-field" style="margin-bottom:0.75rem;">
+            <label>Site Title</label>
+            <input type="text" id="s-title" />
+          </div>
+          <div class="form-field" style="margin-bottom:0.75rem;">
+            <label>Description</label>
+            <textarea id="s-desc" rows="2"></textarea>
+          </div>
+          <div class="form-field" style="margin-bottom:0.75rem;">
+            <label>Author Name</label>
+            <input type="text" id="s-author" />
+          </div>
+          <div class="form-field">
+            <label>Contact Email</label>
+            <input type="email" id="s-email" />
+          </div>
+        </div>
+        <div class="sidebar-panel">
+          <h4>Social Links</h4>
+          <div class="form-field" style="margin-bottom:0.75rem;">
+            <label>Twitter / X</label>
+            <input type="text" id="s-twitter" />
+          </div>
+          <div class="form-field" style="margin-bottom:0.75rem;">
+            <label>GitHub</label>
+            <input type="text" id="s-github" />
+          </div>
+          <div class="form-field" style="margin-bottom:0.75rem;">
+            <label>LinkedIn</label>
+            <input type="text" id="s-linkedin" />
+          </div>
+          <div class="form-field">
+            <label>Instagram</label>
+            <input type="text" id="s-instagram" />
+          </div>
+        </div>
+        <div class="sidebar-panel">
+          <h4>GitHub Connection</h4>
+          <div class="form-field" style="margin-bottom:0.75rem;">
+            <label>Personal Access Token</label>
+            <input type="password" id="s-token" />
+          </div>
+          <div class="form-field" style="margin-bottom:0.75rem;">
+            <label>Username</label>
+            <input type="text" id="s-user" />
+          </div>
+          <div class="form-field" style="margin-bottom:0.75rem;">
+            <label>Repository</label>
+            <input type="text" id="s-repo" />
+          </div>
+          <div class="form-field">
+            <label>Branch</label>
+            <input type="text" id="s-branch" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /app -->
+
+<div class="toast-container" id="toasts"></div>
+
+<script>
+// ── STATE ──
+let cfg = {};
+let blogPosts = [];
+let portfolioProjects = [];
+let editingBlogIdx = null;
+let editingProjIdx = null;
+let currentTags = [];
+let currentTechs = [];
+let aiResult = '';
+let aiProjResult = '';
+
+// ── SETUP ──
+function saveSetup() {
+  cfg = {
+    token: document.getElementById('setup-token').value.trim(),
+    user: document.getElementById('setup-user').value.trim(),
+    repo: document.getElementById('setup-repo').value.trim(),
+    branch: document.getElementById('setup-branch').value.trim() || 'main'
+  };
+  if (!cfg.token || !cfg.user || !cfg.repo) { toast('Fill all fields', 'error'); return; }
+  localStorage.setItem('cms_cfg', JSON.stringify(cfg));
+  launchApp();
+}
+
+function disconnect() {
+  localStorage.removeItem('cms_cfg');
+  location.reload();
+}
+
+async function launchApp() {
+  document.getElementById('setup-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'flex';
+  await loadData();
+  renderBlogs();
+  loadSettingsForm();
+}
+
+// ── GITHUB API ──
+async function ghRequest(path, method = 'GET', body = null) {
+  const url = `https://api.github.com/repos/${cfg.user}/${cfg.repo}/contents/${path}`;
+  const opts = {
+    method,
+    headers: {
+      'Authorization': `token ${cfg.token}`,
+      'Accept': 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json'
+    }
+  };
+  if (body) opts.body = JSON.stringify(body);
+  const res = await fetch(url, opts);
+  if (!res.ok && res.status !== 404) throw new Error(`GitHub: ${res.status} ${res.statusText}`);
+  return res.status === 404 ? null : res.json();
+}
+
+async function ghGetFile(path) {
+  const data = await ghRequest(path);
+  if (!data) return { content: null, sha: null };
+  return { content: JSON.parse(atob(data.content.replace(/\n/g,''))), sha: data.sha };
+}
+
+async function ghPutFile(path, content, sha, message) {
+  const encoded = btoa(unescape(encodeURIComponent(
+    typeof content === 'string' ? content : JSON.stringify(content, null, 2)
+  )));
+  const body = { message, content: encoded, branch: cfg.branch };
+  if (sha) body.sha = sha;
+  return ghRequest(path, 'PUT', body);
+}
+
+async function loadData() {
+  try {
+    const [postsData, portData] = await Promise.all([
+      ghGetFile('posts.json'),
+      ghGetFile('portfolio.json')
+    ]);
+    blogPosts = postsData.content || [];
+    portfolioProjects = portData.content || [];
+    document.getElementById('gh-dot').classList.remove('disconnected');
+    document.getElementById('gh-status-text').textContent = `${cfg.user}/${cfg.repo}`;
+  } catch(e) {
+    document.getElementById('gh-dot').classList.add('disconnected');
+    document.getElementById('gh-status-text').textContent = 'Connection error';
+    toast('Could not load data from GitHub. Check your token.', 'error');
+  }
+}
+
+// ── VIEWS ──
+function showView(name) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('view-' + name).classList.add('active');
+  const tabMap = { 'blogs': 0, 'blog-editor': 0, 'portfolio': 1, 'portfolio-editor': 1, 'settings': 2 };
+  const tabs = document.querySelectorAll('.nav-tab');
+  if (tabMap[name] !== undefined) tabs[tabMap[name]].classList.add('active');
+  if (name === 'blogs') renderBlogs();
+  if (name === 'portfolio') renderPortfolio();
+  if (name === 'settings') loadSettingsForm();
+}
+
+// ── BLOG LIST ──
+function renderBlogs() {
+  const el = document.getElementById('blog-list');
+  if (!blogPosts.length) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon">✍️</div><h3>No posts yet</h3><p>Create your first blog post to get started.</p></div>`;
+    return;
+  }
+  el.innerHTML = `<div class="item-grid">${blogPosts.map((p,i) => `
+    <div class="item-card">
+      <span class="card-tag ${p.status||'published'}">${p.status||'published'}</span>
+      <h3>${p.title || 'Untitled'}</h3>
+      <p>${p.description || ''}</p>
+      <div class="card-meta">${p.category || ''} · ${p.publishDate ? new Date(p.publishDate).toLocaleDateString() : 'No date'}</div>
+      <div class="card-actions">
+        <button class="btn btn-secondary btn-sm" onclick="editBlog(${i})">Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteBlog(${i})">Delete</button>
+      </div>
+    </div>`).join('')}</div>`;
+}
+
+// ── BLOG EDITOR ──
+function newBlog() {
+  editingBlogIdx = null;
+  currentTags = [];
+  document.getElementById('blog-title').value = '';
+  document.getElementById('blog-description').value = '';
+  document.getElementById('blog-content').value = '';
+  document.getElementById('blog-image').value = '';
+  document.getElementById('blog-category').value = 'DevOps';
+  document.getElementById('blog-status').value = 'published';
+  document.getElementById('tags-list').innerHTML = '';
+  document.getElementById('editor-mode-label').textContent = 'New Blog Post';
+  dismissAI();
+  showView('blog-editor');
+}
+
+function editBlog(idx) {
+  editingBlogIdx = idx;
+  const p = blogPosts[idx];
+  document.getElementById('blog-title').value = p.title || '';
+  document.getElementById('blog-description').value = p.description || '';
+  document.getElementById('blog-content').value = p.content || '';
+  document.getElementById('blog-image').value = p.featuredImage || '';
+  document.getElementById('blog-category').value = p.category || 'DevOps';
+  document.getElementById('blog-status').value = p.status || 'published';
+  currentTags = [...(p.tags || [])];
+  renderTags();
+  document.getElementById('editor-mode-label').textContent = 'Edit Post';
+  dismissAI();
+  showView('blog-editor');
+}
+
+async function saveBlog() {
+  const title = document.getElementById('blog-title').value.trim();
+  if (!title) { toast('Please add a title', 'error'); return; }
+
+  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  const post = {
+    slug,
+    title,
+    description: document.getElementById('blog-description').value.trim(),
+    author: 'Durrell Gemuh',
+    publishDate: new Date().toISOString(),
+    category: document.getElementById('blog-category').value,
+    tags: currentTags,
+    featuredImage: document.getElementById('blog-image').value.trim() || null,
+    content: document.getElementById('blog-content').value,
+    status: document.getElementById('blog-status').value,
+    _file: slug + '.md'
+  };
+
+  if (editingBlogIdx !== null) {
+    blogPosts[editingBlogIdx] = post;
+  } else {
+    blogPosts.unshift(post);
+  }
+
+  try {
+    toast('Saving to GitHub...', 'success');
+    const { sha } = await ghGetFile('posts.json');
+    await ghPutFile('posts.json', blogPosts, sha, `${editingBlogIdx !== null ? 'Update' : 'Add'} post: ${title}`);
+    toast('✅ Published! Cloudflare will deploy shortly.', 'success');
+    showView('blogs');
+  } catch(e) {
+    toast('GitHub save failed: ' + e.message, 'error');
+  }
+}
+
+async function deleteBlog(idx) {
+  if (!confirm('Delete this post?')) return;
+  blogPosts.splice(idx, 1);
+  try {
+    const { sha } = await ghGetFile('posts.json');
+    await ghPutFile('posts.json', blogPosts, sha, 'Delete post');
+    toast('Post deleted', 'success');
+    renderBlogs();
+  } catch(e) {
+    toast('Delete failed', 'error');
+  }
+}
+
+function previewBlog() {
+  const post = {
+    title: document.getElementById('blog-title').value,
+    description: document.getElementById('blog-description').value,
+    category: document.getElementById('blog-category').value,
+    tags: currentTags,
+    content: document.getElementById('blog-content').value.substring(0,200) + '...'
+  };
+  alert(JSON.stringify(post, null, 2));
+}
+
+// ── PORTFOLIO LIST ──
+function renderPortfolio() {
+  const el = document.getElementById('portfolio-list');
+  if (!portfolioProjects.length) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon">🗂</div><h3>No projects yet</h3><p>Add your first portfolio project.</p></div>`;
+    return;
+  }
+  el.innerHTML = `<div class="item-grid">${portfolioProjects.map((p,i) => `
+    <div class="item-card">
+      <span class="card-tag published">${p.status || 'Completed'}</span>
+      <h3>${p.title || 'Untitled'}</h3>
+      <p>${p.description || ''}</p>
+      <div class="card-meta">${(p.technologies||[]).slice(0,4).join(' · ')}</div>
+      <div class="card-actions">
+        <button class="btn btn-secondary btn-sm" onclick="editProject(${i})">Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteProject(${i})">Delete</button>
+      </div>
+    </div>`).join('')}</div>`;
+}
+
+// ── PORTFOLIO EDITOR ──
+function newProject() {
+  editingProjIdx = null;
+  currentTechs = [];
+  document.getElementById('proj-title').value = '';
+  document.getElementById('proj-desc').value = '';
+  document.getElementById('proj-link').value = '';
+  document.getElementById('proj-image').value = '';
+  document.getElementById('proj-status').value = 'Completed';
+  document.getElementById('features-list').innerHTML = '';
+  document.getElementById('tech-list').innerHTML = '';
+  document.getElementById('proj-mode-label').textContent = 'New Project';
+  addFeature(''); addFeature(''); addFeature('');
+  showView('portfolio-editor');
+}
+
+function editProject(idx) {
+  editingProjIdx = idx;
+  const p = portfolioProjects[idx];
+  document.getElementById('proj-title').value = p.title || '';
+  document.getElementById('proj-desc').value = p.description || '';
+  document.getElementById('proj-link').value = p.link || '';
+  document.getElementById('proj-image').value = p.image || '';
+  document.getElementById('proj-status').value = p.status || 'Completed';
+  currentTechs = [...(p.technologies || [])];
+  renderTechs();
+  const fl = document.getElementById('features-list');
+  fl.innerHTML = '';
+  (p.features || ['']).forEach(f => addFeature(f));
+  document.getElementById('proj-mode-label').textContent = 'Edit Project';
+  showView('portfolio-editor');
+}
+
+async function saveProject() {
+  const title = document.getElementById('proj-title').value.trim();
+  if (!title) { toast('Please add a title', 'error'); return; }
+
+  const features = Array.from(document.querySelectorAll('.feature-item input'))
+    .map(i => i.value.trim()).filter(Boolean);
+
+  const project = {
+    title,
+    description: document.getElementById('proj-desc').value.trim(),
+    image: document.getElementById('proj-image').value.trim() || null,
+    technologies: currentTechs,
+    link: document.getElementById('proj-link').value.trim(),
+    features,
+    status: document.getElementById('proj-status').value
+  };
+
+  if (editingProjIdx !== null) {
+    portfolioProjects[editingProjIdx] = project;
+  } else {
+    portfolioProjects.unshift(project);
+  }
+
+  try {
+    toast('Saving to GitHub...', 'success');
+    const { sha } = await ghGetFile('portfolio.json');
+    await ghPutFile('portfolio.json', portfolioProjects, sha,
+      `${editingProjIdx !== null ? 'Update' : 'Add'} project: ${title}`);
+    toast('✅ Project saved! Cloudflare will deploy shortly.', 'success');
+    showView('portfolio');
+  } catch(e) {
+    toast('GitHub save failed: ' + e.message, 'error');
+  }
+}
+
+async function deleteProject(idx) {
+  if (!confirm('Delete this project?')) return;
+  portfolioProjects.splice(idx, 1);
+  try {
+    const { sha } = await ghGetFile('portfolio.json');
+    await ghPutFile('portfolio.json', portfolioProjects, sha, 'Delete project');
+    toast('Project deleted', 'success');
+    renderPortfolio();
+  } catch(e) {
+    toast('Delete failed', 'error');
+  }
+}
+
+// ── FEATURES ──
+function addFeature(val = '') {
+  const fl = document.getElementById('features-list');
+  const div = document.createElement('div');
+  div.className = 'feature-item';
+  div.innerHTML = `<input type="text" value="${val}" placeholder="e.g. Infrastructure as Code with Terraform">
+    <button class="btn btn-ghost btn-sm" onclick="this.parentElement.remove()">✕</button>`;
+  fl.appendChild(div);
+}
+
+// ── TAGS ──
+function addTag() {
+  const inp = document.getElementById('tag-input');
+  const tag = inp.value.trim();
+  if (tag && !currentTags.includes(tag)) { currentTags.push(tag); renderTags(); }
+  inp.value = '';
+}
+
+function removeTag(i) { currentTags.splice(i, 1); renderTags(); }
+
+function renderTags() {
+  document.getElementById('tags-list').innerHTML = currentTags.map((t,i) =>
+    `<span class="tag-chip">${t}<button onclick="removeTag(${i})">×</button></span>`
+  ).join('');
+}
+
+// ── TECHS ──
+function addTech() {
+  const inp = document.getElementById('tech-input');
+  const t = inp.value.trim();
+  if (t && !currentTechs.includes(t)) { currentTechs.push(t); renderTechs(); }
+  inp.value = '';
+}
+
+function removeTech(i) { currentTechs.splice(i, 1); renderTechs(); }
+
+function renderTechs() {
+  document.getElementById('tech-list').innerHTML = currentTechs.map((t,i) =>
+    `<span class="tag-chip">${t}<button onclick="removeTech(${i})">×</button></span>`
+  ).join('');
+}
+
+// ── MARKDOWN HELPERS ──
+function insertMd(before, after) {
+  const ta = document.getElementById('blog-content');
+  const s = ta.selectionStart, e = ta.selectionEnd;
+  const sel = ta.value.substring(s, e) || 'text';
+  ta.value = ta.value.substring(0,s) + before + sel + after + ta.value.substring(e);
+  ta.focus();
+}
+
+function insertMdLine(prefix) {
+  const ta = document.getElementById('blog-content');
+  const s = ta.selectionStart;
+  const lineStart = ta.value.lastIndexOf('\n', s-1) + 1;
+  ta.value = ta.value.substring(0, lineStart) + prefix + ta.value.substring(lineStart);
+  ta.focus();
+}
+
+function insertCodeBlock() {
+  const ta = document.getElementById('blog-content');
+  const s = ta.selectionStart;
+  const block = '\n```yaml\n# your code here\n```\n';
+  ta.value = ta.value.substring(0,s) + block + ta.value.substring(s);
+  ta.focus();
+}
+
+// ── AI ──
+async function callAI(prompt) {
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 1000,
+      messages: [{ role: 'user', content: prompt }]
+    })
+  });
+  const data = await res.json();
+  return data.content?.[0]?.text || '';
+}
+
+function buildBlogContext() {
+  const title = document.getElementById('blog-title').value;
+  const category = document.getElementById('blog-category').value;
+  const desc = document.getElementById('blog-description').value;
+  const content = document.getElementById('blog-content').value;
+  return `You are a DevOps and cloud infrastructure technical writer helping Durrell Gemuh write blog posts.
+Author: Durrell Gemuh — Cloud & DevOps Engineer specializing in AWS, GCP, Kubernetes, CI/CD, and infrastructure automation.
+Post title: "${title}"
+Category: ${category}
+Current description: "${desc}"
+Current content: ${content ? content.substring(0,500) : '(empty)'}`;
+}
+
+async function aiQuick(instruction) {
+  document.getElementById('ai-prompt').value = instruction;
+  await runAI();
+}
+
+async function runAI() {
+  const instruction = document.getElementById('ai-prompt').value.trim();
+  if (!instruction) { toast('Enter an instruction', 'error'); return; }
+
+  const spinner = document.getElementById('ai-spinner');
+  const output = document.getElementById('ai-output');
+  const actions = document.getElementById('ai-actions');
+
+  spinner.classList.add('visible');
+  output.classList.remove('visible');
+  actions.classList.remove('visible');
+
+  const prompt = buildBlogContext() + '\n\nInstruction: ' + instruction;
+
+  try {
+    aiResult = await callAI(prompt);
+    output.textContent = aiResult;
+    output.classList.add('visible');
+    actions.classList.add('visible');
+  } catch(e) {
+    toast('AI error: ' + e.message, 'error');
+  }
+  spinner.classList.remove('visible');
+}
+
+function applyAI(mode) {
+  const ta = document.getElementById('blog-content');
+  const descEl = document.getElementById('blog-description');
+
+  // Auto-detect if it's a description (short, no markdown)
+  if (aiResult.length < 250 && !aiResult.includes('#') && !aiResult.includes('\n\n')) {
+    if (mode === 'replace') descEl.value = aiResult;
+    else descEl.value += '\n' + aiResult;
+  } else {
+    if (mode === 'replace') ta.value = aiResult;
+    else ta.value += '\n\n' + aiResult;
+  }
+  dismissAI();
+  toast('AI content applied ✓', 'success');
+}
+
+function dismissAI() {
+  document.getElementById('ai-output').classList.remove('visible');
+  document.getElementById('ai-actions').classList.remove('visible');
+  document.getElementById('ai-spinner').classList.remove('visible');
+}
+
+// Project AI
+async function aiProjectQuick(instruction) {
+  document.getElementById('ai-proj-prompt').value = instruction;
+  await runProjectAI();
+}
+
+async function runProjectAI() {
+  const instruction = document.getElementById('ai-proj-prompt').value.trim();
+  if (!instruction) return;
+
+  const spinner = document.getElementById('ai-proj-spinner');
+  const output = document.getElementById('ai-proj-output');
+  const actions = document.getElementById('ai-proj-actions');
+
+  spinner.className = 'ai-spinner visible';
+  spinner.innerHTML = '<div class="spin"></div> Generating...';
+  output.classList.remove('visible');
+  actions.classList.remove('visible');
+
+  const title = document.getElementById('proj-title').value;
+  const desc = document.getElementById('proj-desc').value;
+  const prompt = `You help write DevOps portfolio content for Durrell Gemuh.
+Project: "${title}" — ${desc}
+Instruction: ${instruction}`;
+
+  try {
+    aiProjResult = await callAI(prompt);
+    output.textContent = aiProjResult;
+    output.classList.add('visible');
+    actions.classList.add('visible');
+  } catch(e) {
+    toast('AI error: ' + e.message, 'error');
+  }
+  spinner.className = 'ai-spinner';
+}
+
+function applyProjectAI() {
+  // Try to parse as JSON array for features/techs
+  try {
+    const parsed = JSON.parse(aiProjResult);
+    if (Array.isArray(parsed)) {
+      // Could be features or techs — check context
+      const instruc = document.getElementById('ai-proj-prompt').value.toLowerCase();
+      if (instruc.includes('feature')) {
+        const fl = document.getElementById('features-list');
+        fl.innerHTML = '';
+        parsed.forEach(f => addFeature(f));
+      } else if (instruc.includes('tech')) {
+        currentTechs = parsed;
+        renderTechs();
+      }
+      dismissProjectAI();
+      toast('Applied ✓', 'success');
+      return;
+    }
+  } catch(e) {}
+
+  // Check for comma-separated techs
+  const instruc = document.getElementById('ai-proj-prompt').value.toLowerCase();
+  if (instruc.includes('tech') && aiProjResult.includes(',')) {
+    const techs = aiProjResult.split(',').map(t => t.trim()).filter(Boolean);
+    currentTechs = techs;
+    renderTechs();
+    dismissProjectAI();
+    toast('Tech stack applied ✓', 'success');
+    return;
+  }
+
+  // Otherwise apply to description
+  document.getElementById('proj-desc').value = aiProjResult;
+  dismissProjectAI();
+  toast('Applied ✓', 'success');
+}
+
+function dismissProjectAI() {
+  document.getElementById('ai-proj-output').classList.remove('visible');
+  document.getElementById('ai-proj-actions').classList.remove('visible');
+  document.getElementById('ai-proj-spinner').className = 'ai-spinner';
+}
+
+// ── SETTINGS ──
+function loadSettingsForm() {
+  const raw = localStorage.getItem('cms_site_config');
+  const sc = raw ? JSON.parse(raw) : {};
+  document.getElementById('s-title').value = sc.siteTitle || 'Durrell Gemuh';
+  document.getElementById('s-desc').value = sc.siteDescription || '';
+  document.getElementById('s-author').value = sc.author || 'Durrell Gemuh';
+  document.getElementById('s-email').value = sc.contactEmail || 'contact@durrellgemuh.com';
+  document.getElementById('s-twitter').value = (sc.social||{}).twitter || '';
+  document.getElementById('s-github').value = (sc.social||{}).github || '';
+  document.getElementById('s-linkedin').value = (sc.social||{}).linkedin || '';
+  document.getElementById('s-instagram').value = (sc.social||{}).instagram || '';
+  document.getElementById('s-token').value = cfg.token || '';
+  document.getElementById('s-user').value = cfg.user || '';
+  document.getElementById('s-repo').value = cfg.repo || '';
+  document.getElementById('s-branch').value = cfg.branch || 'main';
+}
+
+async function saveSettings() {
+  const sc = {
+    siteTitle: document.getElementById('s-title').value,
+    siteDescription: document.getElementById('s-desc').value,
+    author: document.getElementById('s-author').value,
+    contactEmail: document.getElementById('s-email').value,
+    social: {
+      twitter: document.getElementById('s-twitter').value,
+      github: document.getElementById('s-github').value,
+      linkedin: document.getElementById('s-linkedin').value,
+      instagram: document.getElementById('s-instagram').value
+    }
+  };
+  localStorage.setItem('cms_site_config', JSON.stringify(sc));
+
+  cfg.token = document.getElementById('s-token').value;
+  cfg.user = document.getElementById('s-user').value;
+  cfg.repo = document.getElementById('s-repo').value;
+  cfg.branch = document.getElementById('s-branch').value;
+  localStorage.setItem('cms_cfg', JSON.stringify(cfg));
+
+  try {
+    const { sha } = await ghGetFile('_config.json');
+    await ghPutFile('_config.json', sc, sha, 'Update site config');
+    toast('✅ Settings saved to GitHub', 'success');
+  } catch(e) {
+    toast('Settings saved locally (GitHub error: ' + e.message + ')', 'error');
+  }
+}
+
+// ── TOAST ──
+function toast(msg, type = 'success') {
+  const el = document.createElement('div');
+  el.className = `toast ${type}`;
+  el.innerHTML = `${type === 'success' ? '✓' : '⚠'} ${msg}`;
+  document.getElementById('toasts').appendChild(el);
+  setTimeout(() => el.remove(), 4000);
+}
+
+// ── INIT ──
+(function init() {
+  const saved = localStorage.getItem('cms_cfg');
+  if (saved) {
+    try {
+      cfg = JSON.parse(saved);
+      if (cfg.token && cfg.user && cfg.repo) { launchApp(); return; }
+    } catch(e) {}
+  }
+  // Pre-fill defaults
+  document.getElementById('setup-user').value = 'durrellgemuh';
+  document.getElementById('setup-repo').value = 'portfolio-durrell';
+  document.getElementById('setup-branch').value = 'main';
+})();
+</script>
+</body>
+</html>
