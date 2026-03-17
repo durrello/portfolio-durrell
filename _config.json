@@ -1,13 +1,12 @@
 {
   "siteTitle": "Durrell Gemuh",
-  "siteDescription": "DevOps & Cloud Infrastructure Engineer | Community Builder | DevOps Educator",
+  "siteDescription": "",
   "author": "Durrell Gemuh",
-  "authorBio": "Cloud & DevOps Engineer specializing in AWS, GCP, Kubernetes, CI/CD, and infrastructure automation.",
   "contactEmail": "contact@durrellgemuh.com",
   "social": {
-    "twitter": "https://twitter.com/durrellgemuh",
-    "github": "https://github.com/durrellgemuh",
-    "linkedin": "https://linkedin.com/in/durrellgemuh",
-    "instagram": "https://instagram.com/durrellgemuh"
+    "twitter": "",
+    "github": "",
+    "linkedin": "",
+    "instagram": ""
   }
 }
