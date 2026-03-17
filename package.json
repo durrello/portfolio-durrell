@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-durrell",
+  "version": "1.0.0",
+  "description": "Portfolio and blog site for Durrell Gemuh",
+  "scripts": {
+    "build": "node scripts/build-content.js",
+    "build:watch": "nodemon --watch posts --watch portfolio --ext md,json scripts/build-content.js"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "portfolio",
+    "blog",
+    "devops",
+    "cloudflare"
+  ],
+  "author": "Durrell Gemuh"
+}

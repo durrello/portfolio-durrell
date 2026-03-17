@@ -1,0 +1,23 @@
+{
+  "title": "Multi-Cloud Infrastructure Automation",
+  "description": "Automated infrastructure deployment across AWS and GCP using Terraform and Ansible, with CI/CD integration via Jenkins.",
+  "image": "/images/portfolio/infrastructure-automation.jpg",
+  "technologies": [
+    "Terraform",
+    "Ansible",
+    "AWS",
+    "GCP",
+    "Jenkins",
+    "Docker"
+  ],
+  "link": "https://github.com/durrellgemuh/infrastructure-automation",
+  "features": [
+    "Infrastructure as Code with Terraform",
+    "Automated configuration with Ansible",
+    "Multi-cloud deployment support",
+    "CI/CD pipeline integration",
+    "Comprehensive monitoring and logging",
+    "Disaster recovery automation"
+  ],
+  "status": "Completed"
+}

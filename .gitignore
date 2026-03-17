@@ -1,0 +1,22 @@
+# Ignore files and directories
+node_modules/
+.env
+.env.local
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+dist/
+build/
+.cache/
+.next/
+out/
+
+# Keep these in git for Decap CMS
+!posts.json
+!portfolio.json
+!_config.json
+!/posts/
+!/portfolio/

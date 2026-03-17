@@ -1,0 +1,19 @@
+[
+  {
+    "slug": "example-post",
+    "title": "Getting Started with Kubernetes",
+    "description": "A comprehensive guide to understanding and deploying applications on Kubernetes",
+    "author": "Durrell Gemuh",
+    "publishDate": "2024-03-15T00:00:00.000Z",
+    "category": "Kubernetes",
+    "tags": [
+      "Kubernetes",
+      "DevOps",
+      "Containers",
+      "Docker"
+    ],
+    "featuredImage": null,
+    "content": "# Getting Started with Kubernetes\n\nKubernetes has become the de facto standard for container orchestration. Whether you're a DevOps engineer or an application developer, understanding how Kubernetes works is essential in modern cloud infrastructure.\n\n## What is Kubernetes?\n\nKubernetes (K8s) is an open-source container orchestration platform that automates many of the manual processes involved in deploying, managing, and scaling containerized applications.\n\n### Key Features\n\n- **Automated Deployment** - Deploy containers across clusters of machines\n- **Self-Healing** - Automatically restart, replace, and reschedule containers\n- **Load Balancing** - Distribute network traffic across containers\n- **Storage Orchestration** - Automatically mount storage systems\n\n## Getting Started\n\n### Prerequisites\n\nBefore you start with Kubernetes, ensure you have:\n- Basic understanding of Docker containers\n- A system with Docker installed\n- kubectl CLI installed\n- A Kubernetes cluster (minikube for local development)\n\n### Your First Deployment\n\nHere's how to deploy your first application:\n\n```yaml\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: nginx-deployment\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: nginx\n  template:\n    metadata:\n      labels:\n        app: nginx\n    spec:\n      containers:\n      - name: nginx\n        image: nginx:latest\n        ports:\n        - containerPort: 80\n```\n\n## Conclusion\n\nKubernetes is a powerful tool for managing containerized applications at scale. Start with these basics and gradually explore more advanced features like networking, storage, and security.",
+    "_file": "example-post.md"
+  }
+]
