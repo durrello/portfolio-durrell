@@ -1,7 +1,7 @@
 backend:
   name: github
-  repo: durrello/portfolio-durrell
-  branch: master
+  repo: durrellgemuh/portfolio-durrell
+  branch: main
   auth_endpoint: /api/auth
   base_url: https://durrellgemuh.com
   auth_type: github
