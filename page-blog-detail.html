@@ -218,41 +218,31 @@
     <script>feather.replace();</script>
     <script src="js/blog-loader.js"></script>
     <script>
-        // Get post slug from URL parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const slug = urlParams.get('post') || window.location.hash.replace('#', '');
+        var slug = new URLSearchParams(window.location.search).get('post') || window.location.hash.replace('#','');
 
-        const loadPost = () => {
+        BlogLoader.onReady(function() {
+            var loading = document.getElementById('loading');
+            var error   = document.getElementById('error');
+            var container = document.getElementById('post-container');
+
             if (!slug) {
-                document.getElementById('loading').innerHTML = 
-                    '<p>No post specified. <a href="page-blog.html">View all posts</a></p>';
+                loading.innerHTML = '<p>No post specified. <a href="page-blog.html">← View all posts</a></p>';
                 return;
             }
 
-            const post = BlogLoader.getPost(slug);
-            
+            var post = BlogLoader.getPost(slug);
             if (post) {
-                document.getElementById('loading').style.display = 'none';
-                
-                // Update page title and meta
-                document.title = post.title + ' - Durrell Gemuh';
-                document.querySelector('meta[name="description"]').setAttribute(
-                    'content', 
-                    post.description || post.title
-                );
-                
-                document.getElementById('post-container').innerHTML = 
-                    BlogLoader.renderPost(post);
+                loading.style.display = 'none';
+                document.title = post.title + ' — Durrell Gemuh';
+                var metaDesc = document.querySelector('meta[name="description"]');
+                if (metaDesc) metaDesc.setAttribute('content', post.description || post.title);
+                container.innerHTML = BlogLoader.renderPost(post);
             } else {
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('error').style.display = 'block';
-                document.getElementById('error').innerHTML = 
-                    '<strong>Post not found.</strong> The post you\'re looking for doesn\'t exist. <a href="page-blog.html">View all posts</a>';
+                loading.style.display = 'none';
+                error.style.display = 'block';
+                error.innerHTML = '<strong>Post not found.</strong> <a href="page-blog.html">← View all posts</a>';
             }
-        };
-
-        // Load post after blog loader initializes
-        setTimeout(loadPost, 500);
+        });
     </script>
 </body>
 

@@ -1417,8 +1417,8 @@
             feather.replace();
         }
 
-        setTimeout(renderHomeBlog, 600);
-        setTimeout(renderHomeProjects, 600);
+        BlogLoader.onReady(renderHomeBlog);
+        PortfolioLoader.onReady ? PortfolioLoader.onReady(renderHomeProjects) : setTimeout(renderHomeProjects, 600);
     </script>
 </body>
 

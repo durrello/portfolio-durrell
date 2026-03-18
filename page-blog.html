@@ -131,24 +131,13 @@
     <script>feather.replace();</script>
     <script src="js/blog-loader.js"></script>
     <script>
-        // Wait for blog posts to load
-        const checkAndRender = () => {
-            const posts = BlogLoader.getAllPosts();
-            
-            if (posts.length > 0) {
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('blog-posts').innerHTML = 
-                    BlogLoader.renderPostsList(posts, { showExcerpt: true });
-            } else if (BlogLoader.posts.length === 0) {
-                // Try again in a moment
-                setTimeout(checkAndRender, 100);
-            } else {
-                document.getElementById('loading').innerHTML = '<p>No blog posts yet. Check back soon!</p>';
-            }
-        };
-
-        // Initial check after short delay to ensure loader initialized
-        setTimeout(checkAndRender, 500);
+        BlogLoader.onReady(function() {
+            var posts = BlogLoader.getAllPosts();
+            var loading = document.getElementById('loading');
+            var grid    = document.getElementById('blog-posts');
+            loading.style.display = 'none';
+            grid.innerHTML = BlogLoader.renderPostsList(posts, { showExcerpt: true });
+        });
     </script>
 </body>
 
