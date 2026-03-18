@@ -141,6 +141,26 @@
     </section>
     <!-- HOME END-->
 
+    <!-- Hero CTA strip -->
+    <div style="background:linear-gradient(90deg,#0d6efd,#0a58ca);padding:1.1rem 0;">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                <p class="text-white mb-0" style="font-weight:500;">&#128640; Open to new opportunities &amp; consulting
+                    engagements</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="mailto:contact@durrellgemuh.com" class="btn btn-light btn-sm rounded"
+                        style="font-weight:600;">
+                        <i data-feather="mail" class="fea icon-sm me-1"></i>contact@durrellgemuh.com
+                    </a>
+                    <a href="https://wa.me/237671305865" target="_blank" class="btn btn-success btn-sm rounded"
+                        id="whatsapp-hero-cta" style="font-weight:600;">
+                        <i data-feather="message-circle" class="fea icon-sm me-1"></i>WhatsApp Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- About Start -->
     <section class="section pb-3" id="about">
         <div class="container">
@@ -199,125 +219,424 @@
                 </div>
             </div>
 
-            <!-- DevOps Interests Grid -->
-            <div class="row">
-                <!-- DevOps Tools and Technologies -->
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-4 pt-2">
-                    <div class="interests-desc bg-light position-relative px-2 py-3 rounded">
-                        <div class="hobbies d-flex align-items-center">
-                            <div class="text-center rounded-pill me-4">
-                                <i data-feather="cloud" class="icon fea icon-md-sm"></i>
+            <!-- DevOps Expertise Slider -->
+            <div class="container mt-100 mt-60">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="section-title">
+                            <div class="position-relative">
+                                <h4 class="title text-uppercase mb-4">DevOps Expertise</h4>
+                                <div>
+                                    <div class="title-box"></div>
+                                    <div class="title-line"></div>
+                                </div>
                             </div>
-                            <div class="content">
-                                <h6 class="title mb-0">Cloud Platforms (AWS, Azure, GCP)</h6>
-                            </div>
+                            <p class="text-muted mx-auto para-desc mt-5 mb-0">4+ years designing, automating, and
+                                operating cloud infrastructure — across AWS, GCP, and hybrid environments.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-4 pt-2">
-                    <div class="interests-desc bg-light position-relative px-2 py-3 rounded">
-                        <div class="hobbies d-flex align-items-center">
-                            <div class="text-center rounded-pill me-4">
-                                <i data-feather="circle" class="icon fea icon-md-sm"></i>
-                            </div>
-                            <div class="content">
-                                <h6 class="title mb-0">Containerization (Docker, Kubernetes)</h6>
+                <!-- Slider -->
+                <div class="expertise-slider-wrap position-relative mt-5" style="overflow:hidden;">
+                    <div class="expertise-track d-flex" id="expertiseTrack"
+                        style="transition:transform 0.45s cubic-bezier(.4,0,.2,1);will-change:transform;">
+
+                        <!-- SLIDE 1 — Cloud & Infra -->
+                        <div class="expertise-slide flex-shrink-0 w-100">
+                            <div class="row g-3">
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="cloud"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Cloud Platforms</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">AWS · GCP · Azure
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="layers"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Kubernetes &
+                                                    Containers</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">K8s · Docker ·
+                                                    Helm · ArgoCD</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="code"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Infrastructure as Code
+                                                </h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">Terraform ·
+                                                    Ansible · Pulumi</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="repeat"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">CI/CD Automation</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">Jenkins · GitHub
+                                                    Actions · GitLab CI</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="bar-chart-2"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Observability</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">Datadog ·
+                                                    Prometheus · Grafana</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="shield"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Cloud Security</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">IAM · WAF · Zero
+                                                    Trust · Vault</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="git-merge"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">GitOps</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">ArgoCD · Flux ·
+                                                    Git workflows</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="trending-down"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Cost Optimisation</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">FinOps · Spot ·
+                                                    Savings Plans</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+
+                        <!-- SLIDE 2 — DevOps Practice & Tools -->
+                        <div class="expertise-slide flex-shrink-0 w-100">
+                            <div class="row g-3">
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="server"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Serverless</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">AWS Lambda · Cloud
+                                                    Run · Cloudflare Workers</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="database"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Secrets Management
+                                                </h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">HashiCorp Vault ·
+                                                    AWS Secrets Manager</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="activity"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">SRE Practices</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">SLOs · Incident
+                                                    Response · Runbooks</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="globe"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">CDN & Edge Security
+                                                </h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">Cloudflare WAF ·
+                                                    CloudFront · DDoS</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="cpu"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Networking</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">VPC · Subnets ·
+                                                    VPN · PrivateLink</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="check-circle"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Compliance & Auditing
+                                                </h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">AWS Security Hub ·
+                                                    CIS Benchmarks</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="refresh-cw"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Agile & Scrum</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">Jira · Scrum ·
+                                                    Kanban · Sprint planning</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="terminal"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Linux & Shell</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">Bash · Python
+                                                    scripting · Systemd</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 3 — Databases, APIs & Soft Skills -->
+                        <div class="expertise-slide flex-shrink-0 w-100">
+                            <div class="row g-3">
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="database"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Databases</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">PostgreSQL · MySQL
+                                                    · RDS · DynamoDB</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="link"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">API & Integration</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">REST · GraphQL ·
+                                                    Webhooks</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="git-branch"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Version Control</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">Git · GitHub ·
+                                                    GitLab · Bitbucket</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="book-open"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Technical Training
+                                                </h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">Workshops ·
+                                                    Masterclasses · Mentorship</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="users"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Team Leadership</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">Cross-functional ·
+                                                    Remote teams · Mentoring</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="zap"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Performance Tuning
+                                                </h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">Auto-scaling ·
+                                                    Load balancing · Caching</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="archive"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Disaster Recovery</h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">Backup strategies
+                                                    · RTO/RPO · Failover</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="interests-desc bg-light px-3 py-3 rounded h-100">
+                                        <div class="hobbies d-flex align-items-center">
+                                            <div class="text-center me-3"><i data-feather="mic"
+                                                    class="fea icon-md-sm text-primary"></i></div>
+                                            <div>
+                                                <h6 class="title mb-0" style="font-size:0.82rem;">Technical Speaking
+                                                </h6>
+                                                <p class="text-muted mb-0" style="font-size:0.75rem;">Conferences ·
+                                                    Meetups · Community events</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /track -->
+
+                    <!-- Prev / Next buttons -->
+                    <button onclick="expertiseSlide(-1)" aria-label="Previous"
+                        style="position:absolute;top:50%;left:-16px;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:1px solid #dee2e6;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:pointer;display:flex;align-items:center;justify-content:center;color:#0d6efd;z-index:10;">
+                        <i data-feather="chevron-left" style="width:18px;height:18px;"></i>
+                    </button>
+                    <button onclick="expertiseSlide(1)" aria-label="Next"
+                        style="position:absolute;top:50%;right:-16px;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:1px solid #dee2e6;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:pointer;display:flex;align-items:center;justify-content:center;color:#0d6efd;z-index:10;">
+                        <i data-feather="chevron-right" style="width:18px;height:18px;"></i>
+                    </button>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-4 pt-2">
-                    <div class="interests-desc bg-light position-relative px-2 py-3 rounded">
-                        <div class="hobbies d-flex align-items-center">
-                            <div class="text-center rounded-pill me-4">
-                                <i data-feather="code" class="icon fea image-icon"></i>
-                            </div>
-                            <div class="content">
-                                <h6 class="title mb-0">Version Control (Git, SVN)</h6>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Dots -->
+                <div class="d-flex justify-content-center gap-2 mt-4" id="expertiseDots">
+                    <button onclick="expertiseGoTo(0)" class="expertise-dot active" aria-label="Slide 1"></button>
+                    <button onclick="expertiseGoTo(1)" class="expertise-dot" aria-label="Slide 2"></button>
+                    <button onclick="expertiseGoTo(2)" class="expertise-dot" aria-label="Slide 3"></button>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-4 pt-2">
-                    <div class="interests-desc bg-light position-relative px-2 py-3 rounded">
-                        <div class="hobbies d-flex align-items-center">
-                            <div class="text-center rounded-pill me-4">
-                                <i data-feather="circle" class="icon fea icon-md-sm"></i>
-                            </div>
-                            <div class="content">
-                                <h6 class="title mb-0">Agile Methodologies (Scrum, Kanban)</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <style>
+                    .expertise-dot {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        border: 2px solid #0d6efd;
+                        background: transparent;
+                        padding: 0;
+                        cursor: pointer;
+                        transition: background 0.2s;
+                    }
 
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-4 pt-2">
-                    <div class="interests-desc bg-light position-relative px-2 py-3 rounded">
-                        <div class="hobbies d-flex align-items-center">
-                            <div class="text-center rounded-pill me-4">
-                                <i data-feather="monitor" class="icon fea icon-md-sm"></i>
-                            </div>
-                            <div class="content">
-                                <h6 class="title mb-0">Monitoring and Logging (Prometheus, Grafana)</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    .expertise-dot.active {
+                        background: #0d6efd;
+                    }
+                </style>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-4 pt-2">
-                    <div class="interests-desc bg-light position-relative px-2 py-3 rounded">
-                        <div class="hobbies d-flex align-items-center">
-                            <div class="text-center rounded-pill me-4">
-                                <i data-feather="server" class="icon fea icon-md-sm"></i>
-                            </div>
-                            <div class="content">
-                                <h6 class="title mb-0">Serverless Computing (AWS Lambda, Azure Functions)</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-4 pt-2">
-                    <div class="interests-desc bg-light position-relative px-2 py-3 rounded">
-                        <div class="hobbies d-flex align-items-center">
-                            <div class="text-center rounded-pill me-4">
-                                <i data-feather="circle" class="icon fea icon-md-sm"></i>
-                            </div>
-                            <div class="content">
-                                <h6 class="title mb-0">Security (IAM, RBAC, Firewall Rules)</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-4 pt-2">
-                    <div class="interests-desc bg-light position-relative px-2 py-3 rounded">
-                        <div class="hobbies d-flex align-items-center">
-                            <div class="text-center rounded-pill me-4">
-                                <i data-feather="circle" class="icon fea icon-md-sm"></i>
-                            </div>
-                            <div class="content">
-                                <h6 class="title mb-0">API Design and Development (REST, GraphQL)</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-4 pt-2">
-                    <div class="interests-desc bg-light position-relative px-2 py-3 rounded">
-                        <div class="hobbies d-flex align-items-center">
-                            <div class="text-center rounded-pill me-4">
-                                <i data-feather="database" class="icon fea icon-md-sm"></i>
-                            </div>
-                            <div class="content">
-                                <h6 class="title mb-0">Database Design and Administration (MySQL, PostgreSQL)</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <script>
+                    var _expIdx = 0;
+                    var _expTotal = 3;
+                    function expertiseSlide(dir) {
+                        _expIdx = (_expIdx + dir + _expTotal) % _expTotal;
+                        expertiseRender();
+                    }
+                    function expertiseGoTo(i) {
+                        _expIdx = i;
+                        expertiseRender();
+                    }
+                    function expertiseRender() {
+                        document.getElementById('expertiseTrack').style.transform = 'translateX(-' + (_expIdx * 100) + '%)';
+                        document.querySelectorAll('.expertise-dot').forEach(function (d, i) {
+                            d.classList.toggle('active', i === _expIdx);
+                        });
+                    }
+                    // Auto-advance every 6s
+                    setInterval(function () { expertiseSlide(1); }, 6000);
+                </script>
             </div>
         </div>
     </section>
@@ -337,97 +656,217 @@
                             </div>
                         </div>
                         <p class="text-muted mx-auto para-desc mt-5 mb-0">I help teams build reliable cloud
-                            infrastructure, automate deployments, and grow DevOps capabilities through training and
-                            mentorship.</p>
+                            infrastructure, automate deployments, and scale DevOps capabilities — from startup to
+                            enterprise.</p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
+
+                <!-- 1 -->
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                    <div
-                        class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5">
-                        <div class="icon text-primary">
-                            <i data-feather="cloud" class="fea icon-md"></i>
-                        </div>
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openService('s1')">
+                        <div class="icon text-primary"><i data-feather="cloud" class="fea icon-md"></i></div>
                         <div class="content mt-4">
                             <h5 class="title">Cloud Infrastructure Engineering</h5>
-                            <p class="text-muted mt-3 mb-0">Designing scalable cloud architecture across AWS and GCP.
-                            </p>
+                            <p class="text-muted mt-3 mb-0">Designing and deploying production-grade cloud architecture
+                                on AWS and GCP.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
                         </div>
-                        <div class="big-icon">
-                            <i data-feather="cloud" class="fea icons"></i>
-                        </div>
+                        <div class="big-icon"><i data-feather="cloud" class="fea icons"></i></div>
                     </div>
                 </div>
+
+                <!-- 2 -->
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                    <div
-                        class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5">
-                        <div class="icon text-primary">
-                            <i data-feather="repeat" class="fea icon-md"></i>
-                        </div>
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openService('s2')">
+                        <div class="icon text-primary"><i data-feather="repeat" class="fea icon-md"></i></div>
                         <div class="content mt-4">
-                            <h5 class="title">DevOps & CI/CD Automation</h5>
-                            <p class="text-muted mt-3 mb-0">Building automated pipelines with Jenkins, GitHub Actions,
-                                GitLab CI, and Azure DevOps.</p>
+                            <h5 class="title">CI/CD Pipeline Automation</h5>
+                            <p class="text-muted mt-3 mb-0">Building fast, reliable pipelines with Jenkins, GitHub
+                                Actions, GitLab CI, and Azure DevOps.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
                         </div>
-                        <div class="big-icon">
-                            <i data-feather="repeat" class="fea icons"></i>
-                        </div>
+                        <div class="big-icon"><i data-feather="repeat" class="fea icons"></i></div>
                     </div>
                 </div>
+
+                <!-- 3 -->
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                    <div
-                        class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5">
-                        <div class="icon text-primary">
-                            <i data-feather="layers" class="fea icon-md"></i>
-                        </div>
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openService('s3')">
+                        <div class="icon text-primary"><i data-feather="layers" class="fea icon-md"></i></div>
                         <div class="content mt-4">
-                            <h5 class="title">Kubernetes Platforms</h5>
-                            <p class="text-muted mt-3 mb-0">Deploying and managing containerized workloads using
-                                Kubernetes and Helm.</p>
+                            <h5 class="title">Kubernetes & Container Platforms</h5>
+                            <p class="text-muted mt-3 mb-0">Production Kubernetes environments with Helm, ArgoCD, and
+                                GitOps workflows.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
                         </div>
-                        <div class="big-icon">
-                            <i data-feather="layers" class="fea icons"></i>
-                        </div>
+                        <div class="big-icon"><i data-feather="layers" class="fea icons"></i></div>
                     </div>
                 </div>
+
+                <!-- 4 -->
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                    <div
-                        class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5">
-                        <div class="icon text-primary">
-                            <i data-feather="bar-chart-2" class="fea icon-md"></i>
-                        </div>
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openService('s4')">
+                        <div class="icon text-primary"><i data-feather="bar-chart-2" class="fea icon-md"></i></div>
                         <div class="content mt-4">
                             <h5 class="title">Observability & Monitoring</h5>
-                            <p class="text-muted mt-3 mb-0">Implementing monitoring systems using Datadog, Prometheus,
-                                and Grafana.</p>
+                            <p class="text-muted mt-3 mb-0">Full-stack observability with Datadog, Prometheus, Grafana,
+                                and CloudWatch.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
                         </div>
-                        <div class="big-icon">
-                            <i data-feather="bar-chart-2" class="fea icons"></i>
-                        </div>
+                        <div class="big-icon"><i data-feather="bar-chart-2" class="fea icons"></i></div>
                     </div>
                 </div>
+
+                <!-- 5 -->
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                    <div
-                        class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5">
-                        <div class="icon text-primary">
-                            <i data-feather="book-open" class="fea icon-md"></i>
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openService('s5')">
+                        <div class="icon text-primary"><i data-feather="code" class="fea icon-md"></i></div>
+                        <div class="content mt-4">
+                            <h5 class="title">Infrastructure as Code</h5>
+                            <p class="text-muted mt-3 mb-0">Version-controlled, reproducible infrastructure with
+                                Terraform and Ansible.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
                         </div>
+                        <div class="big-icon"><i data-feather="code" class="fea icons"></i></div>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openService('s6')">
+                        <div class="icon text-primary"><i data-feather="shield" class="fea icon-md"></i></div>
+                        <div class="content mt-4">
+                            <h5 class="title">Cloud Security & Compliance</h5>
+                            <p class="text-muted mt-3 mb-0">IAM hardening, WAF, Zero Trust, AWS Security Hub, and
+                                compliance remediation.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
+                        </div>
+                        <div class="big-icon"><i data-feather="shield" class="fea icons"></i></div>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openService('s7')">
+                        <div class="icon text-primary"><i data-feather="trending-down" class="fea icon-md"></i></div>
+                        <div class="content mt-4">
+                            <h5 class="title">Cloud Cost Optimisation</h5>
+                            <p class="text-muted mt-3 mb-0">Right-sizing, reserved instance strategy, and cost
+                                governance to cut cloud spend.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
+                        </div>
+                        <div class="big-icon"><i data-feather="trending-down" class="fea icons"></i></div>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openService('s8')">
+                        <div class="icon text-primary"><i data-feather="database" class="fea icon-md"></i></div>
+                        <div class="content mt-4">
+                            <h5 class="title">Secrets & Vault Management</h5>
+                            <p class="text-muted mt-3 mb-0">Secure secrets workflows with HashiCorp Vault, AWS Secrets
+                                Manager, and RBAC.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
+                        </div>
+                        <div class="big-icon"><i data-feather="database" class="fea icons"></i></div>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openService('s9')">
+                        <div class="icon text-primary"><i data-feather="book-open" class="fea icon-md"></i></div>
                         <div class="content mt-4">
                             <h5 class="title">DevOps Training & Mentorship</h5>
-                            <p class="text-muted mt-3 mb-0">Teaching DevOps concepts through hands-on workshops and
-                                mentorship programs.</p>
+                            <p class="text-muted mt-3 mb-0">Hands-on workshops, masterclasses, and 1:1 mentorship for
+                                engineers levelling up.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
                         </div>
-                        <div class="big-icon">
-                            <i data-feather="book-open" class="fea icons"></i>
-                        </div>
+                        <div class="big-icon"><i data-feather="book-open" class="fea icons"></i></div>
                     </div>
+                </div>
+
+            </div>
+
+            <!-- CTA bar below services -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <p class="text-muted mb-3">Need one of these? Let's talk about your infrastructure challenges.</p>
+                    <a href="mailto:contact@durrellgemuh.com" class="btn btn-primary rounded me-2 mb-2">
+                        <i data-feather="mail" class="fea icon-sm me-1"></i> Email Me
+                    </a>
+                    <a href="https://wa.me/237671305865" target="_blank" class="btn btn-success rounded me-2 mb-2"
+                        id="whatsapp-services-cta">
+                        <i data-feather="message-circle" class="fea icon-sm me-1"></i> WhatsApp
+                    </a>
+                    <a href="https://linkedin.com/in/durrello" target="_blank"
+                        class="btn btn-outline-primary rounded mb-2">
+                        <i data-feather="linkedin" class="fea icon-sm me-1"></i> LinkedIn
+                    </a>
                 </div>
             </div>
         </div>
     </section>
     <!-- Services End -->
+
+    <!-- ── SERVICE MODALS ──────────────────────────────────────────────── -->
+    <div id="service-modal-overlay" onclick="closeService()"
+        style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:9998;backdrop-filter:blur(3px);">
+    </div>
+
+    <div id="service-modal"
+        style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:9999;width:min(680px,95vw);max-height:90vh;overflow-y:auto;background:#fff;border-radius:16px;box-shadow:0 24px 64px rgba(0,0,0,0.18);">
+        <div style="padding:2rem 2rem 0;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;">
+                <div style="display:flex;align-items:center;gap:0.85rem;">
+                    <div id="svc-icon"
+                        style="width:48px;height:48px;border-radius:12px;background:#e7f3ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#0d6efd;">
+                    </div>
+                    <h4 id="svc-title" style="margin:0;font-size:1.3rem;font-weight:700;color:#212529;line-height:1.3;">
+                    </h4>
+                </div>
+                <button onclick="closeService()"
+                    style="border:none;background:none;font-size:1.5rem;color:#6c757d;cursor:pointer;padding:0;line-height:1;flex-shrink:0;">&times;</button>
+            </div>
+            <p id="svc-tagline" style="color:#0d6efd;font-weight:500;margin:1rem 0 0;font-size:0.95rem;"></p>
+        </div>
+        <div style="padding:1.25rem 2rem;">
+            <div id="svc-body" style="color:#495057;font-size:0.93rem;line-height:1.75;"></div>
+        </div>
+        <div
+            style="padding:1.25rem 2rem 2rem;border-top:1px solid #e9ecef;display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;">
+            <span style="color:#6c757d;font-size:0.85rem;margin-right:auto;">Ready to discuss this service?</span>
+            <a href="mailto:contact@durrellgemuh.com" class="btn btn-primary rounded" style="font-size:0.875rem;">
+                <i data-feather="mail" class="fea icon-sm me-1"></i> Email Me
+            </a>
+            <a href="https://wa.me/237671305865" target="_blank" class="btn btn-success rounded" id="whatsapp-modal-cta"
+                style="font-size:0.875rem;">
+                <i data-feather="message-circle" class="fea icon-sm me-1"></i> WhatsApp
+            </a>
+        </div>
+    </div>
 
     <!-- NextGen Playground Start -->
     <section class="section bg-light" id="nextgen">
@@ -504,97 +943,285 @@
                                 <div class="title-line"></div>
                             </div>
                         </div>
-                        <p class="text-muted mx-auto para-desc mt-5 mb-0">Projects and initiatives I’m focused on
-                            delivering right now.</p>
+                        <p class="text-muted mx-auto para-desc mt-5 mb-0">Projects and initiatives I&#39;m focused on
+                            delivering right now — click any to learn more or get involved.</p>
                     </div>
                 </div>
             </div>
-
             <div class="row">
+
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                    <div
-                        class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5">
-                        <div class="icon text-primary">
-                            <i data-feather="award" class="fea icon-md"></i>
-                        </div>
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openFocus('f1')">
+                        <div class="icon text-primary"><i data-feather="award" class="fea icon-md"></i></div>
                         <div class="content mt-4">
                             <h5 class="title">AWS Community Builders</h5>
                             <p class="text-muted mt-3 mb-0">Sharing cloud operations knowledge and contributing to the
                                 global AWS community.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
                         </div>
-                        <div class="big-icon">
-                            <i data-feather="award" class="fea icons"></i>
-                        </div>
+                        <div class="big-icon"><i data-feather="award" class="fea icons"></i></div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                    <div
-                        class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5">
-                        <div class="icon text-primary">
-                            <i data-feather="globe" class="fea icon-md"></i>
-                        </div>
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openFocus('f2')">
+                        <div class="icon text-primary"><i data-feather="globe" class="fea icon-md"></i></div>
                         <div class="content mt-4">
                             <h5 class="title">NextGen Playground</h5>
                             <p class="text-muted mt-3 mb-0">Building a learning platform that helps engineers gain
                                 real-world DevOps experience.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
                         </div>
-                        <div class="big-icon">
-                            <i data-feather="globe" class="fea icons"></i>
-                        </div>
+                        <div class="big-icon"><i data-feather="globe" class="fea icons"></i></div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                    <div
-                        class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5">
-                        <div class="icon text-primary">
-                            <i data-feather="users" class="fea icon-md"></i>
-                        </div>
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openFocus('f3')">
+                        <div class="icon text-primary"><i data-feather="users" class="fea icon-md"></i></div>
                         <div class="content mt-4">
                             <h5 class="title">DevOps Mentorship</h5>
                             <p class="text-muted mt-3 mb-0">Guiding aspiring engineers transitioning into DevOps and
                                 cloud engineering careers.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
                         </div>
-                        <div class="big-icon">
-                            <i data-feather="users" class="fea icons"></i>
-                        </div>
+                        <div class="big-icon"><i data-feather="users" class="fea icons"></i></div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                    <div
-                        class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5">
-                        <div class="icon text-primary">
-                            <i data-feather="server" class="fea icon-md"></i>
-                        </div>
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openFocus('f4')">
+                        <div class="icon text-primary"><i data-feather="server" class="fea icon-md"></i></div>
                         <div class="content mt-4">
-                            <h5 class="title">Kubernetes Infrastructure Projects</h5>
-                            <p class="text-muted mt-3 mb-0">Designing scalable Kubernetes environments and deployment
-                                workflows.</p>
+                            <h5 class="title">Kubernetes Infrastructure</h5>
+                            <p class="text-muted mt-3 mb-0">Designing scalable Kubernetes environments and GitOps-driven
+                                deployment workflows.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
                         </div>
-                        <div class="big-icon">
-                            <i data-feather="server" class="fea icons"></i>
-                        </div>
+                        <div class="big-icon"><i data-feather="server" class="fea icons"></i></div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                    <div
-                        class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5">
-                        <div class="icon text-primary">
-                            <i data-feather="book-open" class="fea icon-md"></i>
-                        </div>
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openFocus('f5')">
+                        <div class="icon text-primary"><i data-feather="book-open" class="fea icon-md"></i></div>
                         <div class="content mt-4">
                             <h5 class="title">DevOps Education</h5>
                             <p class="text-muted mt-3 mb-0">Creating training programs and technical learning resources
                                 for cloud and DevOps engineers.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
                         </div>
-                        <div class="big-icon">
-                            <i data-feather="book-open" class="fea icons"></i>
-                        </div>
+                        <div class="big-icon"><i data-feather="book-open" class="fea icons"></i></div>
                     </div>
                 </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                    <div class="service-wrapper rounded position-relative text-center border border-footer p-4 pt-5 pb-5"
+                        style="cursor:pointer;" onclick="openFocus('f6')">
+                        <div class="icon text-primary"><i data-feather="mic" class="fea icon-md"></i></div>
+                        <div class="content mt-4">
+                            <h5 class="title">Speaking & Tech Events</h5>
+                            <p class="text-muted mt-3 mb-0">Sharing DevOps and cloud engineering insights at
+                                conferences, meetups, and community events.</p>
+                            <span class="text-primary mt-3 d-block" style="font-size:0.85rem;font-weight:500;">Learn
+                                more →</span>
+                        </div>
+                        <div class="big-icon"><i data-feather="mic" class="fea icons"></i></div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
     <!-- Currently Working On End -->
+
+    <!-- Focus Area Modals -->
+    <div id="focus-modal-overlay" onclick="closeFocus()"
+        style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:9998;backdrop-filter:blur(3px);">
+    </div>
+    <div id="focus-modal"
+        style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:9999;width:min(660px,95vw);max-height:90vh;overflow-y:auto;background:#fff;border-radius:16px;box-shadow:0 24px 64px rgba(0,0,0,0.18);">
+        <div style="padding:2rem 2rem 0;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;">
+                <div style="display:flex;align-items:center;gap:0.85rem;">
+                    <div id="focus-icon"
+                        style="width:48px;height:48px;border-radius:12px;background:#e7f3ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#0d6efd;">
+                    </div>
+                    <div>
+                        <div id="focus-label"
+                            style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#0d6efd;margin-bottom:0.2rem;">
+                        </div>
+                        <h4 id="focus-title"
+                            style="margin:0;font-size:1.25rem;font-weight:700;color:#212529;line-height:1.3;"></h4>
+                    </div>
+                </div>
+                <button onclick="closeFocus()"
+                    style="border:none;background:none;font-size:1.5rem;color:#6c757d;cursor:pointer;padding:0;line-height:1;flex-shrink:0;">&times;</button>
+            </div>
+        </div>
+        <div style="padding:1.25rem 2rem 0.5rem;">
+            <div id="focus-body" style="color:#495057;font-size:0.93rem;line-height:1.75;"></div>
+        </div>
+        <div id="focus-ctas"
+            style="padding:1.25rem 2rem 2rem;border-top:1px solid #e9ecef;display:flex;flex-wrap:wrap;gap:0.65rem;align-items:center;">
+        </div>
+    </div>
+
+    <script>
+        var FOCUS = {
+            f1: {
+                icon: 'award', label: 'Community', title: 'AWS Community Builders',
+                body: `<p>I&#39;m an active member of the <strong>AWS Community Builders program</strong> (Cloud Operations track) — a global network of technical experts who share knowledge, create content, and help the wider community get more out of AWS.</p>
+        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">What This Means in Practice</h6>
+        <ul style="padding-left:1.25rem;">
+          <li>Writing and publishing technical content on AWS cloud operations — real use cases, not theory</li>
+          <li>Contributing to community discussions, answering questions, and helping engineers navigate AWS services</li>
+          <li>Staying ahead of new AWS releases and sharing practical takeaways for DevOps teams</li>
+          <li>Collaborating with AWS experts who review and improve the quality of content I share</li>
+        </ul>
+        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Get Involved</h6>
+        <p>If you&#39;re building on AWS and want a second pair of eyes on your architecture, or want to collaborate on technical content, I&#39;d love to connect.</p>`,
+                ctas: [
+                    { label: '💬 Discuss AWS Architecture', href: 'mailto:contact@durrellgemuh.com?subject=AWS Architecture Discussion', style: 'btn-primary' },
+                    { label: '🔗 Connect on LinkedIn', href: 'https://linkedin.com/in/durrello', style: 'btn-outline-primary', target: '_blank' },
+                    { label: '📖 Read My Blog', href: 'page-blog.html', style: 'btn-outline-secondary' }
+                ]
+            },
+            f2: {
+                icon: 'globe', label: 'Platform', title: 'NextGen Playground',
+                body: `<p><strong>NextGen Playground</strong> is the tech education and community platform I founded in Cameroon — built to bridge the gap between learning DevOps in theory and practising it in the real world.</p>
+        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">What We&#39;re Building</h6>
+        <ul style="padding-left:1.25rem;">
+          <li><strong>Structured DevOps programs</strong> covering Linux, Docker, Kubernetes, Terraform, CI/CD, and cloud platforms</li>
+          <li><strong>Hands-on labs</strong> that mirror real production infrastructure — not toy examples</li>
+          <li><strong>Simulated internship experiences</strong> where students work on real-world projects with guidance</li>
+          <li><strong>Mentorship and career support</strong> for engineers transitioning into DevOps and cloud roles</li>
+          <li><strong>A community</strong> of engineers learning together and helping each other grow</li>
+        </ul>
+        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">How You Can Get Involved</h6>
+        <p>Whether you&#39;re an engineer looking to join, a company wanting to sponsor, or an educator wanting to collaborate — there&#39;s a place for you here.</p>`,
+                ctas: [
+                    { label: '🚀 Visit NextGen Playground', href: 'http://nextgenplayground.org/', style: 'btn-primary', target: '_blank' },
+                    { label: '🤝 Partner With Us', href: 'mailto:contact@durrellgemuh.com?subject=NextGen Playground Partnership', style: 'btn-outline-primary' },
+                    { label: '📱 WhatsApp Me', href: 'https://wa.me/237671305865', style: 'btn-success', target: '_blank', id: 'wa-f2' }
+                ]
+            },
+            f3: {
+                icon: 'users', label: 'Mentorship', title: 'DevOps Mentorship',
+                body: `<p>I actively mentor engineers making the transition into DevOps and cloud engineering — from students to mid-level developers pivoting into infrastructure roles.</p>
+        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">What Mentorship Looks Like</h6>
+        <ul style="padding-left:1.25rem;">
+          <li><strong>1:1 sessions</strong> — structured calls to work through specific challenges, review your setup, or map out a learning path</li>
+          <li><strong>CV and portfolio reviews</strong> — helping you present your skills to land DevOps roles</li>
+          <li><strong>Project guidance</strong> — working through real infrastructure projects together so you learn by doing</li>
+          <li><strong>Career roadmapping</strong> — honest advice on what to learn next, certifications worth pursuing, and how to grow your income as a DevOps engineer</li>
+          <li><strong>Code and config reviews</strong> — Terraform, Dockerfiles, pipeline configs, Kubernetes manifests</li>
+        </ul>
+        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Who This Is For</h6>
+        <p>Developers, sysadmins, and students looking to break into DevOps. Engineers who feel stuck and want a clearer path forward. Anyone who learns better with guidance than alone.</p>`,
+                ctas: [
+                    { label: '📅 Book a Mentorship Session', href: 'mailto:contact@durrellgemuh.com?subject=Mentorship Session Request', style: 'btn-primary' },
+                    { label: '📱 WhatsApp Me', href: 'https://wa.me/237671305865', style: 'btn-success', target: '_blank', id: 'wa-f3' },
+                    { label: '🚀 Join NextGen Playground', href: 'http://nextgenplayground.org/', style: 'btn-outline-primary', target: '_blank' }
+                ]
+            },
+            f4: {
+                icon: 'server', label: 'Engineering', title: 'Kubernetes Infrastructure Projects',
+                body: `<p>Kubernetes is central to how modern infrastructure runs — and I&#39;m currently working on several K8s-focused projects ranging from cluster architecture to GitOps automation and operator development.</p>
+        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Active Focus Areas</h6>
+        <ul style="padding-left:1.25rem;">
+          <li><strong>Multi-cluster management</strong> — designing patterns for running workloads across multiple clusters with unified observability</li>
+          <li><strong>GitOps at scale</strong> — ArgoCD and Flux configurations for teams managing dozens of services</li>
+          <li><strong>Cost-aware scheduling</strong> — Karpenter, spot instance strategies, and resource quota governance</li>
+          <li><strong>Platform engineering</strong> — building internal developer platforms on top of Kubernetes to improve DX</li>
+          <li><strong>Security hardening</strong> — Pod Security Standards, OPA/Gatekeeper policies, and network policies</li>
+        </ul>
+        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Looking to Collaborate?</h6>
+        <p>If you&#39;re building on Kubernetes and want an experienced engineer to review your setup, pair on a problem, or consult on architecture — let&#39;s talk.</p>`,
+                ctas: [
+                    { label: '🔧 Discuss Your K8s Setup', href: 'mailto:contact@durrellgemuh.com?subject=Kubernetes Consultation', style: 'btn-primary' },
+                    { label: '📱 WhatsApp', href: 'https://wa.me/237671305865', style: 'btn-success', target: '_blank', id: 'wa-f4' },
+                    { label: '💼 View My Projects', href: '#projects', style: 'btn-outline-secondary' }
+                ]
+            },
+            f5: {
+                icon: 'book-open', label: 'Education', title: 'DevOps Education',
+                body: `<p>Beyond mentorship, I create structured educational content and training programs — both for my own community at NextGen Playground and as an instructor at DataScienTest in France.</p>
+        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">What I&#39;m Creating</h6>
+        <ul style="padding-left:1.25rem;">
+          <li><strong>Masterclass curricula</strong> covering Kubernetes, GitOps, Prometheus & Grafana, Docker, and security practices</li>
+          <li><strong>Lab environments</strong> — hands-on exercises that mirror real production scenarios</li>
+          <li><strong>Written guides and blog posts</strong> on cloud and DevOps topics (see my blog)</li>
+          <li><strong>Team training programs</strong> for companies who want to upskill their engineering teams</li>
+        </ul>
+        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Bring Training to Your Team</h6>
+        <p>I deliver custom workshops — from half-day introductions to multi-week deep dives. Remote or in-person. Topics tailored to exactly where your team is and where they need to go.</p>`,
+                ctas: [
+                    { label: '🎓 Request a Workshop', href: 'mailto:contact@durrellgemuh.com?subject=Team Training Request', style: 'btn-primary' },
+                    { label: '📱 WhatsApp', href: 'https://wa.me/237671305865', style: 'btn-success', target: '_blank', id: 'wa-f5' },
+                    { label: '📖 Read My Blog', href: 'page-blog.html', style: 'btn-outline-secondary' }
+                ]
+            },
+            f6: {
+                icon: 'mic', label: 'Speaking', title: 'Speaking & Tech Events',
+                body: `<p>I&#39;m available to speak at conferences, meetups, company all-hands, and community events on topics across DevOps, cloud infrastructure, and engineering education.</p>
+        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Topics I Speak On</h6>
+        <ul style="padding-left:1.25rem;">
+          <li><strong>Kubernetes in Production</strong> — lessons from running K8s at scale, common failure modes, and best practices</li>
+          <li><strong>CI/CD Done Right</strong> — building pipelines that teams actually trust and use</li>
+          <li><strong>Cloud Cost Control</strong> — practical strategies that have cut bills by 30–70% in real environments</li>
+          <li><strong>DevOps for African Engineers</strong> — building world-class engineering skills and careers from Africa</li>
+          <li><strong>The DevOps Mindset</strong> — culture, automation, and what it actually means to "do DevOps"</li>
+          <li><strong>Breaking Into DevOps</strong> — career transition stories and practical advice for aspiring engineers</li>
+        </ul>
+        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Format &amp; Availability</h6>
+        <p>Remote or in-person. 20-minute lightning talks to 90-minute deep dives. English or French. I&#39;m based in Cameroon and available globally for virtual events and select in-person engagements.</p>`,
+                ctas: [
+                    { label: '🎤 Invite Me to Speak', href: 'mailto:contact@durrellgemuh.com?subject=Speaking Invitation', style: 'btn-primary' },
+                    { label: '📱 WhatsApp', href: 'https://wa.me/237671305865', style: 'btn-success', target: '_blank', id: 'wa-f6' },
+                    { label: '🔗 LinkedIn', href: 'https://linkedin.com/in/durrello', style: 'btn-outline-primary', target: '_blank' }
+                ]
+            }
+        };
+
+        function openFocus(id) {
+            var f = FOCUS[id];
+            if (!f) return;
+            document.getElementById('focus-label').textContent = f.label;
+            document.getElementById('focus-title').textContent = f.title;
+            document.getElementById('focus-body').innerHTML = f.body;
+            document.getElementById('focus-icon').innerHTML = '<i data-feather="' + f.icon + '" style="width:24px;height:24px;"></i>';
+            var ctaEl = document.getElementById('focus-ctas');
+            ctaEl.innerHTML = f.ctas.map(function (c) {
+                return '<a href="' + c.href + '"' +
+                    (c.target ? ' target="' + c.target + '"' : '') +
+                    (c.id ? ' id="' + c.id + '"' : '') +
+                    ' class="btn ' + c.style + ' rounded" style="font-size:0.875rem;">' + c.label + '</a>';
+            }).join('');
+            document.getElementById('focus-modal').style.display = 'block';
+            document.getElementById('focus-modal-overlay').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            if (window.feather) feather.replace();
+        }
+
+        function closeFocus() {
+            document.getElementById('focus-modal').style.display = 'none';
+            document.getElementById('focus-modal-overlay').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeFocus(); } });
+    </script>
 
     <!-- DevOps Philosophy Start -->
     <section class="section" id="philosophy">
@@ -774,10 +1401,9 @@
                                 <div class="title-line"></div>
                             </div>
                         </div>
-                        <p class="text-muted mx-auto para-desc mt-5 mb-0">I’m a DevOps Engineer with expertise in cloud
-                            infrastructure, CI/CD automation, and scalable solutions. I specialize in optimizing
-                            deployments on AWS and GCP, ensuring high availability and cost-efficiency.
-                        </p>
+                        <p class="text-muted mx-auto para-desc mt-5 mb-0">DevOps and cloud infrastructure engineer with
+                            4+ years delivering scalable systems, CI/CD automation, and cost-optimised deployments
+                            across AWS and GCP.</p>
                     </div>
                 </div>
             </div>
@@ -787,251 +1413,421 @@
                     <div class="main-icon rounded-pill text-center mt-4 pt-2">
                         <i data-feather="star" class="fea icon-md-sm"></i>
                     </div>
-                    <div class="timeline-page pt-2 position-relative">
-                        <div class="timeline-item mt-4">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 order-sm-1 order-2">
-                                    <div class="event event-description-left rounded p-4 border float-left text-end">
-                                        <h5 class="title mb-0 text-capitalize">DevOps / Cloud Engineer</h5>
-                                        <small class="company">Private Client | USA</small>
-                                        <p class="timeline-subtitle mt-3 mb-0 text-muted text-start">
-                                            <li>CI/CD & Automation: Implemented automated dependency analysis in
-                                                repositories using Jenkins integrated with Dependency-Track, ensuring
-                                                proactive vulnerability detection and compliance checks.</li>
-                                            <li>Kubernetes Deployment & Management: Managed multiple Kubernetes
-                                                environments using ArgoCD, handling deployments, troubleshooting,
-                                                debugging, and continuous improvement of cluster operations.</li>
-                                            <li>Cloud Pipeline & Monitoring Integration: Leveraged Azure DevOps
-                                                Pipelines to deploy Terraform scripts provisioning AWS infrastructure,
-                                                Datadog monitors, APM services, and observability agents on
-                                                VMs and Kubernetes clusters.</li>
-                                            <li>Secrets & Credential Management: Utilized HashiCorp Vault with
-                                                Kubernetes to securely store secrets across namespaces, as well as other
-                                                sensitive credentials, enforcing strict access policies.</li>
-                                            <li>Security & Compliance: Resolved and remediated issues flagged by AWS
-                                                Security Hub and AWS Trusted Advisor, ensuring infrastructure adheres to
-                                                best practices in security, reliability, and cost optimization.</li>
-                                            <li>Infrastructure Monitoring & Observability: Deployed CloudWatch agents
-                                                and Datadog integrations to monitor VMs, containers, and cloud services,
-                                                enabling proactive alerting and incident response.</li>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 order-sm-2 order-1">
-                                    <div
-                                        class="duration duration-right rounded border p-2 ps-4 pe-4 position-relative shadow text-start">
-                                        December 2024 - Present
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--end timeline item-->
 
-                        <div class="timeline-item mt-4">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div
-                                        class="duration date-label-left border rounded p-2 ps-4 pe-4 position-relative shadow text-start">
-                                        April 2025 - Present</div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="event event-description-right rounded p-4 border float-left text-start">
-                                        <h5 class="title mb-0 text-capitalize">DevOps Instructor & Mentor</h5>
-                                        <small class="company">DataScienTest | France</small>
-                                        <p class="timeline-subtitle mt-3 mb-0 text-muted">
-                                            <li>Technical Instruction & Masterclasses: Lead live sessions and
-                                                masterclasses covering GitOps tools, Prometheus & Grafana, Docker,
-                                                Kubernetes, GitLab, and security practices, taking students from
-                                                beginner to advanced DevOps concepts.</li>
-                                            <li>Hands-On Project Facilitation: Guide students through real-world DevOps
-                                                projects, providing mentorship on infrastructure design, CI/CD
-                                                pipelines, container orchestration, and monitoring solutions.</li>
-                                            <li>Mentorship & Support: Provide one-on-one guidance, troubleshooting
-                                                support, and career advice to help students gain confidence and achieve
-                                                learning objectives.</li>
-                                            <li>Evaluation & Feedback: Assess student progress through project reviews,
-                                                hands-on exercises, and constructive feedback to ensure mastery of
-                                                DevOps workflows and cloud technologies.</li>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--end timeline item-->
+                    <!-- ── EXPERIENCE ACCORDION ────────────────────────────── -->
+                    <div class="exp-list mt-4" style="max-width:820px;margin-left:auto;margin-right:auto;">
 
-                        <div class="timeline-item mt-4">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 order-sm-1 order-2">
-                                    <div class="event event-description-left rounded p-4 border float-left text-end">
-                                        <h5 class="title mb-0 text-capitalize">Founder & Lead Engineer</h5>
-                                        <small class="company">NextGen Playground | Cameroon</small>
-                                        <p class="timeline-subtitle mt-3 mb-0 text-muted">
-                                            <li>Founded and currently lead DevOps engineer at NextGen Playground, an
-                                                innovative tech education
-                                                and community-building initiative focused on upskilling aspiring DevOps
-                                                Engineers, Cloud Engineers,
-                                                and Linux Administrators through real-world training, mentorship, and
-                                                career support.</li>
-                                            <li>The goal is simple: bridge the gap between theory and real-world
-                                                engineering.</li>
-                                            <li>Through this platform we provide:</li>
-                                        <ul>
-                                            • DevOps training programs
-                                            • Hands-on labs and infrastructure projects
-                                            • mentorship and career guidance
-                                            • simulated internship experiences
-                                            • collaborative learning communities
-                                        </ul>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 order-sm-2 order-1">
-                                    <div
-                                        class="duration duration-right rounded border p-2 ps-4 pe-4 position-relative shadow text-start">
-                                        October 2024 - Present
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--end timeline item-->
+                        <style>
+                            .exp-item {
+                                border: 1px solid #e9ecef;
+                                border-radius: 10px;
+                                margin-bottom: 0.75rem;
+                                overflow: hidden;
+                                transition: box-shadow 0.2s;
+                            }
 
-                        <div class="timeline-item mt-4">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div
-                                        class="duration date-label-left border rounded p-2 ps-4 pe-4 position-relative shadow text-start">
-                                        May 2021 - April 2025</div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="event event-description-right rounded p-4 border float-left text-start">
-                                        <h5 class="title mb-0 text-capitalize">Senior DevOps Engineer</h5>
-                                        <small class="company">BlueWindow Ltd – Malta </small>
-                                        <p class="timeline-subtitle mt-3 mb-0 text-muted">
-                                            <li>Lead DevOps Engineer: Managed the DevOps team, designing and
-                                                implementing solutions that
-                                                significantly improved productivity and operational efficiency.</li>
-                                            <li>Cloud Migration & Optimization: Led the migration of 3,000+ websites
-                                                to AWS and GCP, achieving a
-                                                70% reduction in infrastructure costs and a 95% improvement in
-                                                scalability and reliability.</li>
-                                            <li>CI/CD Pipeline Enhancement: Spearheaded the development and
-                                                optimization of CI/CD pipelines,
-                                                cutting deployment times by 95% and accelerating time-to-market for new
-                                                features.</li>
-                                            <li>Scalable Cloud Architecture: Designed and deployed scalable cloud
-                                                infrastructures capable of handling
-                                                peak traffic loads while maintaining high performance.</li>
-                                            <li>Monitoring & Security Integrations: Implemented comprehensive
-                                                monitoring solutions with Cloudflare,
-                                                leveraging analytics and security features to reduce incidents by 25%
-                                                and improve system reliability.</li>
-                                            <li>Cost Efficiency Strategies: Developed and executed cloud cost
-                                                optimization measures, reducing
-                                                operational expenses by 30% while maintaining high availability and
-                                                performance standards.</li>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--end timeline item-->
+                            .exp-item:hover {
+                                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+                            }
 
-                        <div class="timeline-item mt-4">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 order-sm-1 order-2">
-                                    <div class="event event-description-left rounded p-4 border float-left text-end">
-                                        <h5 class="title mb-0 text-capitalize">DevOps Engineer</h5>
-                                        <small class="company">LILLUP | San Francisco USA</small>
-                                        <p class="timeline-subtitle mt-3 mb-0 text-muted">
-                                            <li>Project Coordination & Team Leadership: Led a cross-functional team of
-                                                developers, testers, and infrastructure
-                                                engineers, defining project scope, setting milestones, and ensuring
-                                                on-time delivery of critical DevOps initiatives.</li>
-                                            <li>AWS IAM & Security Management: Managed AWS IAM users, roles, and
-                                                policies, enforcing role-based access
-                                                control and adhering to security best practices and company compliance
-                                                standards.</li>
-                                            <li>Cloudflare Deployment & Security: Deployed and managed the company
-                                                website using Cloudflare serverless
-                                                architecture, enhancing scalability, security, and operational
-                                                efficiency. Integrated DDoS protection, SSL/TLS
-                                                encryption, and WAF, reducing security incidents by 40%.
-                                            <li>CI/CD Pipeline Development: Built and maintained CI/CD pipelines using
-                                                Jenkins and Terraform, streamlining
-                                                deployment processes, improving reliability, and automating
-                                                infrastructure provisioning.</li>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 order-sm-2 order-1">
-                                    <div
-                                        class="duration duration-right rounded border p-2 ps-4 pe-4 position-relative shadow text-start">
-                                        February 2024 - November 2024
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--end timeline item-->
+                            .exp-header {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding: 1rem 1.25rem;
+                                cursor: pointer;
+                                background: #fff;
+                                gap: 1rem;
+                                user-select: none;
+                            }
 
-                        <div class="timeline-item mt-4">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div
-                                        class="duration date-label-left border rounded p-2 ps-4 pe-4 position-relative shadow text-start">
-                                        November 2021 - June 2023</div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="event event-description-right rounded p-4 border float-left text-start">
-                                        <h5 class="title mb-0 text-capitalize">AWS DevOps Engineer</h5>
-                                        <small class="company">Data Service Group Inc – USA </small>
-                                        <p class="timeline-subtitle mt-3 mb-0 text-muted">
-                                            <li>CI/CD Process Improvement: Revamped build and deployment workflows using
-                                                Jenkins and Maven,
-                                                eliminating 85% of manual tasks and significantly improving deployment
-                                                efficiency.</li>
-                                            <li>Infrastructure Reliability: Collaborated with leadership to enhance
-                                                network and cloud infrastructure,
-                                                achieving 99.9% uptime.</li>
-                                            <li>Cost Optimization: Reviewed and optimized AWS accounts and environments,
-                                                reducing quarterly
-                                                infrastructure costs by 63%.</li>
-                                            <li>Internal Tool Development: Built an internal tool enabling 170+
-                                                developers to deploy VMs in 60
-                                                seconds versus the previous 16+ minutes, enhancing productivity and
-                                                operational agility.</li>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--end timeline item-->
+                            .exp-header:hover {
+                                background: #f8f9ff;
+                            }
 
-                        <div class="timeline-item mt-4">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 order-sm-1 order-2">
-                                    <div class="event event-description-left rounded p-4 border float-left text-end">
-                                        <h5 class="title mb-0 text-capitalize">Site Reliability Engineer</h5>
-                                        <small class="company">ZOTECH Company Limited – Cameroon </small>
-                                        <p class="timeline-subtitle mt-3 mb-0 text-muted">
-                                            <li>Kubernetes Health & Reliability: Implemented a health check system for
-                                                Kubernetes clusters, reducing
-                                                mean time to repair from 15 days to 11 hours.</li>
-                                            <li>Cluster Automation: Engineered tools using Terraform to automate
-                                                Kubernetes cluster creation, cutting
-                                                setup time from 2 hours to 20 minutes and integrating the process into
-                                                the CI/CD pipeline.</li>
-                                            <li>Monitoring & Observability: Designed and deployed Grafana dashboards to
-                                                monitor cluster health,
-                                                resource utilization, and performance metrics, enabling engineers to
-                                                troubleshoot infrastructure issues
-                                                efficiently.</li>
-                                        </p>
+                            .exp-header-left {
+                                display: flex;
+                                align-items: center;
+                                gap: 1rem;
+                                flex: 1;
+                                min-width: 0;
+                            }
+
+                            .exp-dot {
+                                width: 42px;
+                                height: 42px;
+                                border-radius: 10px;
+                                background: #e7f3ff;
+                                color: #0d6efd;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-shrink: 0;
+                            }
+
+                            .exp-dot.current {
+                                background: #0d6efd;
+                                color: #fff;
+                            }
+
+                            .exp-meta {
+                                min-width: 0;
+                            }
+
+                            .exp-title {
+                                font-weight: 700;
+                                font-size: 0.95rem;
+                                color: #212529;
+                                margin: 0;
+                                line-height: 1.3;
+                            }
+
+                            .exp-company {
+                                font-size: 0.8rem;
+                                color: #6c757d;
+                                margin: 0.1rem 0 0;
+                            }
+
+                            .exp-date {
+                                font-size: 0.75rem;
+                                color: #6c757d;
+                                background: #f1f3f5;
+                                border-radius: 20px;
+                                padding: 0.2rem 0.75rem;
+                                white-space: nowrap;
+                                flex-shrink: 0;
+                            }
+
+                            .exp-date.current {
+                                background: #d1f0e0;
+                                color: #0a7a3e;
+                                font-weight: 600;
+                            }
+
+                            .exp-chevron {
+                                color: #6c757d;
+                                flex-shrink: 0;
+                                transition: transform 0.25s;
+                            }
+
+                            .exp-item.open .exp-chevron {
+                                transform: rotate(180deg);
+                            }
+
+                            .exp-body {
+                                display: none;
+                                padding: 0 1.25rem 1.25rem;
+                                border-top: 1px solid #f1f3f5;
+                                background: #fff;
+                            }
+
+                            .exp-item.open .exp-body {
+                                display: block;
+                            }
+
+                            .exp-body ul {
+                                padding-left: 1.1rem;
+                                margin: 0.75rem 0 0;
+                            }
+
+                            .exp-body ul li {
+                                color: #495057;
+                                font-size: 0.88rem;
+                                line-height: 1.65;
+                                margin-bottom: 0.5rem;
+                            }
+
+                            .exp-body ul li strong {
+                                color: #212529;
+                            }
+
+                            .exp-tags {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 0.4rem;
+                                margin-top: 0.9rem;
+                            }
+
+                            .exp-tag {
+                                font-size: 0.72rem;
+                                background: #e7f3ff;
+                                color: #0d6efd;
+                                border-radius: 4px;
+                                padding: 0.15rem 0.55rem;
+                                font-weight: 500;
+                            }
+
+                            @media (max-width: 576px) {
+                                .exp-date {
+                                    display: none;
+                                }
+
+                                .exp-header {
+                                    padding: 0.85rem 1rem;
+                                }
+                            }
+                        </style>
+
+                        <!-- 1. DevOps / Cloud Engineer — Private Client -->
+                        <div class="exp-item open" id="exp1">
+                            <div class="exp-header" onclick="toggleExp('exp1')">
+                                <div class="exp-header-left">
+                                    <div class="exp-dot current"><i data-feather="briefcase"
+                                            style="width:18px;height:18px;"></i></div>
+                                    <div class="exp-meta">
+                                        <p class="exp-title">DevOps / Cloud Engineer</p>
+                                        <p class="exp-company">Private Client · USA</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 order-sm-2 order-1">
-                                    <div
-                                        class="duration duration-right rounded border p-2 ps-4 pe-4 position-relative shadow text-start">
-                                        October 2019 - November 2021
-                                    </div>
+                                <span class="exp-date current">Dec 2024 – Present</span>
+                                <i data-feather="chevron-down" class="exp-chevron" style="width:18px;height:18px;"></i>
+                            </div>
+                            <div class="exp-body">
+                                <ul>
+                                    <li><strong>CI/CD & Automation:</strong> Automated dependency analysis using Jenkins
+                                        + Dependency-Track for proactive vulnerability detection and compliance checks.
+                                    </li>
+                                    <li><strong>Kubernetes Management:</strong> Managed multiple K8s environments via
+                                        ArgoCD — deployments, troubleshooting, debugging, and continuous cluster
+                                        improvement.</li>
+                                    <li><strong>Cloud Pipeline & Monitoring:</strong> Used Azure DevOps Pipelines to
+                                        deploy Terraform scripts provisioning AWS infra, Datadog monitors, APM services,
+                                        and observability agents on VMs and K8s clusters.</li>
+                                    <li><strong>Secrets Management:</strong> Deployed HashiCorp Vault with Kubernetes to
+                                        securely store secrets across namespaces with strict access policies.</li>
+                                    <li><strong>Security & Compliance:</strong> Remediated findings from AWS Security
+                                        Hub and Trusted Advisor, aligning infrastructure to security and reliability
+                                        best practices.</li>
+                                    <li><strong>Observability:</strong> Deployed CloudWatch agents and Datadog
+                                        integrations across VMs, containers, and cloud services — enabling proactive
+                                        alerting and incident response.</li>
+                                </ul>
+                                <div class="exp-tags">
+                                    <span class="exp-tag">Kubernetes</span><span class="exp-tag">ArgoCD</span><span
+                                        class="exp-tag">Jenkins</span><span class="exp-tag">Terraform</span><span
+                                        class="exp-tag">Datadog</span><span class="exp-tag">HashiCorp Vault</span><span
+                                        class="exp-tag">AWS Security Hub</span>
                                 </div>
                             </div>
-                        </div><!--end timeline item-->
-                    </div><!--end timeline page-->
-                    <!-- TIMELINE END -->
+                        </div>
+
+                        <!-- 2. DevOps Instructor — DataScienTest -->
+                        <div class="exp-item" id="exp2">
+                            <div class="exp-header" onclick="toggleExp('exp2')">
+                                <div class="exp-header-left">
+                                    <div class="exp-dot current"><i data-feather="book-open"
+                                            style="width:18px;height:18px;"></i></div>
+                                    <div class="exp-meta">
+                                        <p class="exp-title">DevOps Instructor & Mentor</p>
+                                        <p class="exp-company">DataScienTest · France</p>
+                                    </div>
+                                </div>
+                                <span class="exp-date current">Apr 2025 – Present</span>
+                                <i data-feather="chevron-down" class="exp-chevron" style="width:18px;height:18px;"></i>
+                            </div>
+                            <div class="exp-body">
+                                <ul>
+                                    <li><strong>Masterclasses:</strong> Lead live sessions covering GitOps, Prometheus &
+                                        Grafana, Docker, Kubernetes, GitLab CI, and security — beginner to advanced.
+                                    </li>
+                                    <li><strong>Project Facilitation:</strong> Guide students through real-world DevOps
+                                        projects on infrastructure design, CI/CD pipelines, container orchestration, and
+                                        monitoring.</li>
+                                    <li><strong>1:1 Mentorship:</strong> Provide career guidance, troubleshooting
+                                        support, and confidence-building for students pursuing DevOps roles.</li>
+                                    <li><strong>Evaluation:</strong> Assess progress through project reviews and
+                                        hands-on exercises to ensure mastery of DevOps workflows and cloud technologies.
+                                    </li>
+                                </ul>
+                                <div class="exp-tags">
+                                    <span class="exp-tag">Kubernetes</span><span class="exp-tag">Prometheus</span><span
+                                        class="exp-tag">Grafana</span><span class="exp-tag">Docker</span><span
+                                        class="exp-tag">GitOps</span><span class="exp-tag">GitLab CI</span><span
+                                        class="exp-tag">Mentorship</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Founder — NextGen Playground -->
+                        <div class="exp-item" id="exp3">
+                            <div class="exp-header" onclick="toggleExp('exp3')">
+                                <div class="exp-header-left">
+                                    <div class="exp-dot current"><i data-feather="globe"
+                                            style="width:18px;height:18px;"></i></div>
+                                    <div class="exp-meta">
+                                        <p class="exp-title">Founder & Lead Engineer</p>
+                                        <p class="exp-company">NextGen Playground · Cameroon</p>
+                                    </div>
+                                </div>
+                                <span class="exp-date current">Oct 2024 – Present</span>
+                                <i data-feather="chevron-down" class="exp-chevron" style="width:18px;height:18px;"></i>
+                            </div>
+                            <div class="exp-body">
+                                <ul>
+                                    <li>Founded and lead DevOps at NextGen Playground — a tech education initiative
+                                        upskilling aspiring DevOps Engineers, Cloud Engineers, and Linux Administrators.
+                                    </li>
+                                    <li>Deliver <strong>structured DevOps training programs</strong>, hands-on
+                                        infrastructure labs, mentorship, and simulated internship experiences.</li>
+                                    <li>Mission: bridge the gap between learning DevOps in theory and practising it in
+                                        real-world environments.</li>
+                                    <li>Built a collaborative learning community that helps engineers gain the
+                                        confidence and skills to land engineering roles.</li>
+                                </ul>
+                                <div class="exp-tags">
+                                    <span class="exp-tag">DevOps Training</span><span class="exp-tag">Community
+                                        Building</span><span class="exp-tag">Curriculum Design</span><span
+                                        class="exp-tag">Mentorship</span><span class="exp-tag">Cameroon</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Senior DevOps Engineer — BlueWindow -->
+                        <div class="exp-item" id="exp4">
+                            <div class="exp-header" onclick="toggleExp('exp4')">
+                                <div class="exp-header-left">
+                                    <div class="exp-dot"><i data-feather="trending-up"
+                                            style="width:18px;height:18px;"></i></div>
+                                    <div class="exp-meta">
+                                        <p class="exp-title">Senior DevOps Engineer</p>
+                                        <p class="exp-company">BlueWindow Ltd · Malta</p>
+                                    </div>
+                                </div>
+                                <span class="exp-date">May 2021 – Apr 2025</span>
+                                <i data-feather="chevron-down" class="exp-chevron" style="width:18px;height:18px;"></i>
+                            </div>
+                            <div class="exp-body">
+                                <ul>
+                                    <li><strong>Cloud Migration:</strong> Led migration of 3,000+ websites to AWS and
+                                        GCP — 70% cost reduction, 95% improvement in scalability and reliability.</li>
+                                    <li><strong>CI/CD:</strong> Optimised pipelines cutting deployment times by 95% and
+                                        accelerating time-to-market for new features.</li>
+                                    <li><strong>Architecture:</strong> Designed scalable cloud infrastructure handling
+                                        peak traffic loads with high performance.</li>
+                                    <li><strong>Security & Monitoring:</strong> Implemented Cloudflare security and
+                                        analytics integrations, reducing incidents by 25%.</li>
+                                    <li><strong>Cost Efficiency:</strong> Reduced operational expenses by 30% while
+                                        maintaining high availability.</li>
+                                </ul>
+                                <div class="exp-tags">
+                                    <span class="exp-tag">AWS</span><span class="exp-tag">GCP</span><span
+                                        class="exp-tag">CI/CD</span><span class="exp-tag">Cloudflare</span><span
+                                        class="exp-tag">Cost Optimisation</span><span class="exp-tag">Team Lead</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. DevOps Engineer — LILLUP -->
+                        <div class="exp-item" id="exp5">
+                            <div class="exp-header" onclick="toggleExp('exp5')">
+                                <div class="exp-header-left">
+                                    <div class="exp-dot"><i data-feather="shield" style="width:18px;height:18px;"></i>
+                                    </div>
+                                    <div class="exp-meta">
+                                        <p class="exp-title">DevOps Engineer</p>
+                                        <p class="exp-company">LILLUP · San Francisco, USA</p>
+                                    </div>
+                                </div>
+                                <span class="exp-date">Feb 2024 – Nov 2024</span>
+                                <i data-feather="chevron-down" class="exp-chevron" style="width:18px;height:18px;"></i>
+                            </div>
+                            <div class="exp-body">
+                                <ul>
+                                    <li><strong>Team Leadership:</strong> Led cross-functional team of developers,
+                                        testers, and infra engineers on critical DevOps initiatives.</li>
+                                    <li><strong>IAM & Security:</strong> Managed AWS IAM users, roles, and policies with
+                                        RBAC and company compliance standards.</li>
+                                    <li><strong>Cloudflare:</strong> Deployed company website on Cloudflare serverless
+                                        architecture — integrated DDoS protection, SSL/TLS, and WAF, reducing security
+                                        incidents by 40%.</li>
+                                    <li><strong>CI/CD:</strong> Built and maintained Jenkins + Terraform pipelines,
+                                        streamlining deployments and automating infrastructure provisioning.</li>
+                                </ul>
+                                <div class="exp-tags">
+                                    <span class="exp-tag">AWS IAM</span><span class="exp-tag">Cloudflare</span><span
+                                        class="exp-tag">Jenkins</span><span class="exp-tag">Terraform</span><span
+                                        class="exp-tag">WAF</span><span class="exp-tag">Zero Trust</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. AWS DevOps Engineer — Data Service Group -->
+                        <div class="exp-item" id="exp6">
+                            <div class="exp-header" onclick="toggleExp('exp6')">
+                                <div class="exp-header-left">
+                                    <div class="exp-dot"><i data-feather="cloud" style="width:18px;height:18px;"></i>
+                                    </div>
+                                    <div class="exp-meta">
+                                        <p class="exp-title">AWS DevOps Engineer</p>
+                                        <p class="exp-company">Data Service Group Inc · USA</p>
+                                    </div>
+                                </div>
+                                <span class="exp-date">Nov 2021 – Jun 2023</span>
+                                <i data-feather="chevron-down" class="exp-chevron" style="width:18px;height:18px;"></i>
+                            </div>
+                            <div class="exp-body">
+                                <ul>
+                                    <li><strong>Pipeline Overhaul:</strong> Revamped Jenkins + Maven workflows,
+                                        eliminating 85% of manual tasks.</li>
+                                    <li><strong>Reliability:</strong> Enhanced network and cloud infrastructure,
+                                        achieving 99.9% uptime.</li>
+                                    <li><strong>Cost Optimisation:</strong> Reduced quarterly AWS infrastructure costs
+                                        by 63%.</li>
+                                    <li><strong>Internal Tooling:</strong> Built a tool enabling 170+ developers to
+                                        deploy VMs in 60 seconds (down from 16+ minutes).</li>
+                                </ul>
+                                <div class="exp-tags">
+                                    <span class="exp-tag">AWS</span><span class="exp-tag">Jenkins</span><span
+                                        class="exp-tag">Maven</span><span class="exp-tag">Cost Optimisation</span><span
+                                        class="exp-tag">Internal Tooling</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. SRE — ZOTECH -->
+                        <div class="exp-item" id="exp7">
+                            <div class="exp-header" onclick="toggleExp('exp7')">
+                                <div class="exp-header-left">
+                                    <div class="exp-dot"><i data-feather="activity" style="width:18px;height:18px;"></i>
+                                    </div>
+                                    <div class="exp-meta">
+                                        <p class="exp-title">Site Reliability Engineer</p>
+                                        <p class="exp-company">ZOTECH Company Limited · Cameroon</p>
+                                    </div>
+                                </div>
+                                <span class="exp-date">Oct 2019 – Nov 2021</span>
+                                <i data-feather="chevron-down" class="exp-chevron" style="width:18px;height:18px;"></i>
+                            </div>
+                            <div class="exp-body">
+                                <ul>
+                                    <li><strong>K8s Reliability:</strong> Implemented health check system for Kubernetes
+                                        clusters — MTTR reduced from 15 days to 11 hours.</li>
+                                    <li><strong>Automation:</strong> Built Terraform tooling to automate cluster
+                                        creation, cutting setup from 2 hours to 20 minutes, integrated into CI/CD.</li>
+                                    <li><strong>Observability:</strong> Deployed Grafana dashboards for cluster health,
+                                        resource utilisation, and performance metrics.</li>
+                                </ul>
+                                <div class="exp-tags">
+                                    <span class="exp-tag">Kubernetes</span><span class="exp-tag">Terraform</span><span
+                                        class="exp-tag">Grafana</span><span class="exp-tag">SRE</span><span
+                                        class="exp-tag">CI/CD</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /exp-list -->
+
+                    <script>
+                        function toggleExp(id) {
+                            var el = document.getElementById(id);
+                            var isOpen = el.classList.contains('open');
+                            // Close all
+                            document.querySelectorAll('.exp-item.open').forEach(function (e) { e.classList.remove('open'); });
+                            // Open clicked if it wasn't open
+                            if (!isOpen) el.classList.add('open');
+                        }
+                    </script>
+
                 </div>
             </div>
         </div>
@@ -1162,6 +1958,25 @@
     </section>
 
     <!-- Projects Start -->
+    <!-- Hire Me Band -->
+    <div style="background:#212529;padding:2.5rem 0;">
+        <div class="container text-center">
+            <h5 style="color:#fff;font-weight:700;margin-bottom:0.5rem;">Looking for a DevOps Engineer?</h5>
+            <p
+                style="color:#adb5bd;margin-bottom:1.5rem;max-width:520px;margin-left:auto;margin-right:auto;font-size:0.95rem;">
+                I&#39;m available for full-time roles, contract work, and consulting. Let&#39;s see how I can help your
+                team ship faster and more reliably.</p>
+            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                <a href="durrell_gemuh_resume.pdf" target="_blank" class="btn btn-outline-light rounded">&#128196;
+                    Download Resume</a>
+                <a href="mailto:contact@durrellgemuh.com" class="btn btn-primary rounded"><i data-feather="mail"
+                        class="fea icon-sm me-1"></i>Email Me</a>
+                <a href="https://wa.me/237671305865" target="_blank" class="btn btn-success rounded"
+                    id="whatsapp-hire-cta"><i data-feather="message-circle" class="fea icon-sm me-1"></i>WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
     <section class="section bg-light" id="projects">
         <div class="container">
             <div class="row justify-content-center">
@@ -1210,7 +2025,8 @@
                                 <div class="title-line"></div>
                             </div>
                         </div>
-                        <p class="text-muted mx-auto para-desc mt-5 mb-0">DevOps deep-dives, cloud infrastructure guides,
+                        <p class="text-muted mx-auto para-desc mt-5 mb-0">DevOps deep-dives, cloud infrastructure
+                            guides,
                             and real-world lessons from working with AWS, GCP, Kubernetes, and more.</p>
                     </div>
                 </div>
@@ -1249,39 +2065,81 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-4 mt-4 pt-2">
+            <div class="row justify-content-center">
+
+                <div class="col-md-4 col-sm-6 mt-4 pt-2">
                     <div class="contact-detail text-center">
-                        <div class="icon">
-                            <i data-feather="map-pin" class="fea icon-md"></i>
-                        </div>
+                        <div class="icon"><i data-feather="map-pin" class="fea icon-md"></i></div>
                         <div class="content mt-4">
-                            <p class="text-muted">Cameroon (working globally)</p>
+                            <h6 style="font-weight:600;color:#212529;">Location</h6>
+                            <p class="text-muted mb-0">Cameroon</p>
+                            <p class="text-muted" style="font-size:0.85rem;">Available globally (remote)</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4 mt-4 pt-2">
+                <div class="col-md-4 col-sm-6 mt-4 pt-2">
                     <div class="contact-detail text-center">
-                        <div class="icon">
-                            <i data-feather="linkedin" class="fea icon-md"></i>
-                        </div>
+                        <div class="icon"><i data-feather="mail" class="fea icon-md"></i></div>
                         <div class="content mt-4">
+                            <h6 style="font-weight:600;color:#212529;">Email</h6>
+                            <a href="mailto:contact@durrellgemuh.com"
+                                class="text-primary d-block">contact@durrellgemuh.com</a>
+                            <p class="text-muted mt-1" style="font-size:0.82rem;">Response within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mt-4 pt-2">
+                    <div class="contact-detail text-center">
+                        <div class="icon"><i data-feather="message-circle" class="fea icon-md"></i></div>
+                        <div class="content mt-4">
+                            <h6 style="font-weight:600;color:#212529;">WhatsApp</h6>
+                            <a href="https://wa.me/237671305865" target="_blank" class="text-success d-block"
+                                id="wa-contact">+237 671 305 865</a>
+                            <p class="text-muted mt-1" style="font-size:0.82rem;">Quick questions welcome</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mt-4 pt-2">
+                    <div class="contact-detail text-center">
+                        <div class="icon"><i data-feather="linkedin" class="fea icon-md"></i></div>
+                        <div class="content mt-4">
+                            <h6 style="font-weight:600;color:#212529;">LinkedIn</h6>
                             <a href="https://linkedin.com/in/durrello" target="_blank"
-                                class="text-primary">linkedin.com/in/durrello</a>
+                                class="text-primary d-block">linkedin.com/in/durrello</a>
+                            <p class="text-muted mt-1" style="font-size:0.82rem;">Connect &amp; DM me</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4 mt-4 pt-2">
+                <div class="col-md-4 col-sm-6 mt-4 pt-2">
                     <div class="contact-detail text-center">
-                        <div class="icon">
-                            <i data-feather="globe" class="fea icon-md"></i>
-                        </div>
+                        <div class="icon"><i data-feather="globe" class="fea icon-md"></i></div>
                         <div class="content mt-4">
-                            <a href="https://durrellgemuh.com" target="_blank" class="text-primary">durrellgemuh.com</a>
+                            <h6 style="font-weight:600;color:#212529;">Website</h6>
+                            <a href="https://durrellgemuh.com" target="_blank"
+                                class="text-primary d-block">durrellgemuh.com</a>
+                            <p class="text-muted mt-1" style="font-size:0.82rem;">Portfolio &amp; blog</p>
                         </div>
                     </div>
+                </div>
+
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <a href="mailto:contact@durrellgemuh.com" class="btn btn-primary rounded me-2 mb-2">
+                        <i data-feather="mail" class="fea icon-sm me-1"></i> Send an Email
+                    </a>
+                    <a href="https://wa.me/237671305865" target="_blank" class="btn btn-success rounded me-2 mb-2"
+                        id="wa-contact-btn">
+                        <i data-feather="message-circle" class="fea icon-sm me-1"></i> WhatsApp Me
+                    </a>
+                    <a href="https://linkedin.com/in/durrello" target="_blank"
+                        class="btn btn-outline-primary rounded mb-2">
+                        <i data-feather="linkedin" class="fea icon-sm me-1"></i> LinkedIn
+                    </a>
                 </div>
             </div>
         </div>
@@ -1348,6 +2206,231 @@
     <script src="js/plugins.init.js"></script>
     <script src="js/app.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Service Modal Data & Logic -->
+    <script>
+        var SERVICES = {
+            s1: {
+                icon: 'cloud',
+                title: 'Cloud Infrastructure Engineering',
+                tagline: 'Scalable, resilient cloud architecture on AWS and GCP — built to last.',
+                body: `
+          <p>With 4+ years designing and operating cloud infrastructure across AWS and GCP, I bring a practical, production-first approach to every engagement.</p>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Led migration of 3,000+ websites to AWS and GCP, achieving 70% cost reduction and 95% improvement in scalability at BlueWindow Ltd</li>
+            <li>Designed multi-region, high-availability architectures capable of handling peak traffic without degradation</li>
+            <li>Provisioned and maintained EC2, RDS, EKS, VPCs, load balancers, and S3-based data pipelines</li>
+            <li>Built VPC endpoint configurations, private subnet routing, and NAT gateway setups for secure, internet-isolated workloads</li>
+          </ul>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Architect cloud environments from scratch or audit and improve existing ones</li>
+            <li>Migrate on-premise workloads to AWS/GCP with minimal downtime</li>
+            <li>Define networking, IAM, and security baselines that scale with your org</li>
+            <li>Document infrastructure so your team can own it long after I'm done</li>
+          </ul>
+          <p><strong>Tools:</strong> AWS (EC2, EKS, RDS, S3, VPC, IAM, CloudFront), GCP (GKE, Cloud Run, GCS), Terraform, Ansible</p>`
+            },
+            s2: {
+                icon: 'repeat',
+                title: 'CI/CD Pipeline Automation',
+                tagline: 'Cut deployment times from hours to minutes — reliably, every time.',
+                body: `
+          <p>Deployment pipelines are the heartbeat of a healthy engineering team. I design pipelines that are fast, observable, and resilient to failure.</p>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Reduced deployment time by 95% through optimised CI/CD pipelines at BlueWindow Ltd</li>
+            <li>Revamped build and deployment workflows at Data Service Group, eliminating 85% of manual tasks</li>
+            <li>Built internal tooling enabling 170+ developers to deploy VMs in 60 seconds (down from 16+ minutes)</li>
+            <li>Integrated dependency scanning (Dependency-Track), vulnerability checks, and automated compliance gates into pipelines</li>
+          </ul>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Design or overhaul your pipeline from build to production deploy</li>
+            <li>Add automated testing, security scanning, and approval gates</li>
+            <li>Standardise deployment across multiple services and environments</li>
+            <li>Reduce time-to-market and eliminate deployment-day anxiety</li>
+          </ul>
+          <p><strong>Tools:</strong> Jenkins, GitHub Actions, GitLab CI, Azure DevOps, ArgoCD, Docker, Helm</p>`
+            },
+            s3: {
+                icon: 'layers',
+                title: 'Kubernetes & Container Platforms',
+                tagline: 'Production-grade Kubernetes — from cluster setup to day-2 operations.',
+                body: `
+          <p>Kubernetes is powerful but complex. I help teams run it confidently — whether you're just adopting containers or managing multi-cluster environments.</p>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Managed multiple Kubernetes environments using ArgoCD at a private client, handling deployments, troubleshooting, and continuous cluster improvement</li>
+            <li>Implemented a Kubernetes health check system at ZOTECH, reducing mean time to repair from 15 days to 11 hours</li>
+            <li>Engineered Terraform tooling to automate cluster creation, cutting setup time from 2 hours to 20 minutes</li>
+            <li>Deployed HashiCorp Vault with Kubernetes for secrets management across namespaces</li>
+          </ul>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Set up production EKS / GKE clusters with proper networking, RBAC, and observability from day one</li>
+            <li>Implement GitOps workflows with ArgoCD or Flux</li>
+            <li>Debug live cluster issues and improve reliability</li>
+            <li>Train your team on Kubernetes best practices and day-2 operations</li>
+          </ul>
+          <p><strong>Tools:</strong> Kubernetes, Helm, ArgoCD, Flux, EKS, GKE, Docker, Istio, Karpenter</p>`
+            },
+            s4: {
+                icon: 'bar-chart-2',
+                title: 'Observability & Monitoring',
+                tagline: "Make your systems tell you what they're doing — before users notice.",
+                body: `
+          <p>Observability is not optional in production. I build monitoring setups that give engineers the right signals at the right time.</p>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Deployed CloudWatch agents and Datadog integrations to monitor VMs, containers, and cloud services — enabling proactive alerting and incident response</li>
+            <li>Leveraged Azure DevOps Pipelines to deploy Datadog monitors, APM services, and observability agents on Kubernetes clusters</li>
+            <li>Designed Grafana dashboards to monitor Kubernetes cluster health, resource utilisation, and performance metrics</li>
+            <li>Implemented Cloudflare analytics and security monitoring, reducing incidents by 25% at BlueWindow Ltd</li>
+          </ul>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Build a unified observability stack (metrics, logs, traces) for your infrastructure</li>
+            <li>Create dashboards that surface the KPIs your on-call team actually needs</li>
+            <li>Set up alerting with proper thresholds — not alert fatigue, but meaningful signals</li>
+            <li>Integrate APM into your applications for end-to-end request tracing</li>
+          </ul>
+          <p><strong>Tools:</strong> Datadog, Prometheus, Grafana, CloudWatch, OpenTelemetry, PagerDuty</p>`
+            },
+            s5: {
+                icon: 'code',
+                title: 'Infrastructure as Code',
+                tagline: 'Treat your infrastructure like software — versioned, tested, repeatable.',
+                body: `
+          <p>Manual infrastructure is a liability. I help teams move to fully code-defined environments that are predictable, auditable, and disaster-recovery ready.</p>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Used Terraform to provision AWS and GCP infrastructure including VPCs, EKS clusters, RDS databases, IAM roles, and S3 backends</li>
+            <li>Managed Terraform remote state in S3 with DynamoDB locking for team collaboration</li>
+            <li>Deployed Terraform scripts via Azure DevOps Pipelines for automated, policy-governed infrastructure changes</li>
+            <li>Used Ansible for configuration management and post-provisioning setup across EC2 fleets</li>
+          </ul>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Migrate click-ops infrastructure into Terraform modules your team can own</li>
+            <li>Structure IaC repositories for multi-environment (dev/staging/prod) workflows</li>
+            <li>Implement drift detection and policy-as-code (Sentinel, OPA)</li>
+            <li>Set up Atlantis or Terraform Cloud for automated plan/apply in PRs</li>
+          </ul>
+          <p><strong>Tools:</strong> Terraform, Ansible, Pulumi, Terragrunt, AWS CDK</p>`
+            },
+            s6: {
+                icon: 'shield',
+                title: 'Cloud Security & Compliance',
+                tagline: "Security that's baked in — not bolted on after the fact.",
+                body: `
+          <p>Security is part of every infrastructure decision I make. From IAM policies to WAF rules, I help teams build systems that are secure by default.</p>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Resolved and remediated issues flagged by AWS Security Hub and AWS Trusted Advisor, enforcing security and reliability best practices</li>
+            <li>Managed AWS IAM users, roles, and policies with role-based access control and company compliance standards at LILLUP</li>
+            <li>Integrated DDoS protection, SSL/TLS encryption, and WAF via Cloudflare, reducing security incidents by 40%</li>
+            <li>Implemented HashiCorp Vault with Kubernetes to secure secrets across namespaces with strict access policies</li>
+          </ul>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Audit your AWS/GCP environment against CIS benchmarks and remediate findings</li>
+            <li>Implement least-privilege IAM, RBAC, and network segmentation</li>
+            <li>Set up Cloudflare WAF, Zero Trust, and DDoS protections</li>
+            <li>Establish security scanning in your CI/CD pipeline (SAST, dependency checks, container scanning)</li>
+          </ul>
+          <p><strong>Tools:</strong> AWS Security Hub, IAM, Cloudflare WAF/Zero Trust, HashiCorp Vault, Trivy, Checkov</p>`
+            },
+            s7: {
+                icon: 'trending-down',
+                title: 'Cloud Cost Optimisation',
+                tagline: 'Spend less on cloud. Get more from what you have.',
+                body: `
+          <p>Cloud bills spiral fast without intentional governance. I've consistently delivered significant cost reductions without sacrificing reliability.</p>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Reduced infrastructure costs by 70% during the 3,000-site migration at BlueWindow Ltd</li>
+            <li>Cut quarterly AWS infrastructure costs by 63% through account and environment optimisation at Data Service Group</li>
+            <li>Developed and executed cloud cost strategies reducing operational expenses by 30% while maintaining high availability at BlueWindow</li>
+            <li>Right-sized EC2 instances, cleaned up unused resources, and implemented auto-scaling policies across client environments</li>
+          </ul>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Audit your AWS/GCP spend and identify quick-win savings</li>
+            <li>Implement auto-scaling, spot instances, and right-sizing recommendations</li>
+            <li>Set up cost allocation tags, budgets, and anomaly alerts</li>
+            <li>Build a FinOps practice so your team stays on top of spend going forward</li>
+          </ul>
+          <p><strong>Tools:</strong> AWS Cost Explorer, Infracost, Spot instances, Savings Plans, GCP Committed Use</p>`
+            },
+            s8: {
+                icon: 'database',
+                title: 'Secrets & Vault Management',
+                tagline: 'No more hardcoded credentials. No more secrets in .env files.',
+                body: `
+          <p>Credential sprawl is one of the most common security failures in cloud-native teams. I help organisations adopt proper secrets lifecycle management.</p>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Deployed HashiCorp Vault integrated with Kubernetes to securely store secrets across namespaces with strict access policies</li>
+            <li>Managed AWS Secrets Manager and Parameter Store for application secret injection at runtime</li>
+            <li>Implemented IRSA (IAM Roles for Service Accounts) on EKS to eliminate static credentials from pods</li>
+            <li>Rotated long-lived credentials and established secret rotation policies across multi-cloud environments</li>
+          </ul>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Audit your current secrets posture — find and remove hardcoded credentials</li>
+            <li>Deploy and configure HashiCorp Vault or AWS Secrets Manager</li>
+            <li>Integrate secrets management into your CI/CD pipelines and Kubernetes workloads</li>
+            <li>Set up automated secret rotation and least-privilege access policies</li>
+          </ul>
+          <p><strong>Tools:</strong> HashiCorp Vault, AWS Secrets Manager, AWS SSM Parameter Store, IRSA, External Secrets Operator</p>`
+            },
+            s9: {
+                icon: 'book-open',
+                title: 'DevOps Training & Mentorship',
+                tagline: 'Build the team, not just the infrastructure.',
+                body: `
+          <p>I&#39;ve trained hundreds of engineers through DataScienTest, NextGen Playground, and direct mentorship — helping them go from beginner to production-ready.</p>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Lead live masterclasses at DataScienTest covering GitOps, Prometheus & Grafana, Docker, Kubernetes, GitLab, and security — beginner to advanced</li>
+            <li>Founded NextGen Playground — a training and community platform delivering hands-on DevOps labs, mentorship, and simulated internship experiences</li>
+            <li>Provided one-on-one mentorship, career guidance, and project reviews to engineers transitioning into DevOps</li>
+            <li>Guided students through real-world projects on infrastructure design, CI/CD pipelines, container orchestration, and monitoring</li>
+          </ul>
+          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
+          <ul style="padding-left:1.25rem;">
+            <li>Run a custom DevOps workshop for your engineering team — half day to multi-week</li>
+            <li>Upskill junior engineers on Kubernetes, Terraform, CI/CD, or observability</li>
+            <li>Embed with your team during a major migration to transfer knowledge in real time</li>
+            <li>Create internal documentation and runbooks as part of any engagement</li>
+          </ul>
+          <p><strong>Formats:</strong> Live workshops, async video, 1:1 mentorship, team bootcamps, embedded consulting</p>`
+            }
+        };
+
+        function openService(id) {
+            var s = SERVICES[id];
+            if (!s) return;
+            document.getElementById('svc-title').textContent = s.title;
+            document.getElementById('svc-tagline').textContent = s.tagline;
+            document.getElementById('svc-body').innerHTML = s.body;
+            document.getElementById('svc-icon').innerHTML = '<i data-feather="' + s.icon + '" style="width:24px;height:24px;"></i>';
+            document.getElementById('service-modal').style.display = 'block';
+            document.getElementById('service-modal-overlay').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            if (window.feather) feather.replace();
+        }
+
+        function closeService() {
+            document.getElementById('service-modal').style.display = 'none';
+            document.getElementById('service-modal-overlay').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeService(); });
+    </script>
+
     <script src="js/portfolio-loader.js"></script>
     <script src="js/blog-loader.js"></script>
     <script>
@@ -1365,8 +2448,8 @@
                 return;
             }
             loading.style.display = 'none';
-            grid.innerHTML = posts.map(function(post) {
-                var date = post.publishDate ? new Date(post.publishDate).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'}) : '';
+            grid.innerHTML = posts.map(function (post) {
+                var date = post.publishDate ? new Date(post.publishDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
                 var img = post.featuredImage
                     ? '<img src="' + post.featuredImage + '" class="img-fluid rounded-top" alt="' + post.title + '" style="height:200px;object-fit:cover;width:100%;">'
                     : '<div style="height:200px;background:linear-gradient(135deg,#0d6efd22,#0d6efd44);display:flex;align-items:center;justify-content:center;border-radius:8px 8px 0 0;"><i data-feather="file-text" style="width:48px;height:48px;color:#0d6efd;opacity:0.5;"></i></div>';
@@ -1398,9 +2481,9 @@
                 return;
             }
             loading.style.display = 'none';
-            var icons = ['cloud','git-merge','bar-chart-2','database','code','shield'];
-            grid.innerHTML = projects.map(function(project, i) {
-                var techs = (project.technologies || []).slice(0,3).join(' · ');
+            var icons = ['cloud', 'git-merge', 'bar-chart-2', 'database', 'code', 'shield'];
+            grid.innerHTML = projects.map(function (project, i) {
+                var techs = (project.technologies || []).slice(0, 3).join(' · ');
                 var icon = icons[i % icons.length];
                 return '<div class="col-lg-4 col-md-6 mt-4 pt-2">' +
                     '<div class="item-box portfolio-box rounded shadow bg-white overflow-hidden">' +

@@ -5,13 +5,34 @@
 
 const BlogLoader = {
   posts: [],
-  
+  ready: false,
+  readyCallbacks: [],
+
   /**
    * Initialize the blog loader
    */
   async init() {
     console.log('Initializing Blog Loader...');
     await this.loadPosts();
+    this.ready = true;
+    this.readyCallbacks.forEach(cb => {
+      try {
+        cb();
+      } catch (e) {
+        console.error('BlogLoader callback error:', e);
+      }
+    });
+  },
+
+  /**
+   * Run code when the loader is ready
+   */
+  onReady(callback) {
+    if (this.ready) {
+      callback();
+      return;
+    }
+    this.readyCallbacks.push(callback);
   },
 
   /**
