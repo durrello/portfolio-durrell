@@ -23,7 +23,9 @@
     <link href="css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt">
     <link href="css/colors/default.css" rel="stylesheet" id="color-opt">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
-
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
+<script src="js/app.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
     <!-- For shareable content -->
     <meta property="og:title" content="Durrell Gemuh | Cloud DevOps Engineer | DevOps Trainer & Academy Leader | AWS & GCP Cloud Specialist |
     Infrastructure Automation (Terraform, Ansible, Jenkins) | Cloudflare Security (WAF, Zero Trust) | Linux System
@@ -41,7 +43,7 @@
     <div id="preloader">
         <div id="status">
             <div class="logo">
-                <h3 style="text-align: center;">
+                <h3 class="text-center">
                     Durrell Gemuh
                     Cloud & DevOps Engineer | Community Builder | DevOps Educator
                 </h3>
@@ -108,7 +110,7 @@
     <!-- Navbar End -->
 
     <!-- HOME START-->
-    <section class="bg-home bg-light d-table w-100" style="background-image:url('images/home/01.jpg')" id="home">
+    <section class="bg-home bg-light d-table w-100" id="home">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
@@ -142,18 +144,17 @@
     <!-- HOME END-->
 
     <!-- Hero CTA strip -->
-    <div style="background:linear-gradient(90deg,#0d6efd,#0a58ca);padding:1.1rem 0;">
+    <div class="hero-cta-strip">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
-                <p class="text-white mb-0" style="font-weight:500;">&#128640; Open to new opportunities &amp; consulting
+                <p class="text-white mb-0 fw-semibold">&#128640; Open to new opportunities &amp; consulting
                     engagements</p>
                 <div class="d-flex flex-wrap gap-2">
-                    <a href="mailto:hello@durrellgemuh.com" class="btn btn-light btn-sm rounded"
-                        style="font-weight:600;">
+                    <a href="mailto:hello@durrellgemuh.com" class="btn btn-light btn-sm rounded fw-semibold">
                         <i data-feather="mail" class="fea icon-sm me-1"></i>hello@durrellgemuh.com
                     </a>
-                    <a href="https://wa.me/237671305865" target="_blank" class="btn btn-success btn-sm rounded"
-                        id="whatsapp-hero-cta" style="font-weight:600;">
+                    <a href="https://wa.me/237671305865" target="_blank" class="btn btn-success btn-sm rounded fw-semibold"
+                        id="whatsapp-hero-cta">
                         <i data-feather="message-circle" class="fea icon-sm me-1"></i>WhatsApp Me
                     </a>
                 </div>
@@ -169,29 +170,22 @@
                 <!-- Photo col -->
                 <div class="col-lg-5 col-md-5">
                     <div class="about-hero position-relative">
-                        <img src="images/durrell.jpg" class="img-fluid mx-auto d-block about-tween position-relative"
-                            alt="Durrell Gemuh — DevOps & Cloud Infrastructure Engineer" style="border-radius:16px;">
+                        <img src="images/durrell.jpg" class="img-fluid mx-auto d-block about-tween position-relative rounded-16"
+                            alt="Durrell Gemuh — DevOps & Cloud Infrastructure Engineer">
 
                         <!-- AWS badge floating card -->
-                        <div style="position:absolute;bottom:-18px;right:-8px;background:#fff;border-radius:12px;
-                                    padding:0.65rem 1rem;box-shadow:0 8px 28px rgba(0,0,0,0.12);
-                                    display:flex;align-items:center;gap:0.6rem;max-width:210px;
-                                    border:1px solid #e9ecef;">
-                            <span style="font-size:1.2rem;">🏆</span>
+                        <div class="floating-badge">
+                            <span>🏆</span>
                             <div>
-                                <p style="margin:0;font-size:0.72rem;font-weight:700;color:#212529;line-height:1.2;">AWS
-                                    Community Builder</p>
-                                <p style="margin:0;font-size:0.68rem;color:#6c757d;">Cloud Operations Track</p>
+                                <p>AWS Community Builder</p>
+                                <p>Cloud Operations Track</p>
                             </div>
                         </div>
 
                         <!-- Location floating card -->
-                        <div style="position:absolute;top:16px;left:-12px;background:#0d6efd;border-radius:10px;
-                                    padding:0.5rem 0.85rem;box-shadow:0 4px 16px rgba(13,110,253,0.35);
-                                    display:flex;align-items:center;gap:0.5rem;">
-                            <i data-feather="map-pin" style="width:14px;height:14px;color:#fff;flex-shrink:0;"></i>
-                            <p style="margin:0;font-size:0.72rem;font-weight:600;color:#fff;">Cameroon · Remote Global
-                            </p>
+                        <div class="floating-location">
+                            <i data-feather="map-pin"></i>
+                            <p class="fw-semibold">Cameroon · Remote Global</p>
                         </div>
                     </div>
                 </div>
@@ -201,26 +195,24 @@
                     <div class="ms-lg-4">
 
                         <!-- Name + role -->
-                        <h4 class="title text-primary mb-1"
-                            style="font-size:1.75rem;font-weight:800;letter-spacing:-0.02em;">Durrell Gemuh</h4>
-                        <h5 class="designation mb-4" style="font-weight:500;font-size:1rem;color:#495057;">
+                        <h4 class="title text-primary mb-1 hero-name">Durrell Gemuh</h4>
+                        <h5 class="designation mb-4 hero-subtitle">
                             DevOps &amp; Cloud Infrastructure Engineer
                             <span class="text-primary"> · Community Builder · DevOps Educator</span>
                         </h5>
 
                         <!-- Bio -->
-                        <p class="text-muted mb-3" style="font-size:0.97rem;line-height:1.8;">
-                            I'm a DevOps and Cloud Operations engineer with <strong style="color:#212529;">5+
-                                years</strong> of experience designing, automating, and operating infrastructure across
-                            <strong style="color:#212529;">AWS and Google Cloud</strong>.
+                        <p class="text-muted mb-3 hero-text">
+                            I'm a DevOps and Cloud Operations engineer with <strong class="text-dark">5+ years</strong> of experience designing, automating, and operating infrastructure across
+                            <strong class="text-dark">AWS and Google Cloud</strong>.
                         </p>
-                        <p class="text-muted mb-3" style="font-size:0.97rem;line-height:1.8;">
+                        <p class="text-muted mb-3 hero-text">
                             I've worked with teams across the US, Europe, and Africa — helping organisations cut
                             deployment times, reduce infrastructure costs, and build platforms their engineers are
                             confident running in production.
                         </p>
-                        <p class="text-muted mb-4" style="font-size:0.97rem;line-height:1.8;">
-                            Outside engineering, I founded <strong style="color:#212529;">NextGen Playground</strong> to
+                        <p class="text-muted mb-4 hero-text">
+                            Outside engineering, I founded <strong class="text-dark">NextGen Playground</strong> to
                             help aspiring engineers gain real-world DevOps experience — because I believe the best
                             engineers build systems <em>and</em> share knowledge.
                         </p>
@@ -228,51 +220,33 @@
                         <!-- Stats row -->
                         <div class="row g-3 mb-4">
                             <div class="col-4">
-                                <div
-                                    style="padding:1rem;background:#f8f9fc;border-radius:12px;text-align:center;border:1px solid #e9ecef;">
-                                    <p style="margin:0;font-size:1.6rem;font-weight:800;color:#0d6efd;line-height:1;">5+
-                                    </p>
-                                    <p style="margin:0.2rem 0 0;font-size:0.72rem;color:#6c757d;font-weight:500;">Years
-                                        Experience</p>
+                                <div class="stat-card">
+                                    <p class="stat-value">5+</p>
+                                    <p class="stat-label">Years Experience</p>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div
-                                    style="padding:1rem;background:#f8f9fc;border-radius:12px;text-align:center;border:1px solid #e9ecef;">
-                                    <p style="margin:0;font-size:1.6rem;font-weight:800;color:#0d6efd;line-height:1;">
-                                        3K+</p>
-                                    <p style="margin:0.2rem 0 0;font-size:0.72rem;color:#6c757d;font-weight:500;">Sites
-                                        Migrated</p>
+                                <div class="stat-card">
+                                    <p class="stat-value">3K+</p>
+                                    <p class="stat-label">Sites Migrated</p>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div
-                                    style="padding:1rem;background:#f8f9fc;border-radius:12px;text-align:center;border:1px solid #e9ecef;">
-                                    <p style="margin:0;font-size:1.6rem;font-weight:800;color:#0d6efd;line-height:1;">
-                                        70%</p>
-                                    <p style="margin:0.2rem 0 0;font-size:0.72rem;color:#6c757d;font-weight:500;">Cost
-                                        Reduction</p>
+                                <div class="stat-card">
+                                    <p class="stat-value">70%</p>
+                                    <p class="stat-label">Cost Reduction</p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Key credential pills -->
-                        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.75rem;">
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="skill-pill">☁️ AWS · GCP</span>
+                            <span class="skill-pill">⚙️ Kubernetes · Terraform</span>
+                            <span class="skill-pill">🔄 CI/CD · GitOps</span>
+                            <span class="skill-pill">📊 Datadog · Prometheus</span>
                             <span
-                                style="background:#e7f3ff;color:#0d6efd;font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:20px;border:1px solid rgba(13,110,253,0.2);">☁️
-                                AWS · GCP</span>
-                            <span
-                                style="background:#e7f3ff;color:#0d6efd;font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:20px;border:1px solid rgba(13,110,253,0.2);">⚙️
-                                Kubernetes · Terraform</span>
-                            <span
-                                style="background:#e7f3ff;color:#0d6efd;font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:20px;border:1px solid rgba(13,110,253,0.2);">🔄
-                                CI/CD · GitOps</span>
-                            <span
-                                style="background:#e7f3ff;color:#0d6efd;font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:20px;border:1px solid rgba(13,110,253,0.2);">📊
-                                Datadog · Prometheus</span>
-                            <span
-                                style="background:#d1f0e0;color:#0a7a3e;font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:20px;border:1px solid rgba(10,122,62,0.2);">🏆
-                                AWS Community Builder</span>
+                                class="skill-pill skill-pill--highlight">🏆 AWS Community Builder</span>
                         </div>
 
                         <!-- CTA buttons -->
@@ -315,15 +289,12 @@
 
             <!-- Slide label -->
             <div class="text-center mt-4">
-                <span id="expertiseLabel"
-                    style="font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#0d6efd;background:#e7f3ff;padding:0.25rem 1rem;border-radius:20px;">Cloud
-                    & Infrastructure</span>
+                <span id="expertiseLabel">Cloud & Infrastructure</span>
             </div>
 
             <!-- Slider wrapper -->
-            <div class="expertise-slider-wrap position-relative mt-3" style="overflow:hidden;">
-                <div class="expertise-track d-flex" id="expertiseTrack"
-                    style="transition:transform 0.5s cubic-bezier(.4,0,.2,1);will-change:transform;">
+            <div class="expertise-slider-wrap position-relative mt-3">
+                <div class="expertise-track d-flex" id="expertiseTrack">
 
                     <!-- SLIDE 1 — Cloud & Infrastructure -->
                     <div class="expertise-slide flex-shrink-0 w-100">
@@ -669,62 +640,6 @@
                 <button onclick="expertiseGoTo(1)" class="expertise-dot" aria-label="Slide 2"></button>
                 <span id="expertiseCounter" style="font-size:0.75rem;color:#6c757d;">1 / 2</span>
             </div>
-
-            <style>
-                .expertise-dot {
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
-                    border: 2px solid #0d6efd;
-                    background: transparent;
-                    padding: 0;
-                    cursor: pointer;
-                    transition: background 0.2s;
-                }
-
-                .expertise-dot.active {
-                    background: #0d6efd;
-                }
-
-                .interests-desc {
-                    transition: box-shadow 0.2s, transform 0.2s;
-                }
-
-                .interests-desc:hover {
-                    box-shadow: 0 4px 14px rgba(13, 110, 253, 0.12);
-                    transform: translateY(-2px);
-                }
-            </style>
-
-            <script>
-                var _expIdx = 0;
-                var _expTotal = 2;
-                var _expLabels = ['Cloud & Infrastructure', 'DevOps Practice & SRE'];
-                var _expTimer;
-                function expertiseSlide(dir) {
-                    _expIdx = (_expIdx + dir + _expTotal) % _expTotal;
-                    expertiseRender();
-                    resetExpTimer();
-                }
-                function expertiseGoTo(i) {
-                    _expIdx = i;
-                    expertiseRender();
-                    resetExpTimer();
-                }
-                function expertiseRender() {
-                    document.getElementById('expertiseTrack').style.transform = 'translateX(-' + (_expIdx * 100) + '%)';
-                    document.querySelectorAll('.expertise-dot').forEach(function (d, i) { d.classList.toggle('active', i === _expIdx); });
-                    var label = document.getElementById('expertiseLabel');
-                    if (label) label.textContent = _expLabels[_expIdx];
-                    var counter = document.getElementById('expertiseCounter');
-                    if (counter) counter.textContent = (_expIdx + 1) + ' / ' + _expTotal;
-                }
-                function resetExpTimer() {
-                    clearInterval(_expTimer);
-                    _expTimer = setInterval(function () { expertiseSlide(1); }, 10000);
-                }
-                resetExpTimer();
-            </script>
         </div>
 
 
@@ -759,157 +674,6 @@
 
                     <!-- ── EXPERIENCE ACCORDION ────────────────────────────── -->
                     <div class="exp-list mt-4" style="max-width:820px;margin-left:auto;margin-right:auto;">
-
-                        <style>
-                            .exp-item {
-                                border: 1px solid #e9ecef;
-                                border-radius: 10px;
-                                margin-bottom: 0.75rem;
-                                overflow: hidden;
-                                transition: box-shadow 0.2s;
-                            }
-
-                            .exp-item:hover {
-                                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
-                            }
-
-                            .exp-header {
-                                display: flex;
-                                align-items: center;
-                                justify-content: space-between;
-                                padding: 1rem 1.25rem;
-                                cursor: pointer;
-                                background: #fff;
-                                gap: 1rem;
-                                user-select: none;
-                            }
-
-                            .exp-header:hover {
-                                background: #f8f9ff;
-                            }
-
-                            .exp-header-left {
-                                display: flex;
-                                align-items: center;
-                                gap: 1rem;
-                                flex: 1;
-                                min-width: 0;
-                            }
-
-                            .exp-dot {
-                                width: 42px;
-                                height: 42px;
-                                border-radius: 10px;
-                                background: #e7f3ff;
-                                color: #0d6efd;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                flex-shrink: 0;
-                            }
-
-                            .exp-dot.current {
-                                background: #0d6efd;
-                                color: #fff;
-                            }
-
-                            .exp-meta {
-                                min-width: 0;
-                            }
-
-                            .exp-title {
-                                font-weight: 700;
-                                font-size: 0.95rem;
-                                color: #212529;
-                                margin: 0;
-                                line-height: 1.3;
-                            }
-
-                            .exp-company {
-                                font-size: 0.8rem;
-                                color: #6c757d;
-                                margin: 0.1rem 0 0;
-                            }
-
-                            .exp-date {
-                                font-size: 0.75rem;
-                                color: #6c757d;
-                                background: #f1f3f5;
-                                border-radius: 20px;
-                                padding: 0.2rem 0.75rem;
-                                white-space: nowrap;
-                                flex-shrink: 0;
-                            }
-
-                            .exp-date.current {
-                                background: #d1f0e0;
-                                color: #0a7a3e;
-                                font-weight: 600;
-                            }
-
-                            .exp-chevron {
-                                color: #6c757d;
-                                flex-shrink: 0;
-                                transition: transform 0.25s;
-                            }
-
-                            .exp-item.open .exp-chevron {
-                                transform: rotate(180deg);
-                            }
-
-                            .exp-body {
-                                display: none;
-                                padding: 0 1.25rem 1.25rem;
-                                border-top: 1px solid #f1f3f5;
-                                background: #fff;
-                            }
-
-                            .exp-item.open .exp-body {
-                                display: block;
-                            }
-
-                            .exp-body ul {
-                                padding-left: 1.1rem;
-                                margin: 0.75rem 0 0;
-                            }
-
-                            .exp-body ul li {
-                                color: #495057;
-                                font-size: 0.88rem;
-                                line-height: 1.65;
-                                margin-bottom: 0.5rem;
-                            }
-
-                            .exp-body ul li strong {
-                                color: #212529;
-                            }
-
-                            .exp-tags {
-                                display: flex;
-                                flex-wrap: wrap;
-                                gap: 0.4rem;
-                                margin-top: 0.9rem;
-                            }
-
-                            .exp-tag {
-                                font-size: 0.72rem;
-                                background: #e7f3ff;
-                                color: #0d6efd;
-                                border-radius: 4px;
-                                padding: 0.15rem 0.55rem;
-                                font-weight: 500;
-                            }
-
-                            @media (max-width: 576px) {
-                                .exp-date {
-                                    display: none;
-                                }
-
-                                .exp-header {
-                                    padding: 0.85rem 1rem;
-                                }
-                            }
-                        </style>
 
                         <!-- 1. DevOps / Cloud Engineer — Private Client -->
                         <div class="exp-item open" id="exp1">
@@ -1159,17 +923,6 @@
                         </div>
 
                     </div><!-- /exp-list -->
-
-                    <script>
-                        function toggleExp(id) {
-                            var el = document.getElementById(id);
-                            var isOpen = el.classList.contains('open');
-                            // Close all
-                            document.querySelectorAll('.exp-item.open').forEach(function (e) { e.classList.remove('open'); });
-                            // Open clicked if it wasn't open
-                            if (!isOpen) el.classList.add('open');
-                        }
-                    </script>
 
                 </div>
             </div>
@@ -1568,152 +1321,6 @@
             style="padding:1.25rem 2rem 2rem;border-top:1px solid #e9ecef;display:flex;flex-wrap:wrap;gap:0.65rem;align-items:center;">
         </div>
     </div>
-
-    <script>
-        var FOCUS = {
-            f1: {
-                icon: 'award', label: 'Community', title: 'AWS Community Builders',
-                body: `<p>I&#39;m an active member of the <strong>AWS Community Builders program</strong> (Cloud Operations track) — a global network of technical experts who share knowledge, create content, and help the wider community get more out of AWS.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">What This Means in Practice</h6>
-        <ul style="padding-left:1.25rem;">
-          <li>Writing and publishing technical content on AWS cloud operations — real use cases, not theory</li>
-          <li>Contributing to community discussions, answering questions, and helping engineers navigate AWS services</li>
-          <li>Staying ahead of new AWS releases and sharing practical takeaways for DevOps teams</li>
-          <li>Collaborating with AWS experts who review and improve the quality of content I share</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Get Involved</h6>
-        <p>If you&#39;re building on AWS and want a second pair of eyes on your architecture, or want to collaborate on technical content, I&#39;d love to connect.</p>`,
-                ctas: [
-                    { label: '💬 Discuss AWS Architecture', href: 'mailto:hello@durrellgemuh.com?subject=AWS Architecture Discussion', style: 'btn-primary' },
-                    { label: '🔗 Connect on LinkedIn', href: 'https://linkedin.com/in/durrello', style: 'btn-outline-primary', target: '_blank' },
-                    { label: '📖 Read My Blog', href: 'page-blog.html', style: 'btn-outline-secondary' }
-                ]
-            },
-            f2: {
-                icon: 'globe', label: 'Platform', title: 'NextGen Playground',
-                body: `<p><strong>NextGen Playground</strong> is the tech education and community platform I founded in Cameroon — built to bridge the gap between learning DevOps in theory and practising it in the real world.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">What We&#39;re Building</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>Structured DevOps programs</strong> covering Linux, Docker, Kubernetes, Terraform, CI/CD, and cloud platforms</li>
-          <li><strong>Hands-on labs</strong> that mirror real production infrastructure — not toy examples</li>
-          <li><strong>Simulated internship experiences</strong> where students work on real-world projects with guidance</li>
-          <li><strong>Mentorship and career support</strong> for engineers transitioning into DevOps and cloud roles</li>
-          <li><strong>A community</strong> of engineers learning together and helping each other grow</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">How You Can Get Involved</h6>
-        <p>Whether you&#39;re an engineer looking to join, a company wanting to sponsor, or an educator wanting to collaborate — there&#39;s a place for you here.</p>`,
-                ctas: [
-                    { label: '🚀 Visit NextGen Playground', href: 'http://nextgenplayground.org/', style: 'btn-primary', target: '_blank' },
-                    { label: '🤝 Partner With Us', href: 'mailto:hello@durrellgemuh.com?subject=NextGen Playground Partnership', style: 'btn-outline-primary' },
-                    { label: '📱 WhatsApp Me', href: 'https://wa.me/237671305865', style: 'btn-success', target: '_blank', id: 'wa-f2' }
-                ]
-            },
-            f3: {
-                icon: 'users', label: 'Mentorship', title: 'DevOps Mentorship',
-                body: `<p>I actively mentor engineers making the transition into DevOps and cloud engineering — from students to mid-level developers pivoting into infrastructure roles.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">What Mentorship Looks Like</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>1:1 sessions</strong> — structured calls to work through specific challenges, review your setup, or map out a learning path</li>
-          <li><strong>CV and portfolio reviews</strong> — helping you present your skills to land DevOps roles</li>
-          <li><strong>Project guidance</strong> — working through real infrastructure projects together so you learn by doing</li>
-          <li><strong>Career roadmapping</strong> — honest advice on what to learn next, certifications worth pursuing, and how to grow your income as a DevOps engineer</li>
-          <li><strong>Code and config reviews</strong> — Terraform, Dockerfiles, pipeline configs, Kubernetes manifests</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Who This Is For</h6>
-        <p>Developers, sysadmins, and students looking to break into DevOps. Engineers who feel stuck and want a clearer path forward. Anyone who learns better with guidance than alone.</p>`,
-                ctas: [
-                    { label: '📅 Book a Mentorship Session', href: 'mailto:hello@durrellgemuh.com?subject=Mentorship Session Request', style: 'btn-primary' },
-                    { label: '📱 WhatsApp Me', href: 'https://wa.me/237671305865', style: 'btn-success', target: '_blank', id: 'wa-f3' },
-                    { label: '🚀 Join NextGen Playground', href: 'http://nextgenplayground.org/', style: 'btn-outline-primary', target: '_blank' }
-                ]
-            },
-            f4: {
-                icon: 'server', label: 'Engineering', title: 'Kubernetes Infrastructure Projects',
-                body: `<p>Kubernetes is central to how modern infrastructure runs — and I&#39;m currently working on several K8s-focused projects ranging from cluster architecture to GitOps automation and operator development.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Active Focus Areas</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>Multi-cluster management</strong> — designing patterns for running workloads across multiple clusters with unified observability</li>
-          <li><strong>GitOps at scale</strong> — ArgoCD and Flux configurations for teams managing dozens of services</li>
-          <li><strong>Cost-aware scheduling</strong> — Karpenter, spot instance strategies, and resource quota governance</li>
-          <li><strong>Platform engineering</strong> — building internal developer platforms on top of Kubernetes to improve DX</li>
-          <li><strong>Security hardening</strong> — Pod Security Standards, OPA/Gatekeeper policies, and network policies</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Looking to Collaborate?</h6>
-        <p>If you&#39;re building on Kubernetes and want an experienced engineer to review your setup, pair on a problem, or consult on architecture — let&#39;s talk.</p>`,
-                ctas: [
-                    { label: '🔧 Discuss Your K8s Setup', href: 'mailto:hello@durrellgemuh.com?subject=Kubernetes Consultation', style: 'btn-primary' },
-                    { label: '📱 WhatsApp', href: 'https://wa.me/237671305865', style: 'btn-success', target: '_blank', id: 'wa-f4' },
-                    { label: '💼 View My Projects', href: '#projects', style: 'btn-outline-secondary' }
-                ]
-            },
-            f5: {
-                icon: 'book-open', label: 'Education', title: 'DevOps Education',
-                body: `<p>Beyond mentorship, I create structured educational content and training programs — both for my own community at NextGen Playground and as an instructor at Liora in France.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">What I&#39;m Creating</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>Masterclass curricula</strong> covering Kubernetes, GitOps, Prometheus & Grafana, Docker, and security practices</li>
-          <li><strong>Lab environments</strong> — hands-on exercises that mirror real production scenarios</li>
-          <li><strong>Written guides and blog posts</strong> on cloud and DevOps topics (see my blog)</li>
-          <li><strong>Team training programs</strong> for companies who want to upskill their engineering teams</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Bring Training to Your Team</h6>
-        <p>I deliver custom workshops — from half-day introductions to multi-week deep dives. Remote or in-person. Topics tailored to exactly where your team is and where they need to go.</p>`,
-                ctas: [
-                    { label: '🎓 Request a Workshop', href: 'mailto:hello@durrellgemuh.com?subject=Team Training Request', style: 'btn-primary' },
-                    { label: '📱 WhatsApp', href: 'https://wa.me/237671305865', style: 'btn-success', target: '_blank', id: 'wa-f5' },
-                    { label: '📖 Read My Blog', href: 'page-blog.html', style: 'btn-outline-secondary' }
-                ]
-            },
-            f6: {
-                icon: 'mic', label: 'Speaking', title: 'Speaking & Tech Events',
-                body: `<p>I&#39;m available to speak at conferences, meetups, company all-hands, and community events on topics across DevOps, cloud infrastructure, and engineering education.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Topics I Speak On</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>Kubernetes in Production</strong> — lessons from running K8s at scale, common failure modes, and best practices</li>
-          <li><strong>CI/CD Done Right</strong> — building pipelines that teams actually trust and use</li>
-          <li><strong>Cloud Cost Control</strong> — practical strategies that have cut bills by 30–70% in real environments</li>
-          <li><strong>DevOps for African Engineers</strong> — building world-class engineering skills and careers from Africa</li>
-          <li><strong>The DevOps Mindset</strong> — culture, automation, and what it actually means to "do DevOps"</li>
-          <li><strong>Breaking Into DevOps</strong> — career transition stories and practical advice for aspiring engineers</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Format &amp; Availability</h6>
-        <p>Remote or in-person. 20-minute lightning talks to 90-minute deep dives. English or French. I&#39;m based in Cameroon and available globally for virtual events and select in-person engagements.</p>`,
-                ctas: [
-                    { label: '🎤 Invite Me to Speak', href: 'mailto:hello@durrellgemuh.com?subject=Speaking Invitation', style: 'btn-primary' },
-                    { label: '📱 WhatsApp', href: 'https://wa.me/237671305865', style: 'btn-success', target: '_blank', id: 'wa-f6' },
-                    { label: '🔗 LinkedIn', href: 'https://linkedin.com/in/durrello', style: 'btn-outline-primary', target: '_blank' }
-                ]
-            }
-        };
-
-        function openFocus(id) {
-            var f = FOCUS[id];
-            if (!f) return;
-            document.getElementById('focus-label').textContent = f.label;
-            document.getElementById('focus-title').textContent = f.title;
-            document.getElementById('focus-body').innerHTML = f.body;
-            document.getElementById('focus-icon').innerHTML = '<i data-feather="' + f.icon + '" style="width:24px;height:24px;"></i>';
-            var ctaEl = document.getElementById('focus-ctas');
-            ctaEl.innerHTML = f.ctas.map(function (c) {
-                return '<a href="' + c.href + '"' +
-                    (c.target ? ' target="' + c.target + '"' : '') +
-                    (c.id ? ' id="' + c.id + '"' : '') +
-                    ' class="btn ' + c.style + ' rounded" style="font-size:0.875rem;">' + c.label + '</a>';
-            }).join('');
-            document.getElementById('focus-modal').style.display = 'block';
-            document.getElementById('focus-modal-overlay').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            if (window.feather) feather.replace();
-        }
-
-        function closeFocus() {
-            document.getElementById('focus-modal').style.display = 'none';
-            document.getElementById('focus-modal-overlay').style.display = 'none';
-            document.body.style.overflow = '';
-        }
-
-        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeFocus(); } });
-    </script>
 
     <!-- DevOps Philosophy + Learning in Public — Merged -->
     <section class="section" id="philosophy"
@@ -2187,6 +1794,47 @@
         </div>
     </div>
 
+    <!-- ── BLOG MODAL ────────────────────────────────────────────────── -->
+    <div id="blog-modal-overlay" onclick="closeBlogModal()"
+        style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:9998;backdrop-filter:blur(3px);">
+    </div>
+    <div id="blog-modal"
+        style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:9999;width:min(720px,95vw);max-height:90vh;overflow-y:auto;background:#fff;border-radius:16px;box-shadow:0 24px 64px rgba(0,0,0,0.18);">
+        <div style="padding:2rem 2rem 0;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;">
+                <div style="display:flex;align-items:center;gap:0.85rem;">
+                    <div id="blog-icon"
+                        style="width:48px;height:48px;border-radius:12px;background:#e7f3ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#0d6efd;">
+                    </div>
+                    <div>
+                        <div id="blog-category"
+                            style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#0d6efd;margin-bottom:0.2rem;">
+                        </div>
+                        <h4 id="blog-title"
+                            style="margin:0;font-size:1.25rem;font-weight:700;color:#212529;line-height:1.3;"></h4>
+                    </div>
+                </div>
+                <button onclick="closeBlogModal()"
+                    style="border:none;background:none;font-size:1.5rem;color:#6c757d;cursor:pointer;padding:0;line-height:1;flex-shrink:0;">&times;</button>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-top:0.5rem;margin-bottom:0.25rem;">
+                <span id="blog-author" style="font-size:0.85rem;color:#6c757d;"></span>
+                <span style="font-size:0.85rem;color:#6c757d;">•</span>
+                <span id="blog-date" style="font-size:0.85rem;color:#6c757d;"></span>
+                <span style="font-size:0.85rem;color:#6c757d;">•</span>
+                <span id="blog-read-time" style="font-size:0.85rem;color:#6c757d;"></span>
+            </div>
+            <p id="blog-description" style="color:#0d6efd;font-weight:500;margin:0.85rem 0 0;font-size:0.92rem;"></p>
+        </div>
+        <div style="padding:1.25rem 2rem 0.5rem;">
+            <div id="blog-content" style="color:#495057;font-size:0.92rem;line-height:1.75;"></div>
+            <div id="blog-tags" style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem;"></div>
+        </div>
+        <div id="blog-ctas"
+            style="padding:1.25rem 2rem 2rem;border-top:1px solid #e9ecef;display:flex;flex-wrap:wrap;gap:0.65rem;align-items:center;">
+        </div>
+    </div>
+
     <!-- NextGen Playground Start -->
     <section class="section" id="nextgen"
         style="background: linear-gradient(135deg, #f8f9ff 0%, #e7f3ff 100%); position:relative; overflow:hidden;">
@@ -2574,14 +2222,25 @@
         </div>
     </div>
 
+    <!-- ═══════════════════════════════════════════════════════════════
+     PROJECTS SECTION — Durrell Gemuh Portfolio
+     Drop this block wherever your old #projects section was.
+     Includes: filter bar, cards, detail modals, styles & scripts.
+     No external dependencies beyond Bootstrap 5 + Feather Icons
+     (already loaded in your page).
+════════════════════════════════════════════════════════════════ -->
+
+    <!-- ── SECTION ─────────────────────────────────────────────────────── -->
     <section class="section" id="projects" style="background:#f8f9fc;">
         <div class="container">
+
+            <!-- Header -->
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <div class="section-title">
                         <div class="position-relative">
                             <span
-                                style="display:inline-block;background:#e7f3ff;color:#0d6efd;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;padding:0.3rem 0.9rem;border-radius:20px;margin-bottom:1rem;">Portfolio</span>
+                                style="display:inline-block;background:#e7f3ff;color:#0d6efd;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:.3rem .9rem;border-radius:20px;margin-bottom:1rem;">Portfolio</span>
                             <h4 class="title text-uppercase mb-4">Highlighted Projects</h4>
                             <div>
                                 <div class="title-box"></div>
@@ -2589,27 +2248,364 @@
                             </div>
                         </div>
                         <p class="text-muted mx-auto para-desc mt-5 mb-0">Real infrastructure built for real problems —
-                            cloud migrations, CI/CD platforms, Kubernetes environments, and observability stacks.</p>
+                            cloud migrations, GitOps pipelines, Kubernetes environments, observability stacks, and IaC
+                            automation.</p>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4 g-4" id="projects-grid">
-                <div class="col-12 text-center py-5" id="projects-loading">
-                    <div
-                        style="width:40px;height:40px;border:3px solid #e7f3ff;border-top-color:#0d6efd;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 1rem;">
-                    </div>
-                    <p class="text-muted mb-0" style="font-size:0.88rem;">Loading projects...</p>
-                </div>
+
+            <!-- Filter bar -->
+            <div class="proj-filter-bar mt-5">
+                <button class="proj-filter-btn active" onclick="filterProjects('all',this)">All Projects</button>
+                <button class="proj-filter-btn" onclick="filterProjects('kubernetes',this)">Kubernetes</button>
+                <button class="proj-filter-btn" onclick="filterProjects('aws',this)">AWS</button>
+                <button class="proj-filter-btn" onclick="filterProjects('gitops',this)">GitOps</button>
+                <button class="proj-filter-btn" onclick="filterProjects('iac',this)">IaC</button>
+                <button class="proj-filter-btn" onclick="filterProjects('observability',this)">Observability</button>
+                <button class="proj-filter-btn" onclick="filterProjects('cicd',this)">CI/CD</button>
             </div>
+
+            <!-- Cards grid -->
+            <div class="row g-4" id="projects-grid">
+
+                <!-- ── 1. PECOS Data Extraction Pipeline ── -->
+                <div class="col-lg-4 col-md-6 proj-item" data-cat="aws cicd">
+                    <div class="proj-card" onclick="openProjModal('p1')">
+                        <div class="proj-banner cat-aws">
+                            <div class="proj-banner-grid"></div>
+                            <div class="proj-banner-icon" style="background:rgba(255,153,0,.18);">
+                                <i data-feather="database" style="width:28px;height:28px;color:#ff9900;"></i>
+                            </div>
+                            <span
+                                style="position:absolute;top:.75rem;left:.75rem;background:#ff9900;color:#fff;font-size:.67rem;font-weight:700;text-transform:uppercase;padding:.2rem .6rem;border-radius:4px;">AWS
+                                · Data Pipeline</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p class="proj-card-title">PECOS Data Extraction Pipeline</p>
+                            <p class="proj-card-desc">Production-grade AWS data pipeline extracting Medicare PECOS data
+                                with Lambda, S3, Glue, and Athena. Fully documented DevOps architecture with IaC
+                                provisioning and CI/CD deployment.</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag blue">AWS Lambda</span>
+                                <span class="proj-tag blue">S3</span>
+                                <span class="proj-tag blue">Glue</span>
+                                <span class="proj-tag blue">Athena</span>
+                                <span class="proj-tag">Terraform</span>
+                                <span class="proj-tag">CI/CD</span>
+                            </div>
+                        </div>
+                        <div class="proj-card-footer">
+                            <span class="proj-cat-pill" style="background:#fff3cd;color:#856404;">Data
+                                Engineering</span>
+                            <span style="font-size:.78rem;color:#0d6efd;font-weight:600;">View details →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── 2. HashiCorp Vault HA on Kubernetes ── -->
+                <div class="col-lg-4 col-md-6 proj-item" data-cat="kubernetes">
+                    <div class="proj-card" onclick="openProjModal('p2')">
+                        <div class="proj-banner cat-k8s">
+                            <div class="proj-banner-grid"></div>
+                            <div class="proj-banner-icon" style="background:rgba(255,236,178,.15);">
+                                <i data-feather="lock" style="width:28px;height:28px;color:#ffd055;"></i>
+                            </div>
+                            <span
+                                style="position:absolute;top:.75rem;left:.75rem;background:#6f42c1;color:#fff;font-size:.67rem;font-weight:700;text-transform:uppercase;padding:.2rem .6rem;border-radius:4px;">Kubernetes
+                                · Vault</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p class="proj-card-title">HashiCorp Vault HA on Kubernetes (Raft)</p>
+                            <p class="proj-card-desc">Deployed a production-ready Vault cluster in Kubernetes using
+                                Helm, Raft integrated storage, and a LoadBalancer service for UI access. Covers HA
+                                config, unsealing, and namespace-scoped secrets policies.</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag blue">HashiCorp Vault</span>
+                                <span class="proj-tag blue">Kubernetes</span>
+                                <span class="proj-tag">Helm</span>
+                                <span class="proj-tag">Raft</span>
+                                <span class="proj-tag">Secrets</span>
+                            </div>
+                        </div>
+                        <div class="proj-card-footer">
+                            <span class="proj-cat-pill" style="background:#e7f3ff;color:#0d6efd;">Security</span>
+                            <span style="font-size:.78rem;color:#0d6efd;font-weight:600;">View details →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── 3. ArgoCD GitOps on GCP with TLS ── -->
+                <div class="col-lg-4 col-md-6 proj-item" data-cat="gitops kubernetes">
+                    <div class="proj-card" onclick="openProjModal('p3')">
+                        <div class="proj-banner cat-gitops">
+                            <div class="proj-banner-grid"></div>
+                            <div class="proj-banner-icon" style="background:rgba(13,110,253,.2);">
+                                <i data-feather="git-merge" style="width:28px;height:28px;color:#6ea8fe;"></i>
+                            </div>
+                            <span
+                                style="position:absolute;top:.75rem;left:.75rem;background:#326ce5;color:#fff;font-size:.67rem;font-weight:700;text-transform:uppercase;padding:.2rem .6rem;border-radius:4px;">GitOps
+                                · GCP</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p class="proj-card-title">ArgoCD on GCP with Custom Domain & Auto TLS</p>
+                            <p class="proj-card-desc">Configured ArgoCD Ingress on Google Kubernetes Engine with a
+                                custom domain, automated TLS certificate issuance via cert-manager + Let's Encrypt, and
+                                Bitbucket repository integration for GitOps workflows.</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag blue">ArgoCD</span>
+                                <span class="proj-tag blue">GKE</span>
+                                <span class="proj-tag">cert-manager</span>
+                                <span class="proj-tag">Bitbucket</span>
+                                <span class="proj-tag">Ingress</span>
+                            </div>
+                        </div>
+                        <div class="proj-card-footer">
+                            <span class="proj-cat-pill" style="background:#d1f0e0;color:#0a7a3e;">GitOps</span>
+                            <span style="font-size:.78rem;color:#0d6efd;font-weight:600;">View details →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── 4. CloudWatch Agent Automation with Terraform + SSM ── -->
+                <div class="col-lg-4 col-md-6 proj-item" data-cat="aws iac observability">
+                    <div class="proj-card" onclick="openProjModal('p4')">
+                        <div class="proj-banner cat-obs">
+                            <div class="proj-banner-grid"></div>
+                            <div class="proj-banner-icon" style="background:rgba(40,167,69,.18);">
+                                <i data-feather="bar-chart-2" style="width:28px;height:28px;color:#4ade80;"></i>
+                            </div>
+                            <span
+                                style="position:absolute;top:.75rem;left:.75rem;background:#28a745;color:#fff;font-size:.67rem;font-weight:700;text-transform:uppercase;padding:.2rem .6rem;border-radius:4px;">AWS
+                                · Observability</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p class="proj-card-title">Automated CloudWatch Agent via Terraform & SSM</p>
+                            <p class="proj-card-desc">Automated CloudWatch agent deployment to EC2 fleets using
+                                Terraform for provisioning and AWS SSM for agent configuration push — eliminating manual
+                                SSH access and enabling fleet-wide observability at scale.</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag blue">Terraform</span>
+                                <span class="proj-tag blue">AWS SSM</span>
+                                <span class="proj-tag blue">CloudWatch</span>
+                                <span class="proj-tag">EC2</span>
+                                <span class="proj-tag">IaC</span>
+                            </div>
+                        </div>
+                        <div class="proj-card-footer">
+                            <span class="proj-cat-pill" style="background:#e7f3ff;color:#0d6efd;">IaC ·
+                                Observability</span>
+                            <span style="font-size:.78rem;color:#0d6efd;font-weight:600;">View details →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── 5. Static Site on S3 + CloudFront + Route 53 ── -->
+                <div class="col-lg-4 col-md-6 proj-item" data-cat="aws cicd">
+                    <div class="proj-card" onclick="openProjModal('p5')">
+                        <div class="proj-banner cat-aws">
+                            <div class="proj-banner-grid"></div>
+                            <div class="proj-banner-icon" style="background:rgba(255,153,0,.18);">
+                                <i data-feather="globe" style="width:28px;height:28px;color:#ff9900;"></i>
+                            </div>
+                            <span
+                                style="position:absolute;top:.75rem;left:.75rem;background:#ff9900;color:#fff;font-size:.67rem;font-weight:700;text-transform:uppercase;padding:.2rem .6rem;border-radius:4px;">AWS
+                                · Serverless</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p class="proj-card-title">Static Site Hosting: S3 + CloudFront + Route 53 + ACM</p>
+                            <p class="proj-card-desc">End-to-end serverless static website deployment on AWS — S3
+                                origin, CloudFront CDN distribution, ACM SSL certificate, and Route 53 DNS — with
+                                GitHub-triggered CI/CD for automated deployments.</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag blue">S3</span>
+                                <span class="proj-tag blue">CloudFront</span>
+                                <span class="proj-tag blue">Route 53</span>
+                                <span class="proj-tag">ACM</span>
+                                <span class="proj-tag">GitHub Actions</span>
+                            </div>
+                        </div>
+                        <div class="proj-card-footer">
+                            <span class="proj-cat-pill" style="background:#fff3cd;color:#856404;">Serverless</span>
+                            <span style="font-size:.78rem;color:#0d6efd;font-weight:600;">View details →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── 6. Datadog ↔ AWS Integration via Terraform ── -->
+                <div class="col-lg-4 col-md-6 proj-item" data-cat="observability iac aws">
+                    <div class="proj-card" onclick="openProjModal('p6')">
+                        <div class="proj-banner cat-obs">
+                            <div class="proj-banner-grid"></div>
+                            <div class="proj-banner-icon" style="background:rgba(99,0,214,.2);">
+                                <i data-feather="activity" style="width:28px;height:28px;color:#a855f7;"></i>
+                            </div>
+                            <span
+                                style="position:absolute;top:.75rem;left:.75rem;background:#6300d6;color:#fff;font-size:.67rem;font-weight:700;text-transform:uppercase;padding:.2rem .6rem;border-radius:4px;">Datadog
+                                · Terraform</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p class="proj-card-title">Datadog AWS Integration via Terraform & CloudFormation</p>
+                            <p class="proj-card-desc">Automated Datadog ↔ AWS account integration using Terraform with
+                                CloudFormation stack deployment — enabling full AWS metrics collection, log forwarding,
+                                and cloud-native observability without manual console steps.</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag blue">Datadog</span>
+                                <span class="proj-tag blue">Terraform</span>
+                                <span class="proj-tag blue">CloudFormation</span>
+                                <span class="proj-tag">AWS IAM</span>
+                                <span class="proj-tag">Observability</span>
+                            </div>
+                        </div>
+                        <div class="proj-card-footer">
+                            <span class="proj-cat-pill" style="background:#e7f3ff;color:#0d6efd;">Observability</span>
+                            <span style="font-size:.78rem;color:#0d6efd;font-weight:600;">View details →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── 7. Node-RED on Kubernetes (GCP) ── -->
+                <div class="col-lg-4 col-md-6 proj-item" data-cat="kubernetes">
+                    <div class="proj-card" onclick="openProjModal('p7')">
+                        <div class="proj-banner cat-k8s">
+                            <div class="proj-banner-grid"></div>
+                            <div class="proj-banner-icon" style="background:rgba(220,53,69,.18);">
+                                <i data-feather="cpu" style="width:28px;height:28px;color:#f87171;"></i>
+                            </div>
+                            <span
+                                style="position:absolute;top:.75rem;left:.75rem;background:#dc3545;color:#fff;font-size:.67rem;font-weight:700;text-transform:uppercase;padding:.2rem .6rem;border-radius:4px;">Kubernetes
+                                · GCP</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p class="proj-card-title">Node-RED on Kubernetes with Secrets Management</p>
+                            <p class="proj-card-desc">Deployed Node-RED on GCP's GKE cluster with Kubernetes-native
+                                password management, persistent storage, and production-ready configuration — including
+                                secure credential rotation without pod restarts.</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag blue">Kubernetes</span>
+                                <span class="proj-tag blue">GKE</span>
+                                <span class="proj-tag">Node-RED</span>
+                                <span class="proj-tag">ConfigMaps</span>
+                                <span class="proj-tag">Secrets</span>
+                            </div>
+                        </div>
+                        <div class="proj-card-footer">
+                            <span class="proj-cat-pill" style="background:#e7f3ff;color:#0d6efd;">Platform Ops</span>
+                            <span style="font-size:.78rem;color:#0d6efd;font-weight:600;">View details →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── 8. Terraform EC2 with User Data ── -->
+                <div class="col-lg-4 col-md-6 proj-item" data-cat="iac aws">
+                    <div class="proj-card" onclick="openProjModal('p8')">
+                        <div class="proj-banner cat-iac">
+                            <div class="proj-banner-grid"></div>
+                            <div class="proj-banner-icon" style="background:rgba(123,66,188,.22);">
+                                <i data-feather="code" style="width:28px;height:28px;color:#c084fc;"></i>
+                            </div>
+                            <span
+                                style="position:absolute;top:.75rem;left:.75rem;background:#7b42bc;color:#fff;font-size:.67rem;font-weight:700;text-transform:uppercase;padding:.2rem .6rem;border-radius:4px;">Terraform
+                                · AWS</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p class="proj-card-title">Terraform EC2 Provisioning with Custom User Data</p>
+                            <p class="proj-card-desc">Infrastructure-as-Code pattern for launching AWS EC2 instances
+                                with Terraform, injecting custom user data scripts for automated post-boot configuration
+                                — enabling fully hands-free, repeatable deployments.</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag blue">Terraform</span>
+                                <span class="proj-tag blue">EC2</span>
+                                <span class="proj-tag">User Data</span>
+                                <span class="proj-tag">AWS</span>
+                                <span class="proj-tag">Automation</span>
+                            </div>
+                        </div>
+                        <div class="proj-card-footer">
+                            <span class="proj-cat-pill" style="background:#ede7f6;color:#7b42bc;">Infrastructure as
+                                Code</span>
+                            <span style="font-size:.78rem;color:#0d6efd;font-weight:600;">View details →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── 9. SSM Agent Deployment (Windows + Linux, no SSH) ── -->
+                <div class="col-lg-4 col-md-6 proj-item" data-cat="aws cicd">
+                    <div class="proj-card" onclick="openProjModal('p9')">
+                        <div class="proj-banner cat-cicd">
+                            <div class="proj-banner-grid"></div>
+                            <div class="proj-banner-icon" style="background:rgba(253,126,20,.18);">
+                                <i data-feather="terminal" style="width:28px;height:28px;color:#fb923c;"></i>
+                            </div>
+                            <span
+                                style="position:absolute;top:.75rem;left:.75rem;background:#fd7e14;color:#fff;font-size:.67rem;font-weight:700;text-transform:uppercase;padding:.2rem .6rem;border-radius:4px;">AWS
+                                SSM</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <p class="proj-card-title">Agentless Fleet Management via AWS SSM (No SSH)</p>
+                            <p class="proj-card-desc">Deployed monitoring and management agents to Windows and Linux EC2
+                                fleets using AWS SSM and Parameter Store — zero SSH access, centrally managed secrets,
+                                and fully auditable remote command execution.</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag blue">AWS SSM</span>
+                                <span class="proj-tag blue">Parameter Store</span>
+                                <span class="proj-tag">EC2</span>
+                                <span class="proj-tag">Windows</span>
+                                <span class="proj-tag">Linux</span>
+                            </div>
+                        </div>
+                        <div class="proj-card-footer">
+                            <span class="proj-cat-pill" style="background:#fff3cd;color:#856404;">Fleet
+                                Automation</span>
+                            <span style="font-size:.78rem;color:#0d6efd;font-weight:600;">View details →</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /row -->
+
+            <!-- Bottom CTA -->
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <a href="page-portfolio.html" class="btn btn-outline-primary rounded px-4">View All Projects <i
-                            data-feather="arrow-right" class="fea icon-sm ms-1"></i></a>
+                    <p class="text-muted mb-3">Want to collaborate on infrastructure? Let's talk.</p>
+                    <a href="https://github.com/durrello" target="_blank" class="btn btn-dark rounded me-2 mb-2">
+                        <i data-feather="github" class="fea icon-sm me-1"></i> GitHub
+                    </a>
+                    <a href="mailto:hello@durrellgemuh.com" class="btn btn-primary rounded me-2 mb-2">
+                        <i data-feather="mail" class="fea icon-sm me-1"></i> Email Me
+                    </a>
+                    <a href="https://wa.me/237671305865" target="_blank" class="btn btn-success rounded mb-2">
+                        <i data-feather="message-circle" class="fea icon-sm me-1"></i> WhatsApp
+                    </a>
                 </div>
             </div>
+
         </div>
     </section>
-    <!-- Projects End -->
+
+    <!-- ── MODAL OVERLAY ─────────────────────────────────────────────── -->
+    <div id="proj-modal-overlay" onclick="closeProjModal()"></div>
+
+    <!-- ── MODAL ─────────────────────────────────────────────────────── -->
+    <div id="proj-modal">
+        <div id="pm-banner" class="proj-modal-banner">
+            <div class="proj-banner-grid"></div>
+            <button class="proj-modal-close" onclick="closeProjModal()">&times;</button>
+            <div id="pm-banner-icon" class="proj-banner-icon" style="width:72px;height:72px;border-radius:18px;"></div>
+            <span id="pm-badge"
+                style="position:absolute;top:.85rem;left:.85rem;font-size:.72rem;font-weight:700;text-transform:uppercase;padding:.25rem .75rem;border-radius:5px;"></span>
+        </div>
+        <div class="proj-modal-body">
+            <h4 id="pm-title" style="font-weight:800;font-size:1.25rem;color:#212529;margin-bottom:.35rem;"></h4>
+            <p id="pm-tagline" style="color:#0d6efd;font-weight:500;font-size:.93rem;margin-bottom:1.25rem;"></p>
+            <div id="pm-body" style="color:#495057;font-size:.92rem;line-height:1.78;"></div>
+            <div id="pm-tags" style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.25rem;"></div>
+        </div>
+        <div class="proj-modal-footer">
+            <span style="color:#6c757d;font-size:.82rem;margin-right:auto;">Read the full write-up or explore the
+                code</span>
+            <div id="pm-ctas"></div>
+        </div>
+    </div>
 
     <!-- Hire Me Band -->
     <div style="background:#212529;padding:2.5rem 0;">
@@ -2652,16 +2648,121 @@
                 </div>
             </div>
             <div class="row mt-4 g-4" id="blog-preview-grid">
-                <div class="col-12 text-center py-5" id="blog-preview-loading">
-                    <div
-                        style="width:40px;height:40px;border:3px solid #e7f3ff;border-top-color:#0d6efd;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 1rem;">
+                <!-- Blog Post 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-wrapper rounded position-relative border border-footer p-4 h-100"
+                        style="cursor:pointer;transition:box-shadow 0.2s,transform 0.2s;" onclick="openBlogModal('b1')"
+                        onmouseover="this.style.boxShadow='0 6px 20px rgba(13,110,253,0.1)';this.style.transform='translateY(-3px)'"
+                        onmouseout="this.style.boxShadow='';this.style.transform=''">
+                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.85rem;">
+                            <div
+                                style="width:40px;height:40px;border-radius:10px;background:#e7f3ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#0d6efd;">
+                                <i data-feather="file-text" style="width:18px;height:18px;"></i>
+                            </div>
+                            <div>
+                                <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#0d6efd;">DevOps</span>
+                                <h5 class="title mb-0" style="font-size:1.1rem;">Terraform Best Practices</h5>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-3" style="font-size:0.88rem;line-height:1.6;">How to structure Terraform code for teams of 5-50 engineers, with real patterns that scale and prevent disasters.</p>
+                        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+                            <span style="font-size:0.8rem;color:#6c757d;">Durrell Gemuh</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">•</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">Mar 20, 2026</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">•</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">8 min read</span>
+                        </div>
+                        <span class="text-primary" style="font-size:0.82rem;font-weight:600;">Read post →</span>
                     </div>
-                    <p class="text-muted mb-0" style="font-size:0.88rem;">Loading posts...</p>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-wrapper rounded position-relative border border-footer p-4 h-100"
+                        style="cursor:pointer;transition:box-shadow 0.2s,transform 0.2s;" onclick="openBlogModal('b2')"
+                        onmouseover="this.style.boxShadow='0 6px 20px rgba(13,110,253,0.1)';this.style.transform='translateY(-3px)'"
+                        onmouseout="this.style.boxShadow='';this.style.transform=''">
+                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.85rem;">
+                            <div
+                                style="width:40px;height:40px;border-radius:10px;background:#ff95001a;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#ff9500;">
+                                <i data-feather="dollar-sign" style="width:18px;height:18px;"></i>
+                            </div>
+                            <div>
+                                <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff9500;">AWS</span>
+                                <h5 class="title mb-0" style="font-size:1.1rem;">Cost Optimization Strategies</h5>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-3" style="font-size:0.88rem;line-height:1.6;">Practical AWS cost optimization techniques that saved my clients 40-70% on their cloud bills, with real examples and implementation guides.</p>
+                        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+                            <span style="font-size:0.8rem;color:#6c757d;">Durrell Gemuh</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">•</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">Mar 19, 2026</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">•</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">12 min read</span>
+                        </div>
+                        <span class="text-primary" style="font-size:0.82rem;font-weight:600;">Read post →</span>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-wrapper rounded position-relative border border-footer p-4 h-100"
+                        style="cursor:pointer;transition:box-shadow 0.2s,transform 0.2s;" onclick="openBlogModal('b3')"
+                        onmouseover="this.style.boxShadow='0 6px 20px rgba(13,110,253,0.1)';this.style.transform='translateY(-3px)'"
+                        onmouseout="this.style.boxShadow='';this.style.transform=''">
+                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.85rem;">
+                            <div
+                                style="width:40px;height:40px;border-radius:10px;background:#326ce51a;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#326ce5;">
+                                <i data-feather="layers" style="width:18px;height:18px;"></i>
+                            </div>
+                            <div>
+                                <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#326ce5;">Kubernetes</span>
+                                <h5 class="title mb-0" style="font-size:1.1rem;">Service Mesh Comparison</h5>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-3" style="font-size:0.88rem;line-height:1.6;">A practical comparison of the three most popular service mesh solutions for Kubernetes, with real-world deployment considerations and performance benchmarks.</p>
+                        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+                            <span style="font-size:0.8rem;color:#6c757d;">Durrell Gemuh</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">•</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">Mar 18, 2026</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">•</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">10 min read</span>
+                        </div>
+                        <span class="text-primary" style="font-size:0.82rem;font-weight:600;">Read post →</span>
+                    </div>
+                </div>
+
+                <!-- Blog Post 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-wrapper rounded position-relative border border-footer p-4 h-100"
+                        style="cursor:pointer;transition:box-shadow 0.2s,transform 0.2s;" onclick="openBlogModal('b4')"
+                        onmouseover="this.style.boxShadow='0 6px 20px rgba(13,110,253,0.1)';this.style.transform='translateY(-3px)'"
+                        onmouseout="this.style.boxShadow='';this.style.transform=''">
+                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.85rem;">
+                            <div
+                                style="width:40px;height:40px;border-radius:10px;background:#ff95001a;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#ff9500;">
+                                <i data-feather="database" style="width:18px;height:18px;"></i>
+                            </div>
+                            <div>
+                                <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff9500;">AWS</span>
+                                <h5 class="title mb-0" style="font-size:1.1rem;">S3 Service Spotlight</h5>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-3" style="font-size:0.88rem;line-height:1.6;">Welcome to my AWS Service Spotlight series, where I break down AWS services, how they work, when to use them, and how they fit into real-world DevOps systems.</p>
+                        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+                            <span style="font-size:0.8rem;color:#6c757d;">Durrell Gemuh</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">•</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">Mar 17, 2026</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">•</span>
+                            <span style="font-size:0.8rem;color:#6c757d;">7 min read</span>
+                        </div>
+                        <span class="text-primary" style="font-size:0.82rem;font-weight:600;">Read post →</span>
+                    </div>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <a href="page-blog.html" class="btn btn-outline-primary rounded px-4">View All Posts <i
+                    <a href="https://dev.to/durrellgemuh" target="_blank" class="btn btn-outline-primary rounded px-4">View All Posts <i
                             data-feather="arrow-right" class="fea icon-sm ms-1"></i></a>
                 </div>
             </div>
@@ -2846,650 +2947,13 @@
     <script src="js/feather.min.js"></script>
     <!-- Main Js -->
     <script src="js/plugins.init.js"></script>
-    <script src="js/app.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <!-- Service Modal Data & Logic -->
-    <script>
-        var SERVICES = {
-            s1: {
-                icon: 'cloud',
-                title: 'Cloud Infrastructure Engineering',
-                tagline: 'Scalable, resilient cloud architecture on AWS and GCP — built to last.',
-                body: `
-          <p>With 4+ years designing and operating cloud infrastructure across AWS and GCP, I bring a practical, production-first approach to every engagement.</p>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Led migration of 3,000+ websites to AWS and GCP, achieving 70% cost reduction and 95% improvement in scalability at BlueWindow Ltd</li>
-            <li>Designed multi-region, high-availability architectures capable of handling peak traffic without degradation</li>
-            <li>Provisioned and maintained EC2, RDS, EKS, VPCs, load balancers, and S3-based data pipelines</li>
-            <li>Built VPC endpoint configurations, private subnet routing, and NAT gateway setups for secure, internet-isolated workloads</li>
-          </ul>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Architect cloud environments from scratch or audit and improve existing ones</li>
-            <li>Migrate on-premise workloads to AWS/GCP with minimal downtime</li>
-            <li>Define networking, IAM, and security baselines that scale with your org</li>
-            <li>Document infrastructure so your team can own it long after I'm done</li>
-          </ul>
-          <p><strong>Tools:</strong> AWS (EC2, EKS, RDS, S3, VPC, IAM, CloudFront), GCP (GKE, Cloud Run, GCS), Terraform, Ansible</p>`
-            },
-            s2: {
-                icon: 'repeat',
-                title: 'CI/CD Pipeline Automation',
-                tagline: 'Cut deployment times from hours to minutes — reliably, every time.',
-                body: `
-          <p>Deployment pipelines are the heartbeat of a healthy engineering team. I design pipelines that are fast, observable, and resilient to failure.</p>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Reduced deployment time by 95% through optimised CI/CD pipelines at BlueWindow Ltd</li>
-            <li>Revamped build and deployment workflows at Data Service Group, eliminating 85% of manual tasks</li>
-            <li>Built internal tooling enabling 170+ developers to deploy VMs in 60 seconds (down from 16+ minutes)</li>
-            <li>Integrated dependency scanning (Dependency-Track), vulnerability checks, and automated compliance gates into pipelines</li>
-          </ul>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Design or overhaul your pipeline from build to production deploy</li>
-            <li>Add automated testing, security scanning, and approval gates</li>
-            <li>Standardise deployment across multiple services and environments</li>
-            <li>Reduce time-to-market and eliminate deployment-day anxiety</li>
-          </ul>
-          <p><strong>Tools:</strong> Jenkins, GitHub Actions, GitLab CI, Azure DevOps, ArgoCD, Docker, Helm</p>`
-            },
-            s3: {
-                icon: 'layers',
-                title: 'Kubernetes & Container Platforms',
-                tagline: 'Production-grade Kubernetes — from cluster setup to day-2 operations.',
-                body: `
-          <p>Kubernetes is powerful but complex. I help teams run it confidently — whether you're just adopting containers or managing multi-cluster environments.</p>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Managed multiple Kubernetes environments using ArgoCD at a private client, handling deployments, troubleshooting, and continuous cluster improvement</li>
-            <li>Implemented a Kubernetes health check system at ZOTECH, reducing mean time to repair from 15 days to 11 hours</li>
-            <li>Engineered Terraform tooling to automate cluster creation, cutting setup time from 2 hours to 20 minutes</li>
-            <li>Deployed HashiCorp Vault with Kubernetes for secrets management across namespaces</li>
-          </ul>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Set up production EKS / GKE clusters with proper networking, RBAC, and observability from day one</li>
-            <li>Implement GitOps workflows with ArgoCD or Flux</li>
-            <li>Debug live cluster issues and improve reliability</li>
-            <li>Train your team on Kubernetes best practices and day-2 operations</li>
-          </ul>
-          <p><strong>Tools:</strong> Kubernetes, Helm, ArgoCD, Flux, EKS, GKE, Docker, Istio, Karpenter</p>`
-            },
-            s4: {
-                icon: 'bar-chart-2',
-                title: 'Observability & Monitoring',
-                tagline: "Make your systems tell you what they're doing — before users notice.",
-                body: `
-          <p>Observability is not optional in production. I build monitoring setups that give engineers the right signals at the right time.</p>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Deployed CloudWatch agents and Datadog integrations to monitor VMs, containers, and cloud services — enabling proactive alerting and incident response</li>
-            <li>Leveraged Azure DevOps Pipelines to deploy Datadog monitors, APM services, and observability agents on Kubernetes clusters</li>
-            <li>Designed Grafana dashboards to monitor Kubernetes cluster health, resource utilisation, and performance metrics</li>
-            <li>Implemented Cloudflare analytics and security monitoring, reducing incidents by 25% at BlueWindow Ltd</li>
-          </ul>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Build a unified observability stack (metrics, logs, traces) for your infrastructure</li>
-            <li>Create dashboards that surface the KPIs your on-call team actually needs</li>
-            <li>Set up alerting with proper thresholds — not alert fatigue, but meaningful signals</li>
-            <li>Integrate APM into your applications for end-to-end request tracing</li>
-          </ul>
-          <p><strong>Tools:</strong> Datadog, Prometheus, Grafana, CloudWatch, OpenTelemetry, PagerDuty</p>`
-            },
-            s5: {
-                icon: 'code',
-                title: 'Infrastructure as Code',
-                tagline: 'Treat your infrastructure like software — versioned, tested, repeatable.',
-                body: `
-          <p>Manual infrastructure is a liability. I help teams move to fully code-defined environments that are predictable, auditable, and disaster-recovery ready.</p>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Used Terraform to provision AWS and GCP infrastructure including VPCs, EKS clusters, RDS databases, IAM roles, and S3 backends</li>
-            <li>Managed Terraform remote state in S3 with DynamoDB locking for team collaboration</li>
-            <li>Deployed Terraform scripts via Azure DevOps Pipelines for automated, policy-governed infrastructure changes</li>
-            <li>Used Ansible for configuration management and post-provisioning setup across EC2 fleets</li>
-          </ul>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Migrate click-ops infrastructure into Terraform modules your team can own</li>
-            <li>Structure IaC repositories for multi-environment (dev/staging/prod) workflows</li>
-            <li>Implement drift detection and policy-as-code (Sentinel, OPA)</li>
-            <li>Set up Atlantis or Terraform Cloud for automated plan/apply in PRs</li>
-          </ul>
-          <p><strong>Tools:</strong> Terraform, Ansible, Pulumi, Terragrunt, AWS CDK</p>`
-            },
-            s6: {
-                icon: 'shield',
-                title: 'Cloud Security & Compliance',
-                tagline: "Security that's baked in — not bolted on after the fact.",
-                body: `
-          <p>Security is part of every infrastructure decision I make. From IAM policies to WAF rules, I help teams build systems that are secure by default.</p>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Resolved and remediated issues flagged by AWS Security Hub and AWS Trusted Advisor, enforcing security and reliability best practices</li>
-            <li>Managed AWS IAM users, roles, and policies with role-based access control and company compliance standards at LILLUP</li>
-            <li>Integrated DDoS protection, SSL/TLS encryption, and WAF via Cloudflare, reducing security incidents by 40%</li>
-            <li>Implemented HashiCorp Vault with Kubernetes to secure secrets across namespaces with strict access policies</li>
-          </ul>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Audit your AWS/GCP environment against CIS benchmarks and remediate findings</li>
-            <li>Implement least-privilege IAM, RBAC, and network segmentation</li>
-            <li>Set up Cloudflare WAF, Zero Trust, and DDoS protections</li>
-            <li>Establish security scanning in your CI/CD pipeline (SAST, dependency checks, container scanning)</li>
-          </ul>
-          <p><strong>Tools:</strong> AWS Security Hub, IAM, Cloudflare WAF/Zero Trust, HashiCorp Vault, Trivy, Checkov</p>`
-            },
-            s7: {
-                icon: 'trending-down',
-                title: 'Cloud Cost Optimisation',
-                tagline: 'Spend less on cloud. Get more from what you have.',
-                body: `
-          <p>Cloud bills spiral fast without intentional governance. I've consistently delivered significant cost reductions without sacrificing reliability.</p>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Reduced infrastructure costs by 70% during the 3,000-site migration at BlueWindow Ltd</li>
-            <li>Cut quarterly AWS infrastructure costs by 63% through account and environment optimisation at Data Service Group</li>
-            <li>Developed and executed cloud cost strategies reducing operational expenses by 30% while maintaining high availability at BlueWindow</li>
-            <li>Right-sized EC2 instances, cleaned up unused resources, and implemented auto-scaling policies across client environments</li>
-          </ul>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Audit your AWS/GCP spend and identify quick-win savings</li>
-            <li>Implement auto-scaling, spot instances, and right-sizing recommendations</li>
-            <li>Set up cost allocation tags, budgets, and anomaly alerts</li>
-            <li>Build a FinOps practice so your team stays on top of spend going forward</li>
-          </ul>
-          <p><strong>Tools:</strong> AWS Cost Explorer, Infracost, Spot instances, Savings Plans, GCP Committed Use</p>`
-            },
-            s8: {
-                icon: 'database',
-                title: 'Secrets & Vault Management',
-                tagline: 'No more hardcoded credentials. No more secrets in .env files.',
-                body: `
-          <p>Credential sprawl is one of the most common security failures in cloud-native teams. I help organisations adopt proper secrets lifecycle management.</p>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Deployed HashiCorp Vault integrated with Kubernetes to securely store secrets across namespaces with strict access policies</li>
-            <li>Managed AWS Secrets Manager and Parameter Store for application secret injection at runtime</li>
-            <li>Implemented IRSA (IAM Roles for Service Accounts) on EKS to eliminate static credentials from pods</li>
-            <li>Rotated long-lived credentials and established secret rotation policies across multi-cloud environments</li>
-          </ul>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Audit your current secrets posture — find and remove hardcoded credentials</li>
-            <li>Deploy and configure HashiCorp Vault or AWS Secrets Manager</li>
-            <li>Integrate secrets management into your CI/CD pipelines and Kubernetes workloads</li>
-            <li>Set up automated secret rotation and least-privilege access policies</li>
-          </ul>
-          <p><strong>Tools:</strong> HashiCorp Vault, AWS Secrets Manager, AWS SSM Parameter Store, IRSA, External Secrets Operator</p>`
-            },
-            s9: {
-                icon: 'book-open',
-                title: 'DevOps Training & Mentorship',
-                tagline: 'Build the team, not just the infrastructure.',
-                body: `
-          <p>I&#39;ve trained hundreds of engineers through Liora, NextGen Playground, and direct mentorship — helping them go from beginner to production-ready.</p>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">What I've Done</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Lead live masterclasses at Liora covering GitOps, Prometheus & Grafana, Docker, Kubernetes, GitLab, and security — beginner to advanced</li>
-            <li>Founded NextGen Playground — a training and community platform delivering hands-on DevOps labs, mentorship, and simulated internship experiences</li>
-            <li>Provided one-on-one mentorship, career guidance, and project reviews to engineers transitioning into DevOps</li>
-            <li>Guided students through real-world projects on infrastructure design, CI/CD pipelines, container orchestration, and monitoring</li>
-          </ul>
-          <h6 style="font-weight:700;margin-top:1.25rem;margin-bottom:0.5rem;">How I Can Help Your Team</h6>
-          <ul style="padding-left:1.25rem;">
-            <li>Run a custom DevOps workshop for your engineering team — half day to multi-week</li>
-            <li>Upskill junior engineers on Kubernetes, Terraform, CI/CD, or observability</li>
-            <li>Embed with your team during a major migration to transfer knowledge in real time</li>
-            <li>Create internal documentation and runbooks as part of any engagement</li>
-          </ul>
-          <p><strong>Formats:</strong> Live workshops, async video, 1:1 mentorship, team bootcamps, embedded consulting</p>`
-            }
-        };
-
-        function openService(id) {
-            var s = SERVICES[id];
-            if (!s) return;
-            document.getElementById('svc-title').textContent = s.title;
-            document.getElementById('svc-tagline').textContent = s.tagline;
-            document.getElementById('svc-body').innerHTML = s.body;
-            document.getElementById('svc-icon').innerHTML = '<i data-feather="' + s.icon + '" style="width:24px;height:24px;"></i>';
-            document.getElementById('service-modal').style.display = 'block';
-            document.getElementById('service-modal-overlay').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            if (window.feather) feather.replace();
-        }
-
-        function closeService() {
-            document.getElementById('service-modal').style.display = 'none';
-            document.getElementById('service-modal-overlay').style.display = 'none';
-            document.body.style.overflow = '';
-        }
-
-        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeService(); });
-    </script>
+    <script src="js/custom.js"></script>
 
     <script src="js/portfolio-loader.js"></script>
-    <script src="js/blog-loader.js"></script>
-    <script>
-        // ── Spinner keyframe (shared) ───────────────────────────────────────────
-        var _spinStyle = document.createElement('style');
-        _spinStyle.textContent = '@keyframes spin{to{transform:rotate(360deg)}}';
-        document.head.appendChild(_spinStyle);
 
-        // ── Blog posts renderer ─────────────────────────────────────────────────
-        function renderHomeBlog() {
-            var posts = BlogLoader.getFeaturedPosts(3);
-            var grid = document.getElementById('blog-preview-grid');
-            var loading = document.getElementById('blog-preview-loading');
-            if (!grid) return;
-            if (posts.length === 0) {
-                if (BlogLoader.posts.length === 0) { setTimeout(renderHomeBlog, 150); return; }
-                if (loading) loading.innerHTML = '<p class="text-muted" style="font-size:0.88rem;">No posts yet — check back soon.</p>';
-                return;
-            }
-            if (loading) loading.style.display = 'none';
 
-            var catColors = {
-                AWS: '#ff9500', GCP: '#4285f4', Kubernetes: '#326ce5', DevOps: '#0d6efd',
-                'CI/CD': '#28a745', Terraform: '#7b42bc', Docker: '#0db7ed', Linux: '#f0c040',
-                Security: '#dc3545', Observability: '#fd7e14'
-            };
 
-            grid.innerHTML = posts.map(function (post, idx) {
-                var date = post.publishDate ? new Date(post.publishDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : '';
-                var cat = post.category || 'DevOps';
-                var catColor = catColors[cat] || '#0d6efd';
-                var readTime = post.content ? Math.max(1, Math.ceil(post.content.split(' ').length / 200)) + ' min read' : '5 min read';
-                var isFirst = idx === 0;
-
-                var imgHtml = post.featuredImage
-                    ? '<img src="' + post.featuredImage + '" alt="' + post.title + '" style="width:100%;height:' + (isFirst ? '240px' : '200px') + ';object-fit:cover;">'
-                    : '<div style="width:100%;height:' + (isFirst ? '240px' : '200px') + ';background:linear-gradient(135deg,#0d1117,#161b22);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">' +
-                    '<div style="position:absolute;inset:0;background-image:radial-gradient(rgba(13,110,253,0.12) 1px,transparent 1px);background-size:20px 20px;"></div>' +
-                    '<div style="position:relative;text-align:center;">' +
-                    '<i data-feather="file-text" style="width:44px;height:44px;color:rgba(13,110,253,0.6);margin-bottom:0.5rem;display:block;margin-left:auto;margin-right:auto;"></i>' +
-                    '<span style="color:rgba(255,255,255,0.3);font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">' + cat + '</span>' +
-                    '</div></div>';
-
-                return '<div class="col-' + (isFirst ? 'lg-5' : 'lg-3_5') + ' col-md-6">' +
-                    '<article style="background:#fff;border-radius:14px;overflow:hidden;height:100%;display:flex;flex-direction:column;border:1px solid #e9ecef;transition:transform 0.2s,box-shadow 0.2s;" ' +
-                    'onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0, 0, 0, 0.1)'" ' +
-                        'onmouseout="this.style.transform='';this.style.boxShadow=''">' +
-                            '<div style="position:relative;">' + imgHtml +
-                            '<div style="position:absolute;top:0.75rem;left:0.75rem;">' +
-                            '<span style="background:' + catColor + ';color:#fff;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:0.2rem 0.6rem;border-radius:4px;">' + cat + '</span>' +
-                            '</div></div>' +
-                            '<div style="padding:1.4rem;flex:1;display:flex;flex-direction:column;">' +
-                            '<div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">' +
-                            '<span style="font-size:0.75rem;color:#6c757d;">' + date + '</span>' +
-                            '<span style="width:3px;height:3px;border-radius:50%;background:#dee2e6;flex-shrink:0;"></span>' +
-                            '<span style="font-size:0.75rem;color:#6c757d;">' + readTime + '</span>' +
-                            '</div>' +
-                            '<h5 style="font-weight:700;font-size:' + (isFirst ? '1.05rem' : '0.92rem') + ';color:#212529;line-height:1.4;margin-bottom:0.75rem;flex:1;">' +
-                            '<a href="page-blog-detail.html?post=' + post.slug + '" style="color:inherit;text-decoration:none;" ' +
-                            'onmouseover="this.style.color='#0d6efd'" onmouseout="this.style.color='inherit'">' + post.title + '</a></h5>' +
-                                (post.description ? '<p style="font-size:0.84rem;color:#6c757d;line-height:1.6;margin-bottom:1rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + post.description + '</p>' : '') +
-                                '<a href="page-blog-detail.html?post=' + post.slug + '" style="font-size:0.82rem;font-weight:600;color:#0d6efd;text-decoration:none;display:inline-flex;align-items:center;gap:0.3rem;margin-top:auto;" ' +
-                                'onmouseover="this.style.gap="0.5rem"" onmouseout="this.style.gap='0.3rem'">Read Post <i data-feather="arrow-right" style="width:14px;height:14px;"></i></a>' +
-                                    '</div></article></div>';
-            }).join('');
-            feather.replace();
-        }
-
-        // ── Portfolio projects renderer ─────────────────────────────────────────
-        function renderHomeProjects() {
-            var projects = PortfolioLoader.getFeaturedProjects(6);
-            var grid = document.getElementById('projects-grid');
-            var loading = document.getElementById('projects-loading');
-            if (!grid) return;
-            if (projects.length === 0) {
-                if (PortfolioLoader.projects.length === 0) { setTimeout(renderHomeProjects, 150); return; }
-                if (loading) loading.innerHTML = '<p class="text-muted" style="font-size:0.88rem;">No projects yet.</p>';
-                return;
-            }
-            if (loading) loading.style.display = 'none';
-
-            var icons = ['cloud', 'layers', 'repeat', 'bar-chart-2', 'code', 'shield'];
-            var statusColors = { Completed: '#28a745', 'In Progress': '#fd7e14', Planned: '#6c757d' };
-
-            grid.innerHTML = projects.map(function (project, i) {
-                var techs = (project.technologies || []).slice(0, 4);
-                var icon = icons[i % icons.length];
-                var status = project.status || 'Completed';
-                var statusColor = statusColors[status] || '#28a745';
-
-                var imgHtml = project.image
-                    ? '<img src="' + project.image + '" alt="' + project.title + '" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" class="proj-img">'
-                    : '<div style="width:100%;height:100%;background:linear-gradient(135deg,#0d1117,#161b22);display:flex;align-items:center;justify-content:center;position:relative;">' +
-                    '<div style="position:absolute;inset:0;background-image:radial-gradient(rgba(13,110,253,0.1) 1px,transparent 1px);background-size:18px 18px;"></div>' +
-                    '<i data-feather="' + icon + '" style="width:52px;height:52px;color:rgba(13,110,253,0.5);position:relative;"></i></div>';
-
-                return '<div class="col-lg-4 col-md-6">' +
-                    '<div style="background:#fff;border-radius:14px;overflow:hidden;height:100%;display:flex;flex-direction:column;border:1px solid #e9ecef;transition:transform 0.2s,box-shadow 0.2s;" ' +
-                    'onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0, 0, 0, 0.1)';var img=this.querySelector('.proj - img');if(img)img.style.transform='scale(1.05)';" ' +
-                        'onmouseout="this.style.transform='';this.style.boxShadow='';var img=this.querySelector('.proj - img');if(img)img.style.transform='';">' +
-                            // Image area
-                            '<div style="height:190px;overflow:hidden;position:relative;">' + imgHtml +
-                            // Status badge
-                            '<div style="position:absolute;top:0.75rem;right:0.75rem;">' +
-                            '<span style="background:' + statusColor + ';color:#fff;font-size:0.67rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:0.2rem 0.55rem;border-radius:4px;">' + status + '</span>' +
-                            '</div>' +
-                            // Hover overlay with link
-                            (project.link ? '<div style="position:absolute;inset:0;background:rgba(13,17,23,0.7);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;" class="proj-overlay" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">' +
-                                '<a href="' + project.link + '" target="_blank" style="background:#fff;color:#212529;padding:0.5rem 1.25rem;border-radius:8px;font-size:0.82rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;">' +
-                                '<i data-feather="external-link" style="width:14px;height:14px;"></i> View Project</a></div>' : '') +
-                '</div>' +
-                // Content
-                '<div style="padding:1.25rem;flex:1;display:flex;flex-direction:column;">' +
-                '<h6 style="font-weight:700;font-size:0.95rem;color:#212529;margin-bottom:0.5rem;line-height:1.35;">' + project.title + '</h6>' +
-                (project.description ? '<p style="font-size:0.82rem;color:#6c757d;line-height:1.6;margin-bottom:0.9rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1;">' + project.description + '</p>' : '<div style="flex:1;"></div>') +
-                // Tech tags
-                (techs.length ? '<div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:auto;">' +
-                    techs.map(function (t) { return '<span style="font-size:0.7rem;background:#f1f3f5;color:#495057;border-radius:4px;padding:0.18rem 0.5rem;font-weight:500;">' + t + '</span>'; }).join('') +
-                    (project.technologies && project.technologies.length > 4 ? '<span style="font-size:0.7rem;background:#e7f3ff;color:#0d6efd;border-radius:4px;padding:0.18rem 0.5rem;font-weight:500;">+' + (project.technologies.length - 4) + ' more</span>' : '') +
-                    '</div>' : '') +
-                '</div></div></div>';
-        }).join('');
-        feather.replace();
-        }
-
-        BlogLoader.onReady(renderHomeBlog);
-        PortfolioLoader.onReady(renderHomeProjects);
-    </script>
-
-    <script>
-        var RESOURCES = {
-            r1: {
-                icon: 'map', label: 'Career Path', title: 'DevOps Roadmap',
-                tagline: 'The clearest path from where you are to where you want to be.',
-                body: `<p>Most DevOps "roadmaps" online are overwhelming walls of tools. This is the practical path — ordered by what actually matters first, based on what I've seen work across dozens of engineers I've mentored.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">The Roadmap in Order</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>Linux fundamentals</strong> — filesystem, processes, networking basics, shell scripting</li>
-          <li><strong>Version control</strong> — Git workflows, branching strategies, pull requests</li>
-          <li><strong>One cloud platform</strong> — Start with AWS (EC2, S3, IAM, VPC, RDS). Go deep before going wide.</li>
-          <li><strong>Containers</strong> — Docker: build, run, compose. Then Kubernetes basics.</li>
-          <li><strong>CI/CD</strong> — GitHub Actions or GitLab CI. Build a real pipeline for a real project.</li>
-          <li><strong>Infrastructure as Code</strong> — Terraform. Provision your first VPC and EC2 in code.</li>
-          <li><strong>Observability</strong> — Prometheus + Grafana. Understand what your systems are doing.</li>
-          <li><strong>Security basics</strong> — IAM least privilege, secret management, RBAC</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Common Mistakes to Avoid</h6>
-        <ul style="padding-left:1.25rem;">
-          <li>Trying to learn everything at once — go deep, not wide</li>
-          <li>Skipping Linux — everything runs on Linux</li>
-          <li>Learning tools without building real projects — employers want evidence</li>
-          <li>Chasing certifications before skills — get the skills first</li>
-        </ul>
-        <p style="margin-top:1rem;padding:0.85rem;background:#f8f9ff;border-radius:8px;font-size:0.88rem;"><strong>From Durrell:</strong> I followed this path myself and now teach it through NextGen Playground. The engineers who progress fastest are the ones who build real infrastructure projects, not just follow tutorials.</p>`,
-                ctas: [
-                    { label: '📅 Get a Personal Roadmap Review', href: 'mailto:hello@durrellgemuh.com?subject=DevOps Roadmap Consultation', cls: 'btn-primary' },
-                    { label: '📱 WhatsApp Me', href: 'https://wa.me/237671305865', cls: 'btn-success', target: '_blank' },
-                    { label: '🚀 Join NextGen Playground', href: 'http://nextgenplayground.org/', cls: 'btn-outline-primary', target: '_blank' }
-                ]
-            },
-            r2: {
-                icon: 'layers', label: 'Container Orchestration', title: 'Kubernetes Learning Path',
-                tagline: 'From confused by YAML to confidently running production clusters.',
-                body: `<p>Kubernetes has a steep learning curve — but once it clicks, it changes how you think about infrastructure. Here's the path I use to teach it, refined through dozens of students and real production experience.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Learning Sequence</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>Docker first</strong> — you must understand containers before Kubernetes</li>
-          <li><strong>Core concepts</strong> — Pods, Deployments, Services, ConfigMaps, Secrets</li>
-          <li><strong>kubectl</strong> — the CLI you'll use every day. Master it early.</li>
-          <li><strong>Namespaces & RBAC</strong> — multi-team isolation and access control</li>
-          <li><strong>Helm</strong> — packaging and deploying applications properly</li>
-          <li><strong>Networking</strong> — Ingress, Services (ClusterIP/NodePort/LoadBalancer), DNS</li>
-          <li><strong>Persistent storage</strong> — PVs, PVCs, StorageClasses</li>
-          <li><strong>ArgoCD / GitOps</strong> — the modern way to deploy to Kubernetes</li>
-          <li><strong>Monitoring</strong> — Prometheus + Grafana on Kubernetes</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Recommended Starting Points</h6>
-        <ul style="padding-left:1.25rem;">
-          <li>Use <strong>kind</strong> or <strong>k3s</strong> locally — spin up clusters in minutes</li>
-          <li>The official Kubernetes docs are actually excellent once you have context</li>
-          <li>Practice the CKA exam questions even if you're not taking the cert — they're practical</li>
-        </ul>
-        <p style="margin-top:1rem;padding:0.85rem;background:#f8f9ff;border-radius:8px;font-size:0.88rem;"><strong>From Durrell:</strong> I've reduced Kubernetes MTTR from 15 days to 11 hours at ZOTECH by getting the fundamentals right. The best investment is time in the kubectl docs and building real workloads.</p>`,
-                ctas: [
-                    { label: '🔧 Book a K8s Coaching Session', href: 'mailto:hello@durrellgemuh.com?subject=Kubernetes Coaching', cls: 'btn-primary' },
-                    { label: '📱 WhatsApp', href: 'https://wa.me/237671305865', cls: 'btn-success', target: '_blank' },
-                    { label: '📖 Read My K8s Blog Posts', href: 'page-blog.html', cls: 'btn-outline-secondary' }
-                ]
-            },
-            r3: {
-                icon: 'code', label: 'Infrastructure as Code', title: 'Terraform & IaC Guide',
-                tagline: 'Stop clicking through consoles. Start versioning your infrastructure.',
-                body: `<p>Terraform is the industry standard for infrastructure as code. Once you learn it, you'll never want to manage infrastructure any other way. Here's the practical path to actually using it well.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Learning Path</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>HCL syntax basics</strong> — resources, variables, outputs, data sources</li>
-          <li><strong>Providers</strong> — AWS, GCP, Cloudflare. Learn how Terraform talks to APIs.</li>
-          <li><strong>State management</strong> — local state first, then remote state in S3 + DynamoDB locking</li>
-          <li><strong>Modules</strong> — reusable infrastructure components. This is where it gets powerful.</li>
-          <li><strong>Workspaces & environments</strong> — dev/staging/prod without code duplication</li>
-          <li><strong>CI/CD integration</strong> — automated plan/apply with GitHub Actions or Atlantis</li>
-          <li><strong>Terragrunt</strong> — DRY Terraform at scale across multiple environments</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Real-World Tips</h6>
-        <ul style="padding-left:1.25rem;">
-          <li>Always use remote state — local state on your laptop will bite you</li>
-          <li>Import existing resources before destroying and recreating them</li>
-          <li>Use <code style="background:#f1f3f5;padding:0.1rem 0.35rem;border-radius:3px;font-size:0.85em;">terraform plan</code> as your safety net — read it carefully every time</li>
-          <li>Lock your provider versions — unexpected upgrades break things</li>
-        </ul>
-        <p style="margin-top:1rem;padding:0.85rem;background:#f8f9ff;border-radius:8px;font-size:0.88rem;"><strong>From Durrell:</strong> I've used Terraform to provision hundreds of AWS and GCP resources across multiple clients. The biggest productivity gain was moving from single files to proper module structures.</p>`,
-                ctas: [
-                    { label: '💬 IaC Architecture Consultation', href: 'mailto:hello@durrellgemuh.com?subject=Terraform Consultation', cls: 'btn-primary' },
-                    { label: '📱 WhatsApp', href: 'https://wa.me/237671305865', cls: 'btn-success', target: '_blank' },
-                    { label: '🎓 Request a Workshop', href: 'mailto:hello@durrellgemuh.com?subject=Terraform Workshop Request', cls: 'btn-outline-primary' }
-                ]
-            },
-            r4: {
-                icon: 'repeat', label: 'Pipeline Design', title: 'CI/CD Best Practices',
-                tagline: 'Pipelines that your team trusts — fast, observable, and safe to deploy.',
-                body: `<p>A good CI/CD pipeline is invisible when it works and obvious when it doesn't. Here's how to build one that earns your team's trust.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Pipeline Design Principles</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>Fast feedback</strong> — a pipeline that takes 45 minutes defeats the purpose. Aim for under 10.</li>
-          <li><strong>Fail fast</strong> — put cheap checks (linting, unit tests) before expensive ones (integration tests)</li>
-          <li><strong>Idempotent deployments</strong> — running the same pipeline twice should be safe</li>
-          <li><strong>Environment parity</strong> — dev, staging, and prod should deploy the same way</li>
-          <li><strong>Rollback strategy</strong> — every pipeline needs a clear rollback before it hits production</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">What to Include in Every Pipeline</h6>
-        <ul style="padding-left:1.25rem;">
-          <li>Linting and code quality checks</li>
-          <li>Unit and integration tests</li>
-          <li>Docker image build and vulnerability scan (Trivy)</li>
-          <li>Secret detection (GitGuardian, truffleHog)</li>
-          <li>Infrastructure plan (Terraform plan in PRs)</li>
-          <li>Deployment with health check verification</li>
-          <li>Notification on failure with enough context to debug</li>
-        </ul>
-        <p style="margin-top:1rem;padding:0.85rem;background:#f8f9ff;border-radius:8px;font-size:0.88rem;"><strong>From Durrell:</strong> I've cut deployment times by 95% at BlueWindow and eliminated 85% of manual tasks at Data Service Group by applying exactly these principles. The payoff is real.</p>`,
-                ctas: [
-                    { label: '🔍 Pipeline Audit & Review', href: 'mailto:hello@durrellgemuh.com?subject=CI/CD Pipeline Review', cls: 'btn-primary' },
-                    { label: '📱 WhatsApp', href: 'https://wa.me/237671305865', cls: 'btn-success', target: '_blank' },
-                    { label: '🎓 CI/CD Workshop', href: 'mailto:hello@durrellgemuh.com?subject=CI/CD Workshop Request', cls: 'btn-outline-primary' }
-                ]
-            },
-            r5: {
-                icon: 'cloud', label: 'Cloud Platform', title: 'AWS for DevOps Engineers',
-                tagline: 'The services that actually matter — not a list of everything AWS offers.',
-                body: `<p>AWS has hundreds of services. DevOps engineers use maybe 20 of them regularly. Here's the focused guide, based on what I've used across multiple production environments.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Core Services to Master</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>IAM</strong> — roles, policies, RBAC. This is the foundation of everything secure in AWS.</li>
-          <li><strong>VPC & Networking</strong> — subnets, route tables, security groups, NAT gateways, VPC endpoints</li>
-          <li><strong>EC2 & Auto Scaling</strong> — compute, launch templates, ASGs, spot instances</li>
-          <li><strong>EKS</strong> — managed Kubernetes. Understand node groups, IRSA, cluster autoscaler.</li>
-          <li><strong>S3</strong> — object storage, versioning, lifecycle policies, cross-account access</li>
-          <li><strong>RDS & Aurora</strong> — managed databases, multi-AZ, snapshots, parameter groups</li>
-          <li><strong>CloudWatch</strong> — logs, metrics, alarms, dashboards, log insights</li>
-          <li><strong>CodePipeline / CodeBuild</strong> — native AWS CI/CD (know it, even if you prefer GitHub Actions)</li>
-          <li><strong>Secrets Manager & SSM Parameter Store</strong> — stop hardcoding credentials</li>
-          <li><strong>CloudFront</strong> — CDN, edge caching, custom origins</li>
-        </ul>
-        <p style="margin-top:1rem;padding:0.85rem;background:#f8f9ff;border-radius:8px;font-size:0.88rem;"><strong>From Durrell:</strong> As an AWS Community Builder, I stay current with AWS releases and share practical breakdowns on my blog. Follow it for real-world AWS usage, not just documentation summaries.</p>`,
-                ctas: [
-                    { label: '☁️ AWS Architecture Review', href: 'mailto:hello@durrellgemuh.com?subject=AWS Architecture Consultation', cls: 'btn-primary' },
-                    { label: '📱 WhatsApp', href: 'https://wa.me/237671305865', cls: 'btn-success', target: '_blank' },
-                    { label: '📖 AWS Blog Posts', href: 'page-blog.html', cls: 'btn-outline-secondary' }
-                ]
-            },
-            r6: {
-                icon: 'bar-chart-2', label: 'Observability', title: 'Monitoring & Observability',
-                tagline: "If your system doesn't tell you what it's doing, you're flying blind.",
-                body: `<p>Observability is one of the most underinvested areas in most engineering teams — until something breaks at 2am. Here's how to set it up properly so you're never surprised.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">The Three Pillars</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>Metrics</strong> — numerical measurements over time (CPU, memory, request rate, error rate). Tool: Prometheus.</li>
-          <li><strong>Logs</strong> — structured event records from your applications and infrastructure. Tool: CloudWatch Logs, Loki.</li>
-          <li><strong>Traces</strong> — end-to-end request flows across services. Tool: Datadog APM, Jaeger, OpenTelemetry.</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">What Good Observability Looks Like</h6>
-        <ul style="padding-left:1.25rem;">
-          <li>Dashboards your on-call engineer can read in 30 seconds during an incident</li>
-          <li>Alerts that fire when things are about to go wrong, not after users complain</li>
-          <li>Structured logs you can query, not walls of text</li>
-          <li>SLOs and error budgets that drive real engineering decisions</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Toolchain Starting Points</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>Open source:</strong> Prometheus + Grafana + Loki (the modern stack)</li>
-          <li><strong>Managed/enterprise:</strong> Datadog (expensive but powerful), CloudWatch (already there if you're on AWS)</li>
-        </ul>
-        <p style="margin-top:1rem;padding:0.85rem;background:#f8f9ff;border-radius:8px;font-size:0.88rem;"><strong>From Durrell:</strong> I've deployed full observability stacks across Kubernetes clusters, VMs, and cloud services — and the ROI on catching issues before they become incidents is always worth the setup time.</p>`,
-                ctas: [
-                    { label: '📊 Observability Stack Consult', href: 'mailto:hello@durrellgemuh.com?subject=Observability Consultation', cls: 'btn-primary' },
-                    { label: '📱 WhatsApp', href: 'https://wa.me/237671305865', cls: 'btn-success', target: '_blank' },
-                    { label: '🎓 Request a Workshop', href: 'mailto:hello@durrellgemuh.com?subject=Monitoring Workshop', cls: 'btn-outline-primary' }
-                ]
-            },
-            r7: {
-                icon: 'shield', label: 'Security', title: 'DevSecOps Fundamentals',
-                tagline: 'Security is a feature of your pipeline, not a review at the end.',
-                body: `<p>DevSecOps means shifting security left — integrating it into your development and deployment process rather than treating it as a final checkpoint. Here's how to do that practically.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Security in Your CI/CD Pipeline</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>Secret detection</strong> — scan every commit for accidentally committed credentials (GitGuardian, truffleHog)</li>
-          <li><strong>SAST</strong> — static application security testing on your code (Semgrep, Bandit for Python)</li>
-          <li><strong>Container scanning</strong> — scan Docker images for known CVEs before they reach production (Trivy, Snyk)</li>
-          <li><strong>Dependency scanning</strong> — check your packages for vulnerabilities (Dependabot, Dependency-Track)</li>
-          <li><strong>IaC scanning</strong> — check Terraform for misconfigurations before they're applied (Checkov, tfsec)</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Cloud Security Basics</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>IAM least privilege</strong> — roles should only have the permissions they actually need</li>
-          <li><strong>No hardcoded secrets</strong> — use Vault, Secrets Manager, or IRSA</li>
-          <li><strong>Network segmentation</strong> — private subnets, security groups, VPC endpoints</li>
-          <li><strong>Audit logging</strong> — CloudTrail, VPC Flow Logs, GuardDuty alerts</li>
-        </ul>
-        <p style="margin-top:1rem;padding:0.85rem;background:#f8f9ff;border-radius:8px;font-size:0.88rem;"><strong>From Durrell:</strong> I've remediated AWS Security Hub findings and integrated security scanning into production pipelines at multiple clients. The earlier you catch issues, the cheaper and faster they are to fix.</p>`,
-                ctas: [
-                    { label: '🔒 Security Audit Consultation', href: 'mailto:hello@durrellgemuh.com?subject=DevSecOps Consultation', cls: 'btn-primary' },
-                    { label: '📱 WhatsApp', href: 'https://wa.me/237671305865', cls: 'btn-success', target: '_blank' },
-                    { label: '🎓 DevSecOps Workshop', href: 'mailto:hello@durrellgemuh.com?subject=DevSecOps Workshop', cls: 'btn-outline-primary' }
-                ]
-            },
-            r8: {
-                icon: 'briefcase', label: 'Career Advice', title: 'Breaking Into DevOps',
-                tagline: 'The real path — not the optimistic version you read on Reddit.',
-                body: `<p>I've helped dozens of engineers make this transition. Here's what actually works, and what wastes your time.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">What Hiring Managers Actually Look For</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>Evidence of real projects</strong> — a GitHub repo with actual Terraform, a CI/CD pipeline you built, a K8s cluster you deployed</li>
-          <li><strong>Linux comfort</strong> — they will ask you to debug things in a terminal. Be ready.</li>
-          <li><strong>Scripting ability</strong> — Bash for automation, Python for tooling</li>
-          <li><strong>Cloud fundamentals</strong> — one platform, done well, beats shallow knowledge of three</li>
-          <li><strong>Communication</strong> — explain what you built and why. Write good READMEs.</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">What Doesn't Work</h6>
-        <ul style="padding-left:1.25rem;">
-          <li>Collecting certifications without building anything real</li>
-          <li>Applying for senior roles before you have a portfolio</li>
-          <li>Learning 10 tools at a shallow level instead of 3 tools deeply</li>
-          <li>Waiting until you feel "ready" — build in public and learn as you go</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Transition Paths That Work</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>From developer:</strong> Start with CI/CD and containers — your code context is an advantage</li>
-          <li><strong>From sysadmin:</strong> Cloud + IaC is your natural next step</li>
-          <li><strong>From non-tech:</strong> Linux + scripting + one cloud platform, then build a visible project</li>
-        </ul>
-        <p style="margin-top:1rem;padding:0.85rem;background:#f8f9ff;border-radius:8px;font-size:0.88rem;"><strong>From Durrell:</strong> I run 1:1 mentorship sessions specifically for engineers making this transition. If you want an honest assessment of where you are and what to do next, reach out.</p>`,
-                ctas: [
-                    { label: '📅 Book a Career Session', href: 'mailto:hello@durrellgemuh.com?subject=DevOps Career Mentorship', cls: 'btn-primary' },
-                    { label: '📱 WhatsApp Me', href: 'https://wa.me/237671305865', cls: 'btn-success', target: '_blank' },
-                    { label: '🚀 Join NextGen Playground', href: 'http://nextgenplayground.org/', cls: 'btn-outline-primary', target: '_blank' }
-                ]
-            },
-            r9: {
-                icon: 'award', label: 'Certifications', title: 'DevOps Certifications Guide',
-                tagline: "Which ones are worth it, which ones aren't, and what order to take them.",
-                body: `<p>Certifications aren't a substitute for skills — but the right ones signal credibility, open doors, and force you to fill knowledge gaps. Here's my honest take after years in the industry.</p>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Worth Your Time</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>AWS Solutions Architect Associate (SAA-C03)</strong> — the best general cloud cert. Widely recognised, teaches real architecture thinking.</li>
-          <li><strong>CKA (Certified Kubernetes Administrator)</strong> — hands-on, practical, respected. If you work with K8s, get this.</li>
-          <li><strong>Terraform Associate</strong> — validates IaC skills. Fast to prepare if you've been using it.</li>
-          <li><strong>AWS DevOps Engineer Professional</strong> — advanced, takes time, but highly valued for DevOps roles.</li>
-          <li><strong>CKAD (Certified Kubernetes Application Developer)</strong> — good if you're coming from a dev background.</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Be Careful With</h6>
-        <ul style="padding-left:1.25rem;">
-          <li><strong>AWS Cloud Practitioner</strong> — only worth it as a stepping stone. Don't stop there.</li>
-          <li><strong>Vendor-specific certs beyond AWS/GCP</strong> — less portable. Do AWS or GCP first.</li>
-          <li><strong>Any cert before you have hands-on experience</strong> — study and build simultaneously</li>
-        </ul>
-        <h6 style="font-weight:700;margin-top:1.1rem;margin-bottom:0.5rem;">Suggested Order</h6>
-        <ul style="padding-left:1.25rem;">
-          <li>AWS SAA → Terraform Associate → CKA → AWS DevOps Pro</li>
-        </ul>
-        <p style="margin-top:1rem;padding:0.85rem;background:#f8f9ff;border-radius:8px;font-size:0.88rem;"><strong>From Durrell:</strong> I guide engineers on cert strategy as part of 1:1 mentorship. If you want advice on which to prioritise for your specific career goals, book a session.</p>`,
-                ctas: [
-                    { label: '🎯 Get Cert Strategy Advice', href: 'mailto:hello@durrellgemuh.com?subject=Certification Guidance', cls: 'btn-primary' },
-                    { label: '📱 WhatsApp Me', href: 'https://wa.me/237671305865', cls: 'btn-success', target: '_blank' },
-                    { label: '📅 Book 1:1 Mentorship', href: 'mailto:hello@durrellgemuh.com?subject=Mentorship Session - Certifications', cls: 'btn-outline-primary' }
-                ]
-            }
-        };
-
-        function openRes(id) {
-            var r = RESOURCES[id];
-            if (!r) return;
-            document.getElementById('res-label').textContent = r.label;
-            document.getElementById('res-title').textContent = r.title;
-            document.getElementById('res-tagline').textContent = r.tagline;
-            document.getElementById('res-body').innerHTML = r.body;
-            document.getElementById('res-icon').innerHTML = '<i data-feather="' + r.icon + '" style="width:24px;height:24px;"></i>';
-            var ctaEl = document.getElementById('res-ctas');
-            ctaEl.innerHTML = '<span style="color:#6c757d;font-size:0.82rem;margin-right:auto;">Want guidance on this topic?</span>' +
-                r.ctas.map(function (c) {
-                    return '<a href="' + c.href + '"' +
-                        (c.target ? ' target="' + c.target + '"' : '') +
-                        ' class="btn ' + c.cls + ' rounded" style="font-size:0.875rem;">' + c.label + '</a>';
-                }).join('');
-            document.getElementById('res-modal').style.display = 'block';
-            document.getElementById('res-modal-overlay').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            if (window.feather) feather.replace();
-        }
-
-        function closeRes() {
-            document.getElementById('res-modal').style.display = 'none';
-            document.getElementById('res-modal-overlay').style.display = 'none';
-            document.body.style.overflow = '';
-        }
-
-        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeRes(); });
-    </script>
+    <!-- ── PROJECT DATA ──────────────────────────────────────────────── -->
 </body>
 
 </html>
