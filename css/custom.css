@@ -673,6 +673,7 @@
   flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: .9rem;
@@ -820,4 +821,18 @@
   .proj-modal-footer {
     padding: 1rem 1.25rem 1.5rem;
   }
+}
+
+/* Ensure emoji glyphs render immediately (color emoji fonts). */
+body {
+  font-family: Roboto, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Montserrat, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
 }

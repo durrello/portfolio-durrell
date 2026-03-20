@@ -1596,4 +1596,64 @@ I was working with two EC2 instances — neither internet-facing. I needed to ge
     if (e.key === 'Escape') closeBlogModal();
   });
 
+  // ------------------ Emoji prewarm ------------------
+  // Some browsers delay color-emoji glyph selection until a later reflow.
+  // Pre-render emoji strings offscreen so the right emoji font is chosen early.
+  function prewarmEmojiGlyphs() {
+    try {
+      var el = document.getElementById("emoji-prewarm");
+      if (!el) {
+        el = document.createElement("div");
+        el.id = "emoji-prewarm";
+        el.style.position = "absolute";
+        el.style.left = "-9999px";
+        el.style.top = "-9999px";
+        el.style.width = "1px";
+        el.style.height = "1px";
+        el.style.overflow = "hidden";
+        el.style.whiteSpace = "nowrap";
+        el.style.visibility = "hidden";
+        document.body.appendChild(el);
+      }
+
+      var labels = [];
+      function pushLabels(arr) {
+        if (!Array.isArray(arr)) return;
+        arr.forEach(function (c) {
+          if (c && typeof c.label === "string") labels.push(c.label);
+        });
+      }
+
+      // Focus CTAs
+      if (typeof FOCUS === "object") {
+        Object.keys(FOCUS).forEach(function (k) {
+          if (FOCUS[k]) pushLabels(FOCUS[k].ctas);
+        });
+      }
+
+      // Resource CTAs
+      if (typeof RESOURCES === "object") {
+        Object.keys(RESOURCES).forEach(function (k) {
+          if (RESOURCES[k]) pushLabels(RESOURCES[k].ctas);
+        });
+      }
+
+      // Project CTAs
+      if (typeof PROJECTS === "object") {
+        Object.keys(PROJECTS).forEach(function (k) {
+          if (PROJECTS[k]) pushLabels(PROJECTS[k].ctas);
+        });
+      }
+
+      el.textContent = labels.join(" ");
+    } catch (e) {
+      // No-op: emoji prewarm should never break page functionality.
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Run after the initial paint cycle.
+    window.setTimeout(prewarmEmojiGlyphs, 0);
+  });
+
 })();

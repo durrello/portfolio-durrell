@@ -24,6 +24,11 @@ window.onload = function loader() {
     setTimeout(() => {
         document.getElementById('preloader').style.visibility = 'hidden';
         document.getElementById('preloader').style.opacity = '0';
+        // Ensure Feather icons are replaced after all scripts/assets are loaded.
+        // This fixes cases where `feather.replace()` was called before Feather finished loading.
+        if (window.feather && typeof window.feather.replace === "function") {
+            window.feather.replace();
+        }
     }, 350);
 } 
 
@@ -64,8 +69,35 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 
-//Feather icon
-feather.replace()
+// Feather icon
+// NOTE: `feather.replace()` must run after the Feather script is loaded.
+// This file is included *before* the Feather script in `index.html`, so we retry.
+(function initFeatherIcons() {
+    var attempts = 0;
+    var maxAttempts = 300; // ~30s (100ms interval)
+    function tryReplace() {
+        attempts++;
+        try {
+            var before = document.querySelectorAll('[data-feather]').length;
+            if (window.feather && typeof window.feather.replace === "function") {
+                window.feather.replace();
+                var after = document.querySelectorAll('[data-feather]').length;
+                // Feather should convert some [data-feather] elements into SVG.
+                if (after < before) return;
+            }
+        } catch (e) {
+            // Ignore and retry: icon rendering should never break the page.
+        }
+        if (attempts < maxAttempts) {
+            setTimeout(tryReplace, 100);
+        }
+    }
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", tryReplace);
+    } else {
+        tryReplace();
+    }
+})();
 
 // Navbar Active Class
 var spy = new Gumshoe('#navbar-navlist a', {
